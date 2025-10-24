@@ -311,7 +311,7 @@ body{
       color: #fff;
     }
     
-    .troop-table {
+.troop-table {
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
@@ -421,6 +421,60 @@ body{
       .footer-grid{ grid-template-columns: 1fr; }
       .strategy-section{ padding:1.25rem; }
       .guide-intro{ padding:1.25rem; }
+       .troop-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .troop-table thead {
+        display: none;
+      }
+      
+      .troop-table tbody {
+        display: block;
+      }
+      
+      .troop-table tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        background: rgba(255,255,255,0.02);
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.05);
+        padding: 1rem;
+      }
+      
+      .troop-table td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 45%;
+      }
+      
+      .troop-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 40%;
+        padding-right: 10px;
+        font-weight: 600;
+        color: var(--accent);
+        text-align: left;
+      }
+      
+      .troop-table td:first-child {
+        font-weight: 700;
+        color: #fff;
+        font-size: 1.1rem;
+        padding-left: 0;
+        margin-bottom: 0.5rem;
+      }
+      
+      .troop-table td:first-child:before {
+        display: none;
+      }
     }
 
     /* Utility */
@@ -623,8 +677,8 @@ body{
         <div class="footer-inner">
             <small>© <span id="year"></span> Last War 743. Unofficial fan site.</small>
             <ul class="footer-nav">
-                <li><a href="privacy-terms.html">Privacy</a></li>
-                <li><a href="privacy-terms.html">Terms</a></li>
+                <li><a href="privacy-terms.html#privacy">Privacy</a></li>
+                <li><a href="privacy-terms.html#terms">Terms</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>

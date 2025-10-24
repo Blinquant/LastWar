@@ -590,7 +590,7 @@
     /* Resources Grid */
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-top: 1.5rem;
     }
@@ -625,6 +625,75 @@
       font-size: 0.9rem;
       margin: 0;
     }
+
+.resource-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, 
+              rgba(14, 165, 163, 0.05) 0%,
+              rgba(20, 184, 182, 0.02) 100%);
+  color: var(--accent);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  border: 1px solid rgba(14, 165, 163, 0.15);
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.resource-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, 
+              rgba(14, 165, 163, 0.1) 0%,
+              rgba(20, 184, 182, 0.05) 50%,
+              transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.resource-btn:hover::before {
+  opacity: 1;
+}
+
+.resource-btn:hover {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 20px rgba(14, 165, 163, 0.4),
+              0 0 40px rgba(14, 165, 163, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+/* Resource Icon SVG */
+.resource-icon svg {
+  width: 56px;
+  height: 56px;
+  color: var(--accent);
+  stroke: currentColor;
+  fill: none;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover .resource-icon svg {
+  color: var(--accent-light);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(14, 165, 163, 0.3));
+}
+
+/* Animation subtile pour le download */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+.resource-card:hover .resource-icon svg {
+  animation: float 2s ease-in-out infinite;
+}
+
 
     /* Hero art placeholder */
     .hero-art svg {
@@ -745,6 +814,10 @@
         padding: 2rem 0;
       }
 
+      .resource-card {
+        margin: 1rem 2rem;
+      }
+
       .resource-grid {
         grid-template-columns: 1fr;
       }
@@ -755,6 +828,10 @@
 
       .strategy-content {
         padding: 1.25rem;
+      }
+      .resource-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;  
       }
     }
 
@@ -1150,6 +1227,9 @@
         justify-content: center;
       }
     }
+
+
+
 
     /* Petits mobiles (max-width: 480px) */
     @media (max-width: 480px) {
@@ -1662,35 +1742,53 @@
     </section>
 
     <!-- Resources Section -->
-    <section id="resources" class="section resources">
-      <div class="container">
-        <h2>Essential Resources</h2>
-        <p class="muted">Tools and links to enhance your Last War experience</p>
+<section id="resources" class="section resources">
+  <div class="container">
+    <h2>Essential Resources</h2>
+    <p class="muted">Tools and links to enhance your Last War experience</p>
 
-        <div class="resource-grid">
-          <article class="resource-card">
-            <div class="resource-icon" aria-hidden="true">📱</div>
-            <h3>Download Game</h3>
-            <p>Get Last War and join Server 743</p>
-          </article>
-          <article class="resource-card">
-            <div class="resource-icon" aria-hidden="true">💎</div>
-            <h3>Shop</h3>
-            <p>Strategic purchases and offers</p>
-          </article>
-          <article class="resource-card">
-            <div class="resource-icon" aria-hidden="true">📚</div>
-            <h3>Wiki</h3>
-            <p>Detailed game mechanics</p>
-          </article>
-          <article class="resource-card">
-            <div class="resource-icon" aria-hidden="true">👥</div>
-            <h3>Community</h3>
-            <p>Discord and forums</p>
-          </article>
+    <div class="resource-grid">
+      <article class="resource-card">
+        <div class="resource-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M7 7H17M7 12H17M7 17H12M7 3V5M17 3V5M6 21H18C19.1046 21 20 20.1046 20 19V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21Z"/>
+          </svg>
         </div>
-      </div>
-    </section>
+        <h3>Calculator</h3>
+        <p>Tools and calculations</p>
+        <a href="https://last-war-util.vercel.app/#/home" class="resource-btn" target="_blank" rel="noopener">
+          Calculator
+        </a>
+      </article>
+
+      <article class="resource-card">
+        <div class="resource-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528"/>
+          </svg>
+        </div>
+        <h3>Wiki</h3>
+        <p>Detailed content</p>
+        <a href="https://www.lastwartutorial.com/" class="resource-btn" target="_blank" rel="noopener">
+          Wiki
+        </a>
+      </article>
+
+      <article class="resource-card">
+        <div class="resource-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429M17 20H7M17 20V18C17 17.3438 16.8736 16.717 16.6438 16.1429M7 20H2V18C2 16.3431 3.34315 15 5 15C5.95561 15 6.80686 15.4468 7.35625 16.1429M7 20V18C7 17.3438 7.12642 16.717 7.35625 16.1429M7.35625 16.1429C8.0935 14.301 9.89482 13 12 13C14.1052 13 15.9065 14.301 16.6438 16.1429M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/>
+          </svg>
+        </div>
+        <h3>Community</h3>
+        <p>Official Discord</p>
+        <a href="https://discord.com/invite/lastwarsurvival" class="resource-btn" target="_blank" rel="noopener">
+          Discord
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="site-footer">
@@ -1727,6 +1825,8 @@
     </div>
   </footer>
   <script>
+
+
     // Calcul du nombre de jours depuis le 21 juillet 2024
     function calculateDaysSinceStart() {
       const startDate = new Date('2024-07-20T00:00:00');
@@ -2265,6 +2365,7 @@
       });
     });
   </script>
+
 </body>
 
 </html>

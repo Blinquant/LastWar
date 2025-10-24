@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Last War 743</title>
+  <meta name="description" content="Contact information for Last War Server 743 community." />
+  <meta name="theme-color" content="#05060a">
+  <style>
+    /* Basic reset and variables */
+    :root{
+      --max-width: 1100px;
+      --accent: #0ea5a3;
+      --accent-light: #14b8b6;
+      --bg: #0b1020;
+      --card: #0e1422;
+      --muted: #9aa3b2;
+      --radius: 10px;
+      --gap: 1.25rem;
+      --container-padding: 1rem;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; padding:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #05060a 0%, #080c18 25%, #0b1020 50%, #080c18 75%, #05060a 100%);
+      background-attachment: fixed;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      min-height: 100vh;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding: 1.25rem var(--container-padding);
+    }
+
+    /* Header */
+    .site-header{
+      position:fixed;
+      top:0;
+      left: 0%;
+      right: 0%;
+      z-index:1000;
+      backdrop-filter: blur(8px);
+      background: rgba(6,8,15,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      padding: 0.5rem 2rem;
+    }
+    main{
+      padding-top: 6rem; 
+    }
+    
+    .header-inner{
+      display:flex;
+      gap:var(--gap);
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-weight:700;
+      font-size:1.25rem;
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    /* Close navigation */
+    .close-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .close-nav:hover {
+      background: rgba(255,255,255,0.03);
+      transform: scale(1.05);
+    }
+    
+    .close-nav::before, .close-nav::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+    }
+    
+    .close-nav::before { transform: rotate(45deg); }
+    .close-nav::after { transform: rotate(-45deg); }
+
+    /* Content */
+    .content-section {
+      background: var(--card);
+      padding: 3rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      text-align: center;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .content-section h1 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      background: rgba(14,165,163,0.05);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(14,165,163,0.1);
+      margin-top: 2rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent-light);
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 700px){
+      .site-header {padding: 0rem 1rem;}
+      .container { padding: 1rem;}
+      .content-section { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        Last War 743
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="close-nav" aria-label="Return to home page"></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="content-section">
+        <h1>Contact</h1>
+        <p>For any questions or suggestions regarding the Last War Server 743 community website, you can reach out to:</p>
+        
+        <div class="contact-info">
+          <h3>onryo</h3>
+          <p>Alliance: <strong>[Tha]</strong></p>
+          <p>Server: <strong>743 of course</strong></p>
+        </div>
+
+        <p class="muted">This is an unofficial fan site created for the Server 743 community.</p>
+        
+        <a href="index.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Main Page
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

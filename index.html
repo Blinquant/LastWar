@@ -1,259 +1,309 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Last War 743</title>
-  <meta name="description" content="Expert tips, strategies and guides for Last War players on Server 743. Master the game with proven tactics." />
+  <meta name="description"
+    content="Expert tips, strategies and guides for Last War players on Server 743. Master the game with proven tactics." />
+  <meta name="theme-color" content="#05060a">
   <style>
     /* Basic reset and variables */
-:root{
-  --max-width: 1100px;
-  --accent: #0ea5a3;
-  --accent-light: #14b8b6;
-  --bg: #0b1020;
-  --card: #0e1422;
-  --muted: #9aa3b2;
-  --radius: 10px;
-  --gap: 1.25rem;
-  --container-padding: 1rem;
-}
+    :root {
+      --max-width: 1100px;
+      --accent: #0ea5a3;
+      --accent-light: #14b8b6;
+      --bg: #0b1020;
+      --card: #0e1422;
+      --muted: #9aa3b2;
+      --radius: 10px;
+      --gap: 1.25rem;
+      --container-padding: 1rem;
+    }
 
-*{box-sizing:border-box}
-html,body{height:100%; margin:0; padding:0}
-body{
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  /* Dégradé plus progressif */
-  background: linear-gradient(
-    180deg, 
-    #05060a 0%, 
-    #080c18 25%, 
-    #0b1020 50%, 
-    #080c18 75%, 
-    #05060a 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  color:#e6eef6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-  min-height: 100vh;
-}
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      /* Dégradé plus progressif */
+      background: linear-gradient(180deg,
+          #05060a 0%,
+          #080c18 25%,
+          #0b1020 50%,
+          #080c18 75%,
+          #05060a 100%);
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
 
     /* Layout container */
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
       padding: 1.25rem var(--container-padding);
     }
 
     /* Header */
-    .site-header{
-      position:fixed;
-      top:0;
+    .site-header {
+      position: fixed;
+      top: 0;
       left: 0%;
       right: 0%;
-      z-index:1000;
+      z-index: 1000;
       backdrop-filter: blur(8px);
-      background: rgba(6,8,15,0.35);;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      background: rgba(6, 8, 15, 0.35);
+      ;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       padding: 0.5rem 2rem;
     }
-    main{
-      padding-top: 6rem; 
+
+    main {
+      padding-top: 6rem;
     }
-    
-    .header-inner{
-      display:flex;
-      gap:var(--gap);
-      align-items:center;
-      justify-content:space-between;
+
+    .header-inner {
+      display: flex;
+      gap: var(--gap);
+      align-items: center;
+      justify-content: space-between;
     }
-    .logo{
-      font-weight:700;
-      font-size:1.25rem;
-      color:var(--accent);
-      text-decoration:none;
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+      text-decoration: none;
     }
-    .server-badge{
+
+    .server-badge {
       background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      color:#fff;
-      padding:0.25rem 0.6rem;
-      border-radius:6px;
-      font-size:0.8rem;
-      margin-left:0.5rem;
-      font-weight:600;
+      color: #fff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      font-weight: 600;
     }
-    .main-nav { display:flex; align-items:center; gap:1rem;}
-    #nav-toggle{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.06);
-      color:inherit;
-      padding:0.4rem 0.65rem;
-      border-radius:8px;
-      display:none;
-      cursor:pointer;
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-    .nav-list{
-      display:flex;
-      gap:0.75rem;
-      list-style:none;
-      margin:0;
-      padding:0;
+
+    #nav-toggle {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: inherit;
+      padding: 0.4rem 0.65rem;
+      border-radius: 8px;
+      display: none;
+      cursor: pointer;
     }
-    .nav-list a{
-      color:var(--muted);
-      text-decoration:none;
-      padding:0.45rem 0.6rem;
-      border-radius:8px;
+
+    .nav-list {
+      display: flex;
+      gap: 0.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
       transition: all 0.2s;
     }
-    .nav-list a:hover{color:#fff; background: rgba(255,255,255,0.03)}
+
+    .nav-list a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.03)
+    }
 
     /* Hero */
-    .hero{
-      padding:3.25rem 0;
+    .hero {
+      padding: 3.25rem 0;
     }
-    .hero-inner{
-      display:grid;
+
+    .hero-inner {
+      display: grid;
       grid-template-columns: 1fr 480px;
-      gap:2rem;
-      align-items:center;
+      gap: 2rem;
+      align-items: center;
     }
-    .hero-copy h1{
-      font-size:clamp(2rem,4vw,3rem);
-      margin:0 0 0.5rem 0;
+
+    .hero-copy h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 0.5rem 0;
       letter-spacing: -0.02em;
     }
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 1.5rem 0;
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0 0 1.5rem 0;
     }
-    .hero-cta{
-      display:flex;
-      gap:0.75rem;
+
+    .hero-cta {
+      display: flex;
+      gap: 0.75rem;
     }
 
     /* Buttons */
-    .btn{
-      display:inline-block;
-      padding:0.65rem 1rem;
-      border-radius:8px;
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,0.06);
-      background:transparent;
-      color:inherit;
-      font-weight:600;
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: transparent;
+      color: inherit;
+      font-weight: 600;
       transition: all 0.2s;
-      cursor:pointer;
+      cursor: pointer;
     }
-    .btn.primary{
+
+    .btn.primary {
       background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      color:#fff;
-      border:0;
+      color: #fff;
+      border: 0;
     }
-    .btn.primary:hover{
+
+    .btn.primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(14,165,163,0.3);
+      box-shadow: 0 8px 20px rgba(14, 165, 163, 0.3);
     }
-    .btn.ghost{
-      background:transparent;
-      color:var(--accent);
-      border:1px solid rgba(14,165,163,0.3);
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(14, 165, 163, 0.3);
     }
-    .btn.ghost:hover{
-      background:rgba(14,165,163,0.1);
+
+    .btn.ghost:hover {
+      background: rgba(14, 165, 163, 0.1);
     }
 
     /* Sections */
-    .section{ padding:2rem 0; }
-    .section h2{
-      font-size:2rem;
-      margin:0 0 1.5rem 0;
-      letter-spacing:-0.02em;
+    .section {
+      padding: 2rem 0;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.02em;
     }
 
     /* About / Split layout */
-    .split{ 
-      display:grid; 
-      grid-template-columns: 1fr 360px; 
-      gap:2rem; 
-      align-items:start; 
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
     }
-    .meta-list{ 
-      list-style:none; 
-      padding:0; 
-      color:var(--muted);
-      line-height:1.8;
+
+    .meta-list {
+      list-style: none;
+      padding: 0;
+      color: var(--muted);
+      line-height: 1.8;
     }
-    .meta-list strong{
-      color:#fff;
+
+    .meta-list strong {
+      color: #fff;
     }
-    .facts-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:0.75rem;
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
     }
-    .fact{ 
-      background:var(--card); 
-      padding:0.75rem; 
-      border-radius:8px; 
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.03);
+
+    .fact {
+      background: var(--card);
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.03);
     }
-    .fact .num{ 
-      display:block; 
-      font-weight:700; 
-      font-size:1.25rem; 
-      color:var(--accent);
+
+    .fact .num {
+      display: block;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
     }
 
     /*Arms Race Section*/
-    .container-tasks{
+    .container-tasks {
       text-align: center;
-      margin-top:5rem;
-      overflow:hidden;
-      display:grid;
+      margin-top: 5rem;
+      overflow: hidden;
+      display: grid;
       grid-template-columns: 10fr 7fr;
     }
-    .events-list{
-      border:1px solid rgba(255,255,255,0.03);
-      border-radius:12px;
-      
-      background:var(--card); 
+
+    .events-list {
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+
+      background: var(--card);
     }
-    .info-daily-tasks{
-      padding:1rem 3.5rem;
+
+    .info-daily-tasks {
+      padding: 1rem 3.5rem;
     }
-    .header-tasks h1{
-      margin:0 0 1rem 0;
-      font-size:2.5rem;
+
+    .header-tasks h1 {
+      margin: 0 0 1rem 0;
+      font-size: 2.5rem;
     }
-    .day-info{
-      color:var(--muted);
-      padding:1.5rem 0;
+
+    .day-info {
+      color: var(--muted);
+      padding: 1.5rem 0;
     }
-    .current-highlight{
+
+    .current-highlight {
       text-align: center;
-      background:rgba(14,165,163,0.05);
-      padding:1rem;
-      border-radius:8px;
-      border:1px solid rgba(14,165,163,0.1);
-      font-weight:600;
-      display:flex;
-      flex-direction:column;
-      gap:0.5rem;
+      background: rgba(14, 165, 163, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(14, 165, 163, 0.1);
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
+
     .current-highlight a {
       font-size: 1.1rem;
       padding-bottom: 1rem;
     }
-    .current-event-name{
+
+    .current-event-name {
       color: var(--accent-light);
     }
-    .countdown{
+
+    .countdown {
       color: #ffaa00;
     }
 
@@ -262,6 +312,7 @@ body{
       border: 1px solid #3a3a3a41;
 
     }
+
     .event {
       padding: 15px 20px;
       border-bottom: 1px solid #3a3a3a;
@@ -269,9 +320,11 @@ body{
       align-items: center;
       transition: background-color 0.3s ease;
     }
+
     .event:last-child {
       border-bottom: none;
     }
+
     .event.current {
       background: linear-gradient(135deg, #14b8b548, rgba(12, 14, 43, 0));
       border-left: 4px solid #14b8b6;
@@ -281,6 +334,7 @@ body{
       opacity: 0.6;
       color: #888;
     }
+
     .event-number {
       width: 30px;
       height: 30px;
@@ -293,51 +347,62 @@ body{
       font-weight: bold;
       font-size: 14px;
     }
+
     .event.current .event-number {
       background: #14b8b6;
       color: white;
     }
+
     .event.completed .event-number {
       background: #555;
       color: #777;
     }
+
     .event-content {
       flex: 1;
     }
+
     .event-name {
       font-weight: 600;
       margin-bottom: 4px;
     }
+
     .event-time {
       font-size: 12px;
       color: #aaa;
     }
+
     .event.current .event-time {
       color: #aaccff;
     }
+
     .event-status {
       font-size: 11px;
       padding: 4px 8px;
       border-radius: 12px;
       font-weight: bold;
     }
+
     .status-current {
       background: var(--accent-light);
       color: white;
     }
+
     .status-completed {
       background: #555;
       color: #999;
     }
+
     .status-upcoming {
       background: #ffaa00;
       color: #2b0606;
-      
+
     }
-    .time-info{
-      margin-top:1rem;
-      font-size:0.85rem;
-      color:var(--muted);
+
+    .time-info {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
 
@@ -346,281 +411,960 @@ body{
 
     /* Tips Grid */
     /* Tips Grid */
-.tips-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:1rem;
-  margin-top:1.5rem;
-}
-.tip-card{
-  background:var(--card);
-  padding:1.5rem;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.03);
-  transition: all 0.3s;
-}
-.tip-card:hover{
-  border-color:rgba(14,165,163,0.3);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(14,165,163,0.15);
-}
-.tip-header{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  margin-bottom:1rem;
-}
-.tip-header h3{
-  font-size:1.25rem;
-  margin:0;
-  color:#fff;
-}
-.tip-level{
-  background: rgba(14,165,163,0.15);
-  color:var(--accent);
-  padding:0.5rem 1rem;
-  border-radius:6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  border: 1px solid rgba(14,165,163,0.3);
-}
-.tip-level:hover{
-  background: rgba(14,165,163,0.25);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(14,165,163,0.2);
-}
-.tip-card p{
-  color:var(--muted);
-  margin:0 0 1rem 0;
-  line-height:1.6;
-}
-.tip-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-.tip-list li{
-  padding:0.4rem 0;
-  padding-left:1.25rem;
-  position:relative;
-  color:var(--muted);
-  font-size:0.95rem;
-}
-.tip-list li:before{
-  content:"▸";
-  position:absolute;
-  left:0;
-  color:var(--accent);
-}
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .tip-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: all 0.3s;
+    }
+
+    .tip-card:hover {
+      border-color: rgba(14, 165, 163, 0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(14, 165, 163, 0.15);
+    }
+
+    .tip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .tip-header h3 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: #fff;
+    }
+
+    .tip-level {
+      background: rgba(14, 165, 163, 0.15);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid rgba(14, 165, 163, 0.3);
+    }
+
+    .tip-level:hover {
+      background: rgba(14, 165, 163, 0.25);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(14, 165, 163, 0.2);
+    }
+
+    .tip-card p {
+      color: var(--muted);
+      margin: 0 0 1rem 0;
+      line-height: 1.6;
+    }
+
+    .tip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tip-list li {
+      padding: 0.4rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tip-list li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
 
     /* Strategy Tabs */
-    .strategy-tabs{
-      display:flex;
-      gap:0.75rem;
-      margin-bottom:1.5rem;
-      flex-wrap:wrap;
+    .strategy-tabs {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
-    .tab-btn{
-      padding:0.6rem 1.25rem;
-      background:var(--card);
-      border:1px solid rgba(255,255,255,0.06);
-      color:var(--muted);
-      border-radius:8px;
-      cursor:pointer;
+
+    .tab-btn {
+      padding: 0.6rem 1.25rem;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      border-radius: 8px;
+      cursor: pointer;
       transition: all 0.2s;
-      font-weight:600;
+      font-weight: 600;
       font-family: inherit;
     }
-    .tab-btn:hover{
-      background:rgba(255,255,255,0.03);
-      color:#fff;
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
     }
-    .tab-btn.active{
+
+    .tab-btn.active {
       background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      color:#fff;
-      border:0;
+      color: #fff;
+      border: 0;
     }
-    .strategy-content{
-      display:none;
-      background:var(--card);
-      padding:2rem;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.03);
+
+    .strategy-content {
+      display: none;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
     }
-    .strategy-content.active{
-      display:block;
+
+    .strategy-content.active {
+      display: block;
       animation: fadeIn 0.4s;
     }
-    @keyframes fadeIn{
-      from{ opacity:0; transform:translateY(10px); }
-      to{ opacity:1; transform:translateY(0); }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .strategy-content h3{
-      font-size:1.75rem;
-      margin:0 0 0.75rem 0;
-      color:#fff;
+
+    .strategy-content h3 {
+      font-size: 1.75rem;
+      margin: 0 0 0.75rem 0;
+      color: #fff;
     }
-    .strategy-content > p{
-      color:var(--muted);
-      margin:0 0 1.5rem 0;
-      line-height:1.7;
+
+    .strategy-content>p {
+      color: var(--muted);
+      margin: 0 0 1.5rem 0;
+      line-height: 1.7;
     }
-    .strategy-steps{
-      background:rgba(14,165,163,0.05);
-      padding:1.5rem;
-      border-radius:10px;
-      border:1px solid rgba(14,165,163,0.1);
+
+    .strategy-steps {
+      background: rgba(14, 165, 163, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(14, 165, 163, 0.1);
     }
-    .strategy-steps h4{
-      color:var(--accent);
-      margin:0 0 1rem 0;
-      font-size:1.25rem;
+
+    .strategy-steps h4 {
+      color: var(--accent);
+      margin: 0 0 1rem 0;
+      font-size: 1.25rem;
     }
-    .strategy-steps ol{
-      margin:0;
-      padding-left:1.5rem;
+
+    .strategy-steps ol {
+      margin: 0;
+      padding-left: 1.5rem;
     }
-    .strategy-steps li{
-      padding:0.5rem 0;
-      color:var(--muted);
-      line-height:1.6;
+
+    .strategy-steps li {
+      padding: 0.5rem 0;
+      color: var(--muted);
+      line-height: 1.6;
     }
-    .strategy-steps strong{
-      color:#fff;
+
+    .strategy-steps strong {
+      color: #fff;
     }
 
     /* Resources Grid */
-    .resource-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:1rem;
-      margin-top:1.5rem;
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .resource-card{
-      background:var(--card);
-      padding:1.5rem;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.03);
-      text-align:center;
+
+    .resource-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      text-align: center;
       transition: all 0.3s;
     }
-    .resource-card:hover{
-      border-color:rgba(14,165,163,0.3);
+
+    .resource-card:hover {
+      border-color: rgba(14, 165, 163, 0.3);
       transform: translateY(-4px);
     }
-    .resource-icon{
-      font-size:3rem;
-      margin-bottom:0.75rem;
+
+    .resource-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
     }
-    .resource-card h3{
-      font-size:1.1rem;
-      margin:0 0 0.5rem 0;
-      color:#fff;
+
+    .resource-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem 0;
+      color: #fff;
     }
-    .resource-card p{
-      color:var(--muted);
-      font-size:0.9rem;
-      margin:0;
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
     }
 
     /* Hero art placeholder */
-    .hero-art svg{
-      width:100%;
-      height:auto;
-      border-radius:12px;
+    .hero-art svg {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
     }
 
     /* Footer */
-    .site-footer{ 
-      border-top:1px solid rgba(255,255,255,0.03); 
-      padding:2rem 0; 
-      margin-top:3rem; 
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 2rem 0;
+      margin-top: 3rem;
     }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:2rem;
-      margin-bottom:2rem;
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
-    .footer-section h4{
-      color:var(--accent);
-      margin:0 0 0.75rem 0;
-      font-size:1rem;
+
+    .footer-section h4 {
+      color: var(--accent);
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
     }
+
     .footer-section p,
-    .footer-section a{
-      color:var(--muted);
-      font-size:0.9rem;
-      text-decoration:none;
-      display:block;
-      line-height:1.8;
-    }
-    .footer-section a:hover{
-      color:#fff;
-    }
-    .footer-inner{
-      display:flex;
-      gap:1rem;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      color:var(--muted);
-      padding-top:1.5rem;
-      border-top:1px solid rgba(255,255,255,0.03);
-    }
-    .footer-nav{
-      list-style:none;
-      display:flex;
-      gap:0.75rem;
-      margin:0;
-      padding:0;
-    }
-    .footer-nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:0.9rem;
-    }
-    .footer-nav a:hover{
-      color:#fff;
+    .footer-section a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: block;
+      line-height: 1.8;
     }
 
+    .footer-section a:hover {
+      color: #fff;
+    }
+
+    .footer-inner {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: var(--muted);
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+  </style>
+  <style>
     /* Responsive rules */
-    @media (max-width: 980px){
-      .hero-inner{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .tips-grid{ grid-template-columns: 1fr; }
-      .resource-grid{ grid-template-columns: repeat(2,1fr); }
-      .footer-grid{ grid-template-columns: repeat(2,1fr); }
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 700px){
-      #nav-toggle{ display:inline-block; }
-      .nav-list{ 
-        position: absolute;
-        right:1rem;
-        top:64px;
-        background: rgba(7,10,15,0.95);
-        padding:0.75rem;
-        border-radius:10px;
-        flex-direction: column;
-        display:none;
-        min-width:160px;
-        box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    @media (max-width: 700px) {
+      #nav-toggle {
+        display: inline-block;
       }
-      .nav-list.show{ display:flex; }
-      .hero{ padding:2rem 0; }
-      .resource-grid{ grid-template-columns: 1fr; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .strategy-content{ padding:1.25rem; }
+
+      .nav-list {
+        position: absolute;
+        right: 1rem;
+        top: 64px;
+        background: rgba(7, 10, 15, 0.95);
+        padding: 0.75rem;
+        border-radius: 10px;
+        flex-direction: column;
+        display: none;
+        min-width: 160px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+      }
+
+      .nav-list.show {
+        display: flex;
+      }
+
+      .hero {
+        padding: 2rem 0;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .strategy-content {
+        padding: 1.25rem;
+      }
     }
 
     /* Utility */
-    .muted{ color:var(--muted); font-size:0.95rem; }
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Tablettes et petits écrans (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 1.25rem 1.5rem;
+      }
+
+      /* Header */
+      .site-header {
+        padding: 0.5rem 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+      }
+
+      .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* About Section */
+      .split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Arms Race Section */
+      .container-tasks {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .info-daily-tasks {
+        padding: 1rem 2rem;
+        order: -1;
+      }
+
+      .header-tasks h1 {
+        font-size: 2rem;
+      }
+
+      /* Tips Grid */
+      .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .tip-card {
+        padding: 1.25rem;
+      }
+
+      /* Strategy Tabs */
+      .strategy-tabs {
+        gap: 0.5rem;
+        justify-content: center;
+      }
+
+      .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .strategy-content {
+        padding: 1.5rem;
+      }
+
+      /* Resources Grid */
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .footer-nav {
+        justify-content: center;
+      }
+    }
+
+    /* Mobiles (max-width: 768px) */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0.5rem 1.25rem;
+      }
+
+      /* Header */
+      .site-header {
+        padding: 0.5rem 1.25rem;
+      }
+
+      .header-inner {
+        gap: 1rem;
+      }
+
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .server-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+      }
+
+      /* Navigation Mobile */
+      #nav-toggle {
+        display: inline-block;
+      }
+
+      .nav-list {
+        position: absolute;
+        right: 1rem;
+        top: 100%;
+        background: rgba(7, 10, 15, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 12px;
+        flex-direction: column;
+        display: none;
+        min-width: 180px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1001;
+      }
+
+      .nav-list.show {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-list a {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        text-align: center;
+        width: 100%;
+        display: block;
+      }
+
+      /* Main Content */
+      main {
+        padding-top: 5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 2rem 0;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
+
+      /* Sections */
+      .section {
+        padding: 1.5rem 0;
+      }
+
+      .section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      /* About Section */
+      .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+
+      .fact {
+        padding: 0.75rem 0.5rem;
+      }
+
+      .fact .num {
+        font-size: 1.1rem;
+      }
+
+      /* Arms Race Section */
+      .container-tasks {
+        margin-top: 2rem;
+      }
+
+      .info-daily-tasks {
+        padding: 1rem 1.25rem;
+      }
+
+      .header-tasks h1 {
+        font-size: 1.75rem;
+      }
+
+      .day-info {
+        padding: 1rem 0;
+        font-size: 0.9rem;
+      }
+
+      .current-highlight {
+        padding: 1rem;
+      }
+
+      .current-highlight a {
+        font-size: 1rem;
+      }
+
+      .events-list {
+        border-radius: 10px;
+      }
+
+      .event {
+        padding: 12px 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+
+      .event-number {
+        margin-right: 0;
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+      }
+
+      .event-content {
+        width: 100%;
+      }
+
+      .event-name {
+        font-size: 0.95rem;
+      }
+
+      .event-time {
+        font-size: 0.8rem;
+      }
+
+      .event-status {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+      }
+
+      .time-info {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      /* Tips Section */
+      .tip-card {
+        padding: 1.25rem;
+      }
+
+      .tip-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+
+      .tip-header h3 {
+        font-size: 1.1rem;
+      }
+
+      .tip-level {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .tip-list li {
+        font-size: 0.9rem;
+      }
+
+      /* Strategy Section */
+      .strategy-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tab-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+      }
+
+      .strategy-content {
+        padding: 1.25rem;
+      }
+
+      .strategy-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .strategy-steps {
+        padding: 1.25rem;
+      }
+
+      .strategy-steps h4 {
+        font-size: 1.1rem;
+      }
+
+      .strategy-steps ol {
+        padding-left: 1.25rem;
+      }
+
+      .strategy-steps li {
+        font-size: 0.9rem;
+      }
+
+      /* Resources Section */
+      .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .resource-card {
+        padding: 1.25rem;
+      }
+
+      .resource-icon {
+        font-size: 2.5rem;
+      }
+
+      .resource-card h3 {
+        font-size: 1rem;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    /* Petits mobiles (max-width: 480px) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0.75rem 1rem;
+      }
+
+      /* Header */
+      .site-header {
+        padding: 0.4rem 1rem;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 1.5rem 0;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+      }
+
+      /* Sections */
+      .section {
+        padding: 1.25rem 0;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      /* About Section */
+      .facts-grid {
+        grid-template-columns: 1fr;
+        max-width: 250px;
+      }
+
+      .meta-list li {
+        font-size: 0.9rem;
+      }
+
+      /* Arms Race Section */
+      .info-daily-tasks {
+        padding: 1rem;
+      }
+
+      .header-tasks h1 {
+        font-size: 1.5rem;
+      }
+
+      .current-highlight {
+        padding: 0.75rem;
+      }
+
+      .event {
+        padding: 10px 12px;
+      }
+
+      /* Tips Section */
+      .tip-card {
+        padding: 1rem;
+      }
+
+      .tip-header h3 {
+        font-size: 1rem;
+      }
+
+      /* Strategy Section */
+      .strategy-content {
+        padding: 1rem;
+      }
+
+      .strategy-content h3 {
+        font-size: 1.3rem;
+      }
+
+      .strategy-steps {
+        padding: 1rem;
+      }
+
+      /* Resources Section */
+      .resource-card {
+        padding: 1rem;
+      }
+
+      /* Utility Classes */
+      .muted {
+        font-size: 0.9rem;
+      }
+
+      /* Scroll to top button adjustments */
+      .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    }
+
+    /* Très petits écrans (max-width: 360px) */
+    @media (max-width: 360px) {
+      .container {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .hero-copy h1 {
+        font-size: 1.4rem;
+      }
+
+      .section h2 {
+        font-size: 1.3rem;
+      }
+
+      .btn {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.9rem;
+      }
+
+      .tab-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+      }
+    }
+
+    /* Orientation paysage sur mobiles */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .site-header {
+        position: static;
+      }
+
+      main {
+        padding-top: 2rem;
+      }
+
+      .hero {
+        padding: 1rem 0;
+      }
+
+      .section {
+        padding: 1rem 0;
+      }
+    }
+
+    /* Support pour les appareils avec notch/safe areas */
+    @supports (padding: max(0px)) {
+      .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+      }
+
+      .site-header {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+      }
+    }
+
+    /* Améliorations pour le mode sombre forcé */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(180deg,
+            #05060a 0%,
+            #080c18 25%,
+            #0b1020 50%,
+            #080c18 75%,
+            #05060a 100%);
+      }
+    }
+
+    /* Améliorations pour le contraste élevé */
+    @media (prefers-contrast: high) {
+      :root {
+        --accent: #00ffff;
+        --accent-light: #00ffff;
+        --muted: #ffffff;
+      }
+
+      .btn.primary {
+        border: 2px solid #00ffff;
+      }
+    }
+
+    /* Support pour le mode réduction de mouvement */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .close-nav {
+        animation: none;
+      }
+    }
+
+    /* Correction pour les vieux navigateurs */
+    @supports not (backdrop-filter: blur(8px)) {
+      .site-header {
+        background: rgba(6, 8, 15, 0.9);
+      }
+
+      .nav-list {
+        background: rgba(7, 10, 15, 0.95);
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -634,7 +1378,6 @@ body{
           <li><a href="#tips">Tips</a></li>
           <li><a href="#strategies">Strategies</a></li>
           <li><a href="#resources">Resources</a></li>
-          <li><a href="#community">Community</a></li>
         </ul>
       </nav>
     </div>
@@ -646,7 +1389,8 @@ body{
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1 id="hero-title"> Last War on Server 743</h1>
-          <p class="subtitle">This website was created by and for Server 743 community, highlight its top alliances and events, provide key strategic advice.</p>
+          <p class="subtitle">This website was created by and for Server 743 community, highlight its top alliances and
+            events, provide key strategic advice.</p>
           <div class="hero-cta">
             <a class="btn primary" href="#tips">Browse Tips</a>
             <a class="btn ghost" href="#strategies">View Strategies</a>
@@ -658,57 +1402,57 @@ body{
 
     <!-- About Server 743 -->
     <section id="about" class="section about">
-        <div class="container">
-            <div class="split">
-                <div>
-                    <h2>About Server 743</h2>
-                    <p>Server 743 is made up of several alliances that have united as one. Here, you'll find a section of
-                        essential tips covering base management, faction strengths, resource optimization, and team
-                        coordination.</p>
-                    <ul class="meta-list">
-                        <li><strong>Server:</strong> 743 </li>
-                        <li><strong>Since:</strong> Sunday, Jul 21, 2024</li>
-                        <li class="timezone-info" id="timezoneInfo"><strong>Server Day:</strong>Time zone detector</li>
-                        <!-- You can add the current server day dynamically with JavaScript since Sunday, Jul 21, 2024 -->
-        
-                    </ul>
-                </div>
-                <div>
-                    <h3>Server Stats</h3>
-                    <div class="facts-grid">
-                        
-                        <div class="fact"><span class="num" data-count="16">0</span> NAP</div>
-                        <div class="fact"><span class="num" data-count="auto">0</span> Days</div>
-                        
-                    </div>
-                </div>
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>About Server 743</h2>
+            <p>Server 743 is made up of several alliances that have united as one. Here, you'll find a section of
+              essential tips covering base management, faction strengths, resource optimization, and team
+              coordination.</p>
+            <ul class="meta-list">
+              <li><strong>Server:</strong> 743 </li>
+              <li><strong>Since:</strong> Sunday, Jul 21, 2024</li>
+              <li class="timezone-info" id="timezoneInfo"><strong>Server Day:</strong>Time zone detector</li>
+              <!-- You can add the current server day dynamically with JavaScript since Sunday, Jul 21, 2024 -->
+
+            </ul>
+          </div>
+          <div>
+            <h3>Server Stats</h3>
+            <div class="facts-grid">
+
+              <div class="fact"><span class="num" data-count="16">0</span> NAP</div>
+              <div class="fact"><span class="num" data-count="auto">0</span> Days</div>
+
             </div>
-            <!--Arms Race Section-->
-            <div class="container-tasks">
-                <div>
-                    <div class="events-list" id="eventsList">
-                        <!-- Loading Arms Race here -->
-                    </div>
-                    <div class="time-info">
-                        <span id="lastUpdate">--</span>
-                    </div>
-                </div>
-                <div class="info-daily-tasks">
-                    <div class="header-tasks">
-                        <h1>Daily tasks</h1>
-                    </div>
-                    <div class="day-info">
-                        <span id="currentDate">--</span> •
-                        <span id="armsRaceDay">jour --/7</span>
-                    </div>
-                    <div class="current-highlight">
-                        <a><strong>Actual Arms Race :</strong></a>
-                        <div class="current-event-name" id="currentEventName">--</div>
-                        <div class="countdown" id="countdown">--</div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <!--Arms Race Section-->
+        <div class="container-tasks">
+          <div>
+            <div class="events-list" id="eventsList">
+              <!-- Loading Arms Race here -->
+            </div>
+            <div class="time-info">
+              <span id="lastUpdate">--</span>
+            </div>
+          </div>
+          <div class="info-daily-tasks">
+            <div class="header-tasks">
+              <h1>Daily tasks</h1>
+            </div>
+            <div class="day-info">
+              <span id="currentDate">--</span> •
+              <span id="armsRaceDay">day --/7</span>
+            </div>
+            <div class="current-highlight">
+              <a><strong>Actual Arms Race :</strong></a>
+              <div class="current-event-name" id="currentEventName">--</div>
+              <div class="countdown" id="countdown">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Tips Section -->
@@ -718,86 +1462,82 @@ body{
         <p class="muted">Master these fundamental strategies to accelerate your progress</p>
         <div class="tips-grid">
           <article class="tip-card">
-        <div class="tip-header">
-          <h3>Headquarter 30-35</h3>
-          <a href="headquarter-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Establish an optimal base construction strategies</p>
-        <ul class="tip-list">
-          <li>Prioritize buildings required for HQ improvement</li>
-          <li>Improve Oil Well</li>
-          <li>Keep building upgrading constantly for future HQ levels to stay efficient</li>
-        </ul>
-      </article>
+            <div class="tip-header">
+              <h3>Headquarter 31-35</h3>
+              <a href="headquarter-guide.html" class="tip-level">Learn more</a>
+            </div>
+            <p>Establish an optimal base construction strategies</p>
+            <ul class="tip-list">
+              <li>Prioritize buildings required for HQ improvement</li>
+              <li>Improve Oil Well</li>
+              <li>Keep building upgrading constantly for future HQ levels to stay efficient</li>
+            </ul>
+          </article>
 
-      <article class="tip-card">
-        <div class="tip-header">
-          <h3>Combat Optimization</h3>
-          <a href="combat-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Maximize battle effectiveness with tactical combat approaches</p>
-        <ul class="tip-list">
-          <li>Avoid attacking and defending with T2-T3</li>
-          <li>Give priority to squads with heroes of the same type</li>
-          <li>Each Heroes type is strong against one and weak against another</li>
-        </ul>
-      </article>
+          <article class="tip-card">
+            <div class="tip-header">
+              <h3>Combat Optimization</h3>
+              <a href="combat-guide.html" class="tip-level">Learn more</a>
+            </div>
+            <p>Maximize battle effectiveness with tactical combat approaches</p>
+            <ul class="tip-list">
+              <li>Avoid attacking and defending with T2-T3</li>
+              <li>Give priority to squads with heroes of the same type</li>
+              <li>Each Heroes type is strong against one and weak against another</li>
+            </ul>
+          </article>
 
-      <article class="tip-card">
-        <div class="tip-header">
-          <h3>Alliance Coordination</h3>
-          <a href="alliance-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Leverage teamwork to dominate Server 743 together</p>
-        <ul class="tip-list">
-          <li>Support our allied alliances in defending their territories</li>
-          <li>Participate in alliance and server events for exclusive rewards</li>
-          <li>Coordinate strikes with members for major targets</li>
-          <li>If you spot a player from enemy server, share him in world chat</li>
-        </ul>
-      </article>
+          <article class="tip-card">
+            <div class="tip-header">
+              <h3>Alliance Coordination</h3>
+            </div>
+            <p>Leverage teamwork to dominate Server 743 together</p>
+            <ul class="tip-list">
+              <li>Support our allied alliances in defending their territories</li>
+              <li>Participate in alliance and server events for exclusive rewards</li>
+              <li>Coordinate strikes with members for major targets</li>
+              <li>If you spot a player from enemy server, share him in world chat</li>
+            </ul>
+          </article>
 
-      <article class="tip-card">
-        <div class="tip-header">
-          <h3>Resource Management</h3>
-          <a href="resource-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Optimize resource flow for rapid progression</p>
-        <ul class="tip-list">
-          <li>Use speed-ups strategically during VS events</li>
-          <li>Keep all builders and scientists active continuously</li>
-          <li>Don't forget to use server buff before upgrading</li>
-          <li>Complete daily Arms Race (18 badges per day)</li>
-          <li>Participate in weekly alliance events to earn personal rewards</li>
-        </ul>
-      </article>
+          <article class="tip-card">
+            <div class="tip-header">
+              <h3>Resource Management</h3>
+            </div>
+            <p>Optimize resource flow for rapid progression</p>
+            <ul class="tip-list">
+              <li>Use speed-ups strategically during VS events</li>
+              <li>Keep all builders and scientists active continuously</li>
+              <li>Don't forget to use server buff before upgrading</li>
+              <li>Complete daily Arms Race (18 badges per day)</li>
+              <li>Participate in weekly alliance events to earn personal rewards</li>
+            </ul>
+          </article>
 
-      <article class="tip-card">
-        <div class="tip-header">
-          <h3>PvP Mastery</h3>
-          <a href="pvp-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Dominate opponents with advanced combat tactics</p>
-        <ul class="tip-list">
-          <li>Scout unknow enemy positions before launching attacks</li>
-          <li>Check player profil before attacking</li>
-          <li>If you attack a one heros squad minimize units looses if you lose</li>
-        </ul>
-      </article>
+          <article class="tip-card">
+            <div class="tip-header">
+              <h3>PvP Mastery</h3>
+            </div>
+            <p>Dominate opponents with advanced combat tactics</p>
+            <ul class="tip-list">
+              <li>Scout unknow enemy positions before launching attacks</li>
+              <li>Check player profil before attacking</li>
+              <li>If you attack a one heros squad minimize units looses if you lose</li>
+            </ul>
+          </article>
 
-      <article class="tip-card">
-        <div class="tip-header">
-          <h3>Research Optimization</h3>
-          <a href="research-guide.html" class="tip-level">Learn more</a>
-        </div>
-        <p>Maximize technology tree progression efficiency</p>
-        <ul class="tip-list">
-          <li>Prioritize military research for stronger units</li>
-          <li>Unlock troop capacity increases early</li>
-          <li>Include economic research for faster building</li>
-          <li>Complete research during alliance events</li>
-        </ul>
-      </article>
+          <article class="tip-card">
+            <div class="tip-header">
+              <h3>Research Optimization</h3>
+            </div>
+            <p>Maximize technology tree progression efficiency</p>
+            <ul class="tip-list">
+              <li>Prioritize military research for stronger units</li>
+              <li>Unlock troop capacity increases early</li>
+              <li>Include economic research for faster building</li>
+              <li>Complete research during alliance events</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -807,78 +1547,114 @@ body{
       <div class="container">
         <h2>Advanced Strategy Guides</h2>
         <p class="muted">Comprehensive playbooks for each stage of your Last War journey</p>
-        
+
         <div class="strategy-tabs" role="tablist" aria-label="Strategy guides">
-          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="early" data-strategy="early">Early Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="mid" data-strategy="mid">Mid Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="late" data-strategy="late">Late Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pvp" data-strategy="pvp">PvP Focus</button>
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="early"
+            data-strategy="early">Early Game</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="mid" data-strategy="mid">Mid
+            Game</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="late" data-strategy="late">Late
+            Game</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pvp" data-strategy="pvp">PvP
+            Focus</button>
         </div>
 
         <div id="early" class="strategy-content active" role="tabpanel">
           <h3>Early Game Strategy (Level 1-15)</h3>
-          <p>Build a solid foundation during your first days on Server 743. This phase determines your long-term success trajectory.</p>
+          <p>Build a solid foundation during your first days on Server 743. This phase determines your long-term success
+            trajectory.</p>
           <div class="strategy-steps">
             <h4>Step-by-Step Progression</h4>
             <ol>
-              <li><strong>Rush Command Center to Level 10:</strong> This unlocks critical buildings and features. Use all available speed-ups to achieve this milestone quickly.</li>
-              <li><strong>Complete Tutorial Missions:</strong> These provide excellent rewards and teach core mechanics. Don't skip any tutorial objectives.</li>
-              <li><strong>Join an Alliance Immediately:</strong> Gain building assistance, protection, and valuable resources. Seek active alliances on Server 743.</li>
-              <li><strong>Focus on Resource Production:</strong> Upgrade farms, oil refineries, and steel mills evenly. Target at least level 8 for each facility.</li>
-              <li><strong>Train Troops Continuously:</strong> Never leave barracks idle. Build a balanced army of infantry and vehicles.</li>
-              <li><strong>Claim All Free Rewards:</strong> Check mail, events, and daily missions regularly for speed-ups and resources.</li>
-              <li><strong>Utilize Shield Protection:</strong> Don't waste beginner shields. Use them while building defensive capabilities.</li>
+              <li><strong>Rush Command Center to Level 10:</strong> This unlocks critical buildings and features. Use
+                all available speed-ups to achieve this milestone quickly.</li>
+              <li><strong>Complete Tutorial Missions:</strong> These provide excellent rewards and teach core mechanics.
+                Don't skip any tutorial objectives.</li>
+              <li><strong>Join an Alliance Immediately:</strong> Gain building assistance, protection, and valuable
+                resources. Seek active alliances on Server 743.</li>
+              <li><strong>Focus on Resource Production:</strong> Upgrade farms, oil refineries, and steel mills evenly.
+                Target at least level 8 for each facility.</li>
+              <li><strong>Train Troops Continuously:</strong> Never leave barracks idle. Build a balanced army of
+                infantry and vehicles.</li>
+              <li><strong>Claim All Free Rewards:</strong> Check mail, events, and daily missions regularly for
+                speed-ups and resources.</li>
+              <li><strong>Utilize Shield Protection:</strong> Don't waste beginner shields. Use them while building
+                defensive capabilities.</li>
             </ol>
           </div>
         </div>
 
         <div id="mid" class="strategy-content" role="tabpanel">
           <h3>Mid Game Strategy (Level 16-25)</h3>
-          <p>Transition from pure expansion to strategic warfare. Balance continued growth with military development and server participation.</p>
+          <p>Transition from pure expansion to strategic warfare. Balance continued growth with military development and
+            server participation.</p>
           <div class="strategy-steps">
             <h4>Step-by-Step Progression</h4>
             <ol>
-              <li><strong>Diversify Your Army:</strong> Unlock and train all troop types. Maintain a versatile composition for different scenarios.</li>
-              <li><strong>Begin Research Progression:</strong> Focus on military and economic branches. Prioritize troop attack and defense bonuses.</li>
-              <li><strong>Participate in Server Events:</strong> Events offer massive rewards. Coordinate with your alliance for maximum points.</li>
-              <li><strong>Upgrade Hero Units:</strong> Heroes are crucial for combat success. Level them up and unlock special abilities.</li>
-              <li><strong>Produce T3 Troops:</strong> These units significantly outperform T2. Begin replacing your army with higher tiers.</li>
-              <li><strong>Optimize Base Layout:</strong> Redesign for defensive strength. Protect Command Center and resource storage.</li>
-              <li><strong>Farm Inactive Bases:</strong> Scout the map for abandoned locations and farm them regularly for resources.</li>
+              <li><strong>Diversify Your Army:</strong> Unlock and train all troop types. Maintain a versatile
+                composition for different scenarios.</li>
+              <li><strong>Begin Research Progression:</strong> Focus on military and economic branches. Prioritize troop
+                attack and defense bonuses.</li>
+              <li><strong>Participate in Server Events:</strong> Events offer massive rewards. Coordinate with your
+                alliance for maximum points.</li>
+              <li><strong>Upgrade Hero Units:</strong> Heroes are crucial for combat success. Level them up and unlock
+                special abilities.</li>
+              <li><strong>Produce T3 Troops:</strong> These units significantly outperform T2. Begin replacing your army
+                with higher tiers.</li>
+              <li><strong>Optimize Base Layout:</strong> Redesign for defensive strength. Protect Command Center and
+                resource storage.</li>
+              <li><strong>Farm Inactive Bases:</strong> Scout the map for abandoned locations and farm them regularly
+                for resources.</li>
             </ol>
           </div>
         </div>
 
         <div id="late" class="strategy-content" role="tabpanel">
           <h3>Late Game Strategy (Level 26+)</h3>
-          <p>Compete with Server 743's elite players. Focus on optimization, specialization, and strategic dominance.</p>
+          <p>Compete with Server 743's elite players. Focus on optimization, specialization, and strategic dominance.
+          </p>
           <div class="strategy-steps">
             <h4>Step-by-Step Progression</h4>
             <ol>
-              <li><strong>Specialize Your Approach:</strong> Choose between offensive raiding, defensive fortress, or balanced gameplay.</li>
-              <li><strong>Maximize Key Buildings:</strong> Prioritize Command Center, army camps, and research facilities to maximum level.</li>
-              <li><strong>Deploy T4 Troops:</strong> The strongest available units. Expensive but essential for top-tier competition.</li>
-              <li><strong>Compete in Global Rankings:</strong> Aim for top positions in power, kills, or resources for recognition and rewards.</li>
-              <li><strong>Control Territory:</strong> Capture and maintain resource tiles on the world map for passive income generation.</li>
-              <li><strong>Engage in Alliance Wars:</strong> Coordinate massive battles against rival factions on Server 743.</li>
-              <li><strong>Optimize Equipment Sets:</strong> Craft and upgrade premium gear for commanders to maximize effectiveness.</li>
+              <li><strong>Specialize Your Approach:</strong> Choose between offensive raiding, defensive fortress, or
+                balanced gameplay.</li>
+              <li><strong>Maximize Key Buildings:</strong> Prioritize Command Center, army camps, and research
+                facilities to maximum level.</li>
+              <li><strong>Deploy T4 Troops:</strong> The strongest available units. Expensive but essential for top-tier
+                competition.</li>
+              <li><strong>Compete in Global Rankings:</strong> Aim for top positions in power, kills, or resources for
+                recognition and rewards.</li>
+              <li><strong>Control Territory:</strong> Capture and maintain resource tiles on the world map for passive
+                income generation.</li>
+              <li><strong>Engage in Alliance Wars:</strong> Coordinate massive battles against rival factions on Server
+                743.</li>
+              <li><strong>Optimize Equipment Sets:</strong> Craft and upgrade premium gear for commanders to maximize
+                effectiveness.</li>
             </ol>
           </div>
         </div>
 
         <div id="pvp" class="strategy-content" role="tabpanel">
           <h3>PvP Focused Strategy</h3>
-          <p>Dominate Server 743 through aggressive military tactics. This approach suits players who prioritize combat and conquest.</p>
+          <p>Dominate Server 743 through aggressive military tactics. This approach suits players who prioritize combat
+            and conquest.</p>
           <div class="strategy-steps">
             <h4>Step-by-Step Progression</h4>
             <ol>
-              <li><strong>Build a War-Centric Base:</strong> Prioritize military buildings, hospitals, and troop production over resource generation.</li>
-              <li><strong>Research Military Technology:</strong> Maximize attack, defense, and health bonuses for all troop categories.</li>
-              <li><strong>Scout All Targets:</strong> Always scout before attacking. Understand enemy strength and identify weaknesses.</li>
-              <li><strong>Execute Hit-and-Run:</strong> Attack, loot efficiently, then use shields or relocate to avoid retaliation.</li>
-              <li><strong>Coordinate Rally Attacks:</strong> Work with alliance members for combined assaults on fortified targets.</li>
-              <li><strong>Employ Counter-Intelligence:</strong> Keep army composition secret. Vary strategies against different opponents.</li>
-              <li><strong>Maintain Hospital Capacity:</strong> Upgrade hospitals to minimize casualties and enable faster recovery.</li>
+              <li><strong>Build a War-Centric Base:</strong> Prioritize military buildings, hospitals, and troop
+                production over resource generation.</li>
+              <li><strong>Research Military Technology:</strong> Maximize attack, defense, and health bonuses for all
+                troop categories.</li>
+              <li><strong>Scout All Targets:</strong> Always scout before attacking. Understand enemy strength and
+                identify weaknesses.</li>
+              <li><strong>Execute Hit-and-Run:</strong> Attack, loot efficiently, then use shields or relocate to avoid
+                retaliation.</li>
+              <li><strong>Coordinate Rally Attacks:</strong> Work with alliance members for combined assaults on
+                fortified targets.</li>
+              <li><strong>Employ Counter-Intelligence:</strong> Keep army composition secret. Vary strategies against
+                different opponents.</li>
+              <li><strong>Maintain Hospital Capacity:</strong> Upgrade hospitals to minimize casualties and enable
+                faster recovery.</li>
             </ol>
           </div>
         </div>
@@ -890,7 +1666,7 @@ body{
       <div class="container">
         <h2>Essential Resources</h2>
         <p class="muted">Tools and links to enhance your Last War experience</p>
-        
+
         <div class="resource-grid">
           <article class="resource-card">
             <div class="resource-icon" aria-hidden="true">📱</div>
@@ -915,22 +1691,6 @@ body{
         </div>
       </div>
     </section>
-
-    <!-- Community Section -->
-    <section id="community" class="section community">
-      <div class="container">
-        <h2>Join the Community</h2>
-        <p>Connect with Server 743 players, share strategies, and stay updated with the latest tips.</p>
-        <form id="newsletter" class="form" style="max-width:560px; display:grid; gap:0.5rem; margin-top:1rem;">
-          <label for="email" style="color:var(--muted); font-size:0.95rem;">Email address</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" style="padding:0.6rem; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit; font-family:inherit;">
-          <div style="display:flex; gap:1rem; align-items:center; margin-top:0.5rem;">
-            <button class="btn primary" type="submit">Subscribe to Tips</button>
-            <small class="muted">Weekly strategy updates</small>
-          </div>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -938,7 +1698,7 @@ body{
       <div class="footer-grid">
         <div class="footer-section">
           <h4>About Server 743</h4>
-          <p>Expert tips and strategies for Last War players on Server 743. Community-driven guides to help you dominate.</p>
+          <p>Tips and strategies for Last War players on Server 743. Community-driven guides to help you.</p>
         </div>
         <div class="footer-section">
           <h4>Quick Links</h4>
@@ -948,23 +1708,20 @@ body{
         </div>
         <div class="footer-section">
           <h4>Community</h4>
-          <a href="#">Discord Server</a>
-          <a href="#">Forum</a>
-          <a href="#">YouTube</a>
+          <a href="https://fr.wikipedia.org/wiki/743">743</a>
+          <a href="https://www.lastwartutorial.com/">Tutorial</a>
         </div>
         <div class="footer-section">
           <h4>Game Links</h4>
-          <a href="#">Download</a>
-          <a href="#">Official Site</a>
-          <a href="#">Support</a>
+          <a href="https://www.lastwar.com/en/home.html?1758595519518">Official Site</a>
         </div>
       </div>
       <div class="footer-inner">
-        <small>© <span id="year"></span> Last War Server 743 Tips. Unofficial fan site.</small>
+        <small>© <span id="year"></span> Last War 743. Unofficial fan site.</small>
         <ul class="footer-nav">
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="privacy-terms.html">Privacy</a></li>
+          <li><a href="privacy-terms.html">Terms</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -972,262 +1729,262 @@ body{
   <script>
     // Calcul du nombre de jours depuis le 21 juillet 2024
     function calculateDaysSinceStart() {
-        const startDate = new Date('2024-07-20T00:00:00');
-        const today = new Date();
-        
-        // Calcul de la différence en jours
-        const timeDiff = today.getTime() - startDate.getTime();
-        const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
-        
-        return Math.max(1, daysDiff); // Au minimum 1 jour
+      const startDate = new Date('2024-07-20T00:00:00');
+      const today = new Date();
+
+      // Calcul de la différence en jours
+      const timeDiff = today.getTime() - startDate.getTime();
+      const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+      return Math.max(1, daysDiff); // Au minimum 1 jour
     }
 
     // Animated counters (runs once when visible)
     const counters = document.querySelectorAll('.num[data-count]');
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                let target;
-                
-                // Cas spécial pour le compteur auto
-                if (el.getAttribute('data-count') === 'auto') {
-                    target = calculateDaysSinceStart();
-                } else {
-                    // Compteurs normaux
-                    target = parseInt(el.getAttribute('data-count'), 10) || 0;
-                }
-                
-                animateCount(el, target, 900);
-                observer.unobserve(el);
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let target;
+
+          // Cas spécial pour le compteur auto
+          if (el.getAttribute('data-count') === 'auto') {
+            target = calculateDaysSinceStart();
+          } else {
+            // Compteurs normaux
+            target = parseInt(el.getAttribute('data-count'), 10) || 0;
+          }
+
+          animateCount(el, target, 900);
+          observer.unobserve(el);
+        }
+      });
     }, { threshold: 0.6 });
-    
+
     counters.forEach(c => observer.observe(c));
 
     function animateCount(el, target, duration) {
-        const startTime = performance.now();
-        function step(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const value = Math.floor(progress * target);
-            el.textContent = value;
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                el.textContent = target;
-            }
+      const startTime = performance.now();
+      function step(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * target);
+        el.textContent = value;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
         }
-        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     }
   </script>
   <script>
     // Arms Race Section
-      class ArmsRaceTracker {
-            constructor() {
-                // Date de référence: 23 octobre 2025 = Jour 3/7
-                // On utilise le 21 octobre 2025 comme Jour 1/7 à 00:00 UTC-2
-                this.referenceDate = new Date('2025-10-21T00:00:00-02:00');
-                
-                // game UTC server
-                this.serverUTCOffset = -2; // UTC-2
-                
-                this.events = [
-                    'Hero Advancement',
-                    'City Building', 
-                    'Unit Progression',
-                    'Tech Research',
-                    'Drone Boost'
-                ];
-                
-                // 7 days cycle
-                this.dayCycle = [
-                    [0, 1, 2, 3, 4, 0],     // Day 1
-                    [1, 2, 3, 4, 0, 1],     // Day 2  
-                    [2, 3, 4, 0, 1, 2],     // Day 3
-                    [3, 4, 0, 1, 2, 3],     // Day 4
-                    [4, 0, 1, 2, 3, 4],     // Day 5
-                    [0, 1, 2, 3, 4, 0],     // Day 6
-                    [1, 2, 3, 4, 0, 1]      // Day 7
-                ];
-            }
+    class ArmsRaceTracker {
+      constructor() {
+        // Date de référence: 23 octobre 2025 = Jour 3/7
+        // On utilise le 21 octobre 2025 comme Jour 1/7 à 00:00 UTC-2
+        this.referenceDate = new Date('2025-10-21T00:00:00-02:00');
 
-            // Obtenir l'offset UTC de l'utilisateur en heures
-            getUserUTCOffset() {
-                return -new Date().getTimezoneOffset() / 60;
-            }
+        // game UTC server
+        this.serverUTCOffset = -2; // UTC-2
 
-            // Calculer la différence entre l'utilisateur et le serveur
-            getTimeDifference() {
-                const userOffset = this.getUserUTCOffset();
-                const serverOffset = this.serverUTCOffset;
-                return userOffset - serverOffset; // Différence en heures
-            }
+        this.events = [
+          'Hero Advancement',
+          'City Building',
+          'Unit Progression',
+          'Tech Research',
+          'Drone Boost'
+        ];
 
-            // Obtenir l'heure serveur actuelle
-            getServerTime() {
-                const now = new Date();
-                const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-                return new Date(utcTime + (this.serverUTCOffset * 3600000));
-            }
+        // 7 days cycle
+        this.dayCycle = [
+          [0, 1, 2, 3, 4, 0],     // Day 1
+          [1, 2, 3, 4, 0, 1],     // Day 2  
+          [2, 3, 4, 0, 1, 2],     // Day 3
+          [3, 4, 0, 1, 2, 3],     // Day 4
+          [4, 0, 1, 2, 3, 4],     // Day 5
+          [0, 1, 2, 3, 4, 0],     // Day 6
+          [1, 2, 3, 4, 0, 1]      // Day 7
+        ];
+      }
 
-            // Calculer le jour Arms Race actuel (1-7)
-            getCurrentArmsRaceDay() {
-                const serverNow = this.getServerTime();
-                const serverDayStart = new Date(serverNow);
-                serverDayStart.setHours(0, 0, 0, 0);
-                
-                const refDayStart = new Date(this.referenceDate);
-                refDayStart.setHours(0, 0, 0, 0);
-                
-                const daysDiff = Math.floor((serverDayStart - refDayStart) / (24 * 60 * 60 * 1000));
-                return ((daysDiff % 7) + 7) % 7 + 1;
-            }
+      // Obtenir l'offset UTC de l'utilisateur en heures
+      getUserUTCOffset() {
+        return -new Date().getTimezoneOffset() / 60;
+      }
 
-            // Obtenir l'heure de début du jour en heure locale (00:00 serveur + différence)
-            getLocalDayStart() {
-                const now = new Date();
-                const localDayStart = new Date(now);
-                localDayStart.setHours(0, 0, 0, 0);
-                
-                // Ajouter la différence de temps
-                const timeDiff = this.getTimeDifference();
-                localDayStart.setHours(localDayStart.getHours() + timeDiff);
-                
-                // Si on est avant l'heure de début, prendre le jour précédent
-                if (now < localDayStart) {
-                    localDayStart.setDate(localDayStart.getDate() - 1);
-                }
-                
-                return localDayStart;
-            }
+      // Calculer la différence entre l'utilisateur et le serveur
+      getTimeDifference() {
+        const userOffset = this.getUserUTCOffset();
+        const serverOffset = this.serverUTCOffset;
+        return userOffset - serverOffset; // Différence en heures
+      }
 
-            // Obtenir l'index de l'événement actuel (0-5)
-            getCurrentEventIndex() {
-                const now = new Date();
-                const dayStart = this.getLocalDayStart();
-                const timeSinceStart = now - dayStart;
-                const eventIndex = Math.floor(timeSinceStart / (4 * 60 * 60 * 1000)); // 4 heures
-                
-                return Math.min(Math.max(eventIndex, 0), 5);
-            }
+      // Obtenir l'heure serveur actuelle
+      getServerTime() {
+        const now = new Date();
+        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+        return new Date(utcTime + (this.serverUTCOffset * 3600000));
+      }
 
-            // Obtenir l'heure de début et fin d'un événement en heure locale
-            getEventTimeRange(eventIndex) {
-                const dayStart = this.getLocalDayStart();
-                const eventStart = new Date(dayStart);
-                eventStart.setHours(eventStart.getHours() + (eventIndex * 4));
-                
-                const eventEnd = new Date(eventStart);
-                eventEnd.setHours(eventEnd.getHours() + 4);
-                
-                return {
-                    start: eventStart.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' }),
-                    end: eventEnd.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' })
-                };
-            }
+      // Calculer le jour Arms Race actuel (1-7)
+      getCurrentArmsRaceDay() {
+        const serverNow = this.getServerTime();
+        const serverDayStart = new Date(serverNow);
+        serverDayStart.setHours(0, 0, 0, 0);
 
-            // Temps restant avant la fin de l'événement
-            getTimeRemaining(eventIndex) {
-                const dayStart = this.getLocalDayStart();
-                const eventEnd = new Date(dayStart);
-                eventEnd.setHours(eventEnd.getHours() + ((eventIndex + 1) * 4));
-                
-                return eventEnd - new Date();
-            }
+        const refDayStart = new Date(this.referenceDate);
+        refDayStart.setHours(0, 0, 0, 0);
 
-            formatTimeRemaining(ms) {
-                if (ms <= 0) return "Terminé";
-                const hours = Math.floor(ms / (1000 * 60 * 60));
-                const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-                return `Ending in ${hours}h ${minutes.toString().padStart(2, '0')}m`;
-            }
+        const daysDiff = Math.floor((serverDayStart - refDayStart) / (24 * 60 * 60 * 1000));
+        return ((daysDiff % 7) + 7) % 7 + 1;
+      }
 
-            formatTimezoneOffset(offset) {
-                const sign = offset >= 0 ? '+' : '';
-                return `UTC${sign}${offset}`;
-            }
+      // Obtenir l'heure de début du jour en heure locale (00:00 serveur + différence)
+      getLocalDayStart() {
+        const now = new Date();
+        const localDayStart = new Date(now);
+        localDayStart.setHours(0, 0, 0, 0);
 
-            getTodaysEvents() {
-                const currentIndex = this.getCurrentEventIndex();
-                const armsRaceDay = this.getCurrentArmsRaceDay();
-                const dayEvents = this.dayCycle[armsRaceDay - 1];
-                
-                const events = [];
-                for (let i = 0; i < dayEvents.length; i++) {
-                    const eventTypeIndex = dayEvents[i];
-                    const eventName = this.events[eventTypeIndex];
-                    const timeRange = this.getEventTimeRange(i);
-                    
-                    let status = 'upcoming';
-                    if (i < currentIndex) {
-                        status = 'completed';
-                    } else if (i === currentIndex) {
-                        status = 'current';
-                    }
+        // Ajouter la différence de temps
+        const timeDiff = this.getTimeDifference();
+        localDayStart.setHours(localDayStart.getHours() + timeDiff);
 
-                    events.push({
-                        number: i + 1,
-                        name: eventName,
-                        timeRange,
-                        status,
-                        index: i
-                    });
-                }
-
-                return {
-                    armsRaceDay,
-                    currentEvent: events.find(e => e.status === 'current'),
-                    events
-                };
-            }
+        // Si on est avant l'heure de début, prendre le jour précédent
+        if (now < localDayStart) {
+          localDayStart.setDate(localDayStart.getDate() - 1);
         }
 
-        const tracker = new ArmsRaceTracker();
+        return localDayStart;
+      }
 
-        function updateDisplay() {
-            const userOffset = tracker.getUserUTCOffset();
-            const serverOffset = tracker.serverUTCOffset;
-            const timeDiff = tracker.getTimeDifference();
-            
-            document.getElementById('timezoneInfo').innerHTML = 
-                `<strong>Your time zone: </strong>${tracker.formatTimezoneOffset(userOffset)} • ` +
-                `<strong>Server: </strong>${tracker.formatTimezoneOffset(serverOffset)} • ` +
-                `<strong>Time offset: </strong>${timeDiff}h`;
+      // Obtenir l'index de l'événement actuel (0-5)
+      getCurrentEventIndex() {
+        const now = new Date();
+        const dayStart = this.getLocalDayStart();
+        const timeSinceStart = now - dayStart;
+        const eventIndex = Math.floor(timeSinceStart / (4 * 60 * 60 * 1000)); // 4 hours
 
-            const data = tracker.getTodaysEvents();
-            const currentDate = new Date().toLocaleDateString('en-EN', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
+        return Math.min(Math.max(eventIndex, 0), 5);
+      }
 
-            document.getElementById('currentDate').textContent = currentDate;
-            document.getElementById('armsRaceDay').textContent = `Jour ${data.armsRaceDay}/7`;
+      // Obtenir l'heure de début et fin d'un événement en heure locale
+      getEventTimeRange(eventIndex) {
+        const dayStart = this.getLocalDayStart();
+        const eventStart = new Date(dayStart);
+        eventStart.setHours(eventStart.getHours() + (eventIndex * 4));
 
-            if (data.currentEvent) {
-                document.getElementById('currentEventName').textContent = data.currentEvent.name;
-                const timeRemaining = tracker.getTimeRemaining(data.currentEvent.index);
-                document.getElementById('countdown').textContent = tracker.formatTimeRemaining(timeRemaining);
-            } else {
-                document.getElementById('currentEventName').textContent = "No event in progress";
-                document.getElementById('countdown').textContent = "";
-            }
+        const eventEnd = new Date(eventStart);
+        eventEnd.setHours(eventEnd.getHours() + 4);
 
-            const eventsList = document.getElementById('eventsList');
-            eventsList.innerHTML = '';
+        return {
+          start: eventStart.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' }),
+          end: eventEnd.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' })
+        };
+      }
 
-            data.events.forEach(event => {
-                const eventDiv = document.createElement('div');
-                eventDiv.className = `event ${event.status}`;
-                
-                const statusClass = `status-${event.status}`;
-                const statusText = event.status === 'current' ? 'ACTUAL' : 
-                                 event.status === 'completed' ? 'FINISHED' : 'NEXT';
+      // Temps restant avant la fin de l'événement
+      getTimeRemaining(eventIndex) {
+        const dayStart = this.getLocalDayStart();
+        const eventEnd = new Date(dayStart);
+        eventEnd.setHours(eventEnd.getHours() + ((eventIndex + 1) * 4));
 
-                eventDiv.innerHTML = `
+        return eventEnd - new Date();
+      }
+
+      formatTimeRemaining(ms) {
+        if (ms <= 0) return "Terminé";
+        const hours = Math.floor(ms / (1000 * 60 * 60));
+        const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+        return `Ending in ${hours}h ${minutes.toString().padStart(2, '0')}m`;
+      }
+
+      formatTimezoneOffset(offset) {
+        const sign = offset >= 0 ? '+' : '';
+        return `UTC${sign}${offset}`;
+      }
+
+      getTodaysEvents() {
+        const currentIndex = this.getCurrentEventIndex();
+        const armsRaceDay = this.getCurrentArmsRaceDay();
+        const dayEvents = this.dayCycle[armsRaceDay - 1];
+
+        const events = [];
+        for (let i = 0; i < dayEvents.length; i++) {
+          const eventTypeIndex = dayEvents[i];
+          const eventName = this.events[eventTypeIndex];
+          const timeRange = this.getEventTimeRange(i);
+
+          let status = 'upcoming';
+          if (i < currentIndex) {
+            status = 'completed';
+          } else if (i === currentIndex) {
+            status = 'current';
+          }
+
+          events.push({
+            number: i + 1,
+            name: eventName,
+            timeRange,
+            status,
+            index: i
+          });
+        }
+
+        return {
+          armsRaceDay,
+          currentEvent: events.find(e => e.status === 'current'),
+          events
+        };
+      }
+    }
+
+    const tracker = new ArmsRaceTracker();
+
+    function updateDisplay() {
+      const userOffset = tracker.getUserUTCOffset();
+      const serverOffset = tracker.serverUTCOffset;
+      const timeDiff = tracker.getTimeDifference();
+
+      document.getElementById('timezoneInfo').innerHTML =
+        `<strong>Your time zone: </strong>${tracker.formatTimezoneOffset(userOffset)} • ` +
+        `<strong>Server: </strong>${tracker.formatTimezoneOffset(serverOffset)} • ` +
+        `<strong>Time offset: </strong>${timeDiff}h`;
+
+      const data = tracker.getTodaysEvents();
+      const currentDate = new Date().toLocaleDateString('en-EN', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      document.getElementById('currentDate').textContent = currentDate;
+      document.getElementById('armsRaceDay').textContent = `day ${data.armsRaceDay}/7`;
+
+      if (data.currentEvent) {
+        document.getElementById('currentEventName').textContent = data.currentEvent.name;
+        const timeRemaining = tracker.getTimeRemaining(data.currentEvent.index);
+        document.getElementById('countdown').textContent = tracker.formatTimeRemaining(timeRemaining);
+      } else {
+        document.getElementById('currentEventName').textContent = "No event in progress";
+        document.getElementById('countdown').textContent = "";
+      }
+
+      const eventsList = document.getElementById('eventsList');
+      eventsList.innerHTML = '';
+
+      data.events.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.className = `event ${event.status}`;
+
+        const statusClass = `status-${event.status}`;
+        const statusText = event.status === 'current' ? 'ACTUAL' :
+          event.status === 'completed' ? 'FINISHED' : 'NEXT';
+
+        eventDiv.innerHTML = `
                     <div class="event-number">${event.number}</div>
                     <div class="event-content">
                         <div class="event-name">${event.name}</div>
@@ -1235,27 +1992,27 @@ body{
                     </div>
                     <div class="event-status ${statusClass}">${statusText}</div>
                 `;
-                
-                eventsList.appendChild(eventDiv);
-            });
 
-            document.getElementById('lastUpdate').textContent = 
-                `Last update: ${new Date().toLocaleTimeString('en-EN')}`;
-            
-            // Info de debug
-            const serverTime = tracker.getServerTime();
-            const dayStart = tracker.getLocalDayStart();
-            document.getElementById('debugInfo').textContent = 
-                `Time server: ${serverTime.toLocaleTimeString('en-EN')} • ` +
-                `cycle start: ${dayStart.toLocaleTimeString('en-EN')}`;
-        }
+        eventsList.appendChild(eventDiv);
+      });
 
+      document.getElementById('lastUpdate').textContent =
+        `Last update: ${new Date().toLocaleTimeString('en-EN')}`;
 
+      // Info de debug
+      const serverTime = tracker.getServerTime();
+      const dayStart = tracker.getLocalDayStart();
+      document.getElementById('debugInfo').textContent =
+        `Time server: ${serverTime.toLocaleTimeString('en-EN')} • ` +
+        `cycle start: ${dayStart.toLocaleTimeString('en-EN')}`;
+    }
 
 
 
-        updateDisplay();
-        setInterval(updateDisplay, 600);
+
+
+    updateDisplay();
+    setInterval(updateDisplay, 600);
   </script>
   <script>
     // Basic UI interactions and enhancements
@@ -1281,19 +2038,13 @@ body{
           }
         });
       }
-      
-
-
-
-
-
 
       // Strategy tabs
       const tabBtns = document.querySelectorAll('.tab-btn');
       tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           const strategy = this.getAttribute('data-strategy');
-          
+
           // Update buttons
           tabBtns.forEach(b => {
             b.classList.remove('active');
@@ -1301,7 +2052,7 @@ body{
           });
           this.classList.add('active');
           this.setAttribute('aria-selected', 'true');
-          
+
           // Update content
           document.querySelectorAll('.strategy-content').forEach(content => {
             content.classList.remove('active');
@@ -1314,36 +2065,27 @@ body{
       });
 
 
-      // Newsletter form
-      const newsletter = document.getElementById('newsletter');
-      if (newsletter) {
-        newsletter.addEventListener('submit', function (e) {
-          e.preventDefault();
-          const email = newsletter.querySelector('#email').value;
-          // Minimal validation
-          if (!email || !email.includes('@')) {
-            alert('Please enter a valid email address.');
-            return;
-          }
-          // Simulate subscription success
-          newsletter.reset();
-          alert('Thank you! You\'re now subscribed to Server 743 strategy tips.');
-        });
-      }
 
-      // Smooth scroll for anchor links
+      // Smooth scroll for anchor links with offset for fixed header
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
           if (href === '#') return;
-          
+
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+            // Calculate the offset based on header height
+            const headerHeight = document.querySelector('.site-header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+            window.scrollTo({
+              top: targetPosition - headerHeight - 20, // Additional 20px for breathing room
+              behavior: 'smooth'
             });
+
+            // Update URL without jumping
+            history.pushState(null, null, href);
           }
         });
       });
@@ -1365,16 +2107,19 @@ body{
         revealObserver.observe(card);
       });
 
-      // Active nav link highlight on scroll
+      // Active nav link highlight on scroll with offset
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-list a');
 
       window.addEventListener('scroll', () => {
         let current = '';
+        const headerHeight = document.querySelector('.site-header').offsetHeight;
+        const offset = headerHeight + 50; // Additional offset for better visibility
+
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
           const sectionHeight = section.clientHeight;
-          if (pageYOffset >= sectionTop - 100) {
+          if (pageYOffset >= sectionTop - offset) {
             current = section.getAttribute('id');
           }
         });
@@ -1458,67 +2203,68 @@ body{
       requestAnimationFrame(step);
     }
   </script>
-<script>
+  <script>
     // Strategy tabs functionality
     const tabBtns = document.querySelectorAll('.tab-btn');
     const strategyContents = document.querySelectorAll('.strategy-content');
 
     // Fonction pour changer d'onglet
     function switchTab(strategyId) {
-        // Mettre à jour les boutons
-        tabBtns.forEach(btn => {
-            btn.classList.remove('active');
-            btn.setAttribute('aria-selected', 'false');
-            if (btn.getAttribute('data-strategy') === strategyId) {
-                btn.classList.add('active');
-                btn.setAttribute('aria-selected', 'true');
-            }
-        });
+      // Mettre à jour les boutons
+      tabBtns.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+        if (btn.getAttribute('data-strategy') === strategyId) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+        }
+      });
 
-        // Mettre à jour le contenu
-        strategyContents.forEach(content => {
-            content.classList.remove('active');
-            if (content.id === strategyId) {
-                content.classList.add('active');
-            }
-        });
+      // Mettre à jour le contenu
+      strategyContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === strategyId) {
+          content.classList.add('active');
+        }
+      });
     }
 
     // Ajouter les event listeners
     tabBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const strategy = this.getAttribute('data-strategy');
-            switchTab(strategy);
-        });
+      btn.addEventListener('click', function () {
+        const strategy = this.getAttribute('data-strategy');
+        switchTab(strategy);
+      });
     });
 
     // Optionnel: Navigation au clavier pour l'accessibilité
     tabBtns.forEach(btn => {
-        btn.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                const strategy = this.getAttribute('data-strategy');
-                switchTab(strategy);
-            }
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const strategy = this.getAttribute('data-strategy');
+          switchTab(strategy);
+        }
 
-            // Navigation avec les flèches
-            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-                e.preventDefault();
-                const currentIndex = Array.from(tabBtns).indexOf(this);
-                let nextIndex;
+        // Navigation avec les flèches
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          const currentIndex = Array.from(tabBtns).indexOf(this);
+          let nextIndex;
 
-                if (e.key === 'ArrowRight') {
-                    nextIndex = (currentIndex + 1) % tabBtns.length;
-                } else {
-                    nextIndex = (currentIndex - 1 + tabBtns.length) % tabBtns.length;
-                }
+          if (e.key === 'ArrowRight') {
+            nextIndex = (currentIndex + 1) % tabBtns.length;
+          } else {
+            nextIndex = (currentIndex - 1 + tabBtns.length) % tabBtns.length;
+          }
 
-                const nextStrategy = tabBtns[nextIndex].getAttribute('data-strategy');
-                switchTab(nextStrategy);
-                tabBtns[nextIndex].focus(); // Donne le focus au nouvel onglet
-            }
-        });
+          const nextStrategy = tabBtns[nextIndex].getAttribute('data-strategy');
+          switchTab(nextStrategy);
+          tabBtns[nextIndex].focus(); // Donne le focus au nouvel onglet
+        }
+      });
     });
-</script>
+  </script>
 </body>
+
 </html>

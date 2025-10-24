@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Combat Guide - Last War 743</title>
+  <meta name="description" content="Master combat strategies for Last War on Server 743. Learn troop compositions, hero synergies, and battle tactics." />
+  <style>
+    /* Basic reset and variables */
+:root{
+  --max-width: 1100px;
+  --accent: #0ea5a3;
+  --accent-light: #14b8b6;
+  --bg: #0b1020;
+  --card: #0e1422;
+  --muted: #9aa3b2;
+  --radius: 10px;
+  --gap: 1.25rem;
+  --container-padding: 1rem;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  /* Dégradé plus progressif */
+  background: linear-gradient(
+    180deg, 
+    #05060a 0%, 
+    #080c18 25%, 
+    #0b1020 50%, 
+    #080c18 75%, 
+    #05060a 100%
+  );
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  min-height: 100vh;
+}
+
+    /* Layout container */
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding: 1.25rem var(--container-padding);
+    }
+
+    /* Header */
+    .site-header{
+      position:fixed;
+      top:0;
+      left: 0%;
+      right: 0%;
+      z-index:1000;
+      backdrop-filter: blur(8px);
+      background: rgba(6,8,15,0.35);;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      padding: 0.5rem 2rem;
+    }
+    main{
+      padding-top: 6rem; 
+    }
+    
+    .header-inner{
+      display:flex;
+      gap:var(--gap);
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-weight:700;
+      font-size:1.25rem;
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .server-badge{
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      color:#fff;
+      padding:0.25rem 0.6rem;
+      border-radius:6px;
+      font-size:0.8rem;
+      margin-left:0.5rem;
+      font-weight:600;
+    }
+    .main-nav { display:flex; align-items:center; gap:1rem;}
+    
+    /* Croix de navigation */
+    .close-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .close-nav:hover {
+      background: rgba(255,255,255,0.03);
+      transform: scale(1.05);
+    }
+    
+    .close-nav::before, .close-nav::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.5);
+    }
+    
+    .close-nav::before {
+      transform: rotate(45deg);
+    }
+    
+    .close-nav::after {
+      transform: rotate(-45deg);
+    }
+    
+    /* Animation de pulse très douce */
+    @keyframes gentle-pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    .close-nav {
+      animation: gentle-pulse 4s infinite;
+    }
+
+    /* Hero */
+    .hero{
+      padding:3.25rem 0;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1fr 480px;
+      gap:2rem;
+      align-items:center;
+    }
+    .hero-copy h1{
+      font-size:clamp(2rem,4vw,3rem);
+      margin:0 0 0.5rem 0;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      color:var(--muted);
+      margin:0 0 1.5rem 0;
+    }
+    .hero-cta{
+      display:flex;
+      gap:0.75rem;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-block;
+      padding:0.65rem 1rem;
+      border-radius:8px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.06);
+      background:transparent;
+      color:inherit;
+      font-weight:600;
+      transition: all 0.2s;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      color:#fff;
+      border:0;
+    }
+    .btn.primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(14,165,163,0.3);
+    }
+    .btn.ghost{
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(14,165,163,0.3);
+    }
+    .btn.ghost:hover{
+      background:rgba(14,165,163,0.1);
+    }
+
+    /* Sections */
+    .section{ padding:2rem 0; }
+    .section h2{
+      font-size:2rem;
+      margin:0 0 1.5rem 0;
+      letter-spacing:-0.02em;
+    }
+
+    /* Guide Content */
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .guide-intro {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      margin-bottom: 2rem;
+    }
+    
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .guide-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: all 0.3s;
+    }
+    
+    .guide-card:hover {
+      border-color: rgba(14,165,163,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14,165,163,0.15);
+    }
+    
+    .guide-card h3 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    
+    .guide-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .guide-list li {
+      padding: 0.4rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    .guide-list li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
+    .strategy-section {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.03);
+      margin-bottom: 2rem;
+    }
+    
+    .strategy-section h3 {
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .strategy-steps {
+      background: rgba(14,165,163,0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(14,165,163,0.1);
+      margin-top: 1.5rem;
+    }
+    
+    .strategy-steps h4 {
+      color: var(--accent);
+      margin: 0 0 1rem 0;
+      font-size: 1.25rem;
+    }
+    
+    .strategy-steps ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    
+    .strategy-steps li {
+      padding: 0.5rem 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    .strategy-steps strong {
+      color: #fff;
+    }
+    
+    .troop-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    
+    .troop-table th {
+      background: rgba(14,165,163,0.1);
+      color: var(--accent);
+      padding: 0.75rem;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .troop-table td {
+      padding: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+    }
+    
+    .troop-table tr:nth-child(even) {
+      background: rgba(255,255,255,0.02);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent-light);
+      gap: 0.75rem;
+    }
+
+    /* Footer */
+    .site-footer{ 
+      border-top:1px solid rgba(255,255,255,0.03); 
+      padding:2rem 0; 
+      margin-top:3rem; 
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:2rem;
+      margin-bottom:2rem;
+    }
+    .footer-section h4{
+      color:var(--accent);
+      margin:0 0 0.75rem 0;
+      font-size:1rem;
+    }
+    .footer-section p,
+    .footer-section a{
+      color:var(--muted);
+      font-size:0.9rem;
+      text-decoration:none;
+      display:block;
+      line-height:1.8;
+    }
+    .footer-section a:hover{
+      color:#fff;
+    }
+    .footer-inner{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      color:var(--muted);
+      padding-top:1.5rem;
+      border-top:1px solid rgba(255,255,255,0.03);
+    }
+    .footer-nav{
+      list-style:none;
+      display:flex;
+      gap:0.75rem;
+      margin:0;
+      padding:0;
+    }
+    .footer-nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:0.9rem;
+    }
+    .footer-nav a:hover{
+      color:#fff;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .guide-grid{ grid-template-columns: 1fr; }
+      .footer-grid{ grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 700px){
+      .hero{ padding:2rem 0; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .strategy-section{ padding:1.25rem; }
+      .guide-intro{ padding:1.25rem; }
+    }
+
+    /* Utility */
+    .muted{ color:var(--muted); font-size:0.95rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        Last War 743
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="close-nav" aria-label="Return to home page"></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Combat Optimization Guide</h1>
+          <p class="subtitle">Master battle tactics, troop compositions, and hero synergies to dominate Server 743.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#troop-types">Troop Types</a>
+            <a class="btn ghost" href="#hero-synergies">Hero Synergies</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <!-- Placeholder pour une illustration de combat -->
+          <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="320" rx="12" fill="rgba(14,165,163,0.05)"/>
+            <path d="M120 160C120 142.327 134.327 128 152 128H328C345.673 128 360 142.327 360 160V240C360 257.673 345.673 272 328 272H152C134.327 272 120 257.673 120 240V160Z" stroke="rgba(14,165,163,0.3)" stroke-width="2"/>
+            <circle cx="200" cy="200" r="24" fill="rgba(14,165,163,0.2)" stroke="rgba(14,165,163,0.5)" stroke-width="1"/>
+            <circle cx="280" cy="200" r="24" fill="rgba(255,100,100,0.2)" stroke="rgba(255,100,100,0.5)" stroke-width="1"/>
+            <path d="M200 176L280 224M200 224L280 176" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <text x="240" y="100" text-anchor="middle" fill="rgba(14,165,163,0.7)" font-family="Arial" font-size="18" font-weight="bold">COMBAT STRATEGIES</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide Content -->
+    <section class="section guide">
+      <div class="container">
+        <div class="guide-content">
+          <div class="guide-intro">
+            <h2>Mastering Combat in Last War</h2>
+            <p>Effective combat strategy is essential for dominating Server 743. This guide covers everything from basic troop management to advanced battle tactics that will give you the edge over your opponents.</p>
+            <p>Learn how to optimize your army composition, leverage hero abilities, and execute successful attacks while minimizing losses.</p>
+          </div>
+          
+          <div class="guide-grid">
+            <article class="guide-card">
+              <h3>Troop Type Advantages</h3>
+              <ul class="guide-list">
+                <li>Infantry strong against Vehicles</li>
+                <li>Vehicles strong against Aircraft</li>
+                <li>Aircraft strong against Infantry</li>
+                <li>Always check enemy composition before attacking</li>
+                <li>Mix troop types for balanced armies</li>
+              </ul>
+            </article>
+            
+            <article class="guide-card">
+              <h3>Combat Fundamentals</h3>
+              <ul class="guide-list">
+                <li>Always scout before attacking</li>
+                <li>Check player power and hero levels</li>
+                <li>Attack during enemy offline periods</li>
+                <li>Use rally attacks for strong targets</li>
+                <li>Coordinate with alliance members</li>
+              </ul>
+            </article>
+            
+            <article class="guide-card">
+              <h3>Hero Selection</h3>
+              <ul class="guide-list">
+                <li>Match hero types with troop types</li>
+                <li>Prioritize heroes with attack bonuses</li>
+                <li>Level up key heroes first</li>
+                <li>Unlock and upgrade special abilities</li>
+                <li>Equip heroes with appropriate gear</li>
+              </ul>
+            </article>
+            
+            <article class="guide-card">
+              <h3>Defensive Strategies</h3>
+              <ul class="guide-list">
+                <li>Upgrade defensive buildings regularly</li>
+                <li>Use shields during vulnerable periods</li>
+                <li>Coordinate defense with alliance</li>
+                <li>Keep hospital capacity high</li>
+                <li>Optimize base layout for defense</li>
+              </ul>
+            </article>
+          </div>
+          
+          <div id="troop-types" class="strategy-section">
+            <h3>Troop Types and Counters</h3>
+            <p>Understanding the rock-paper-scissors mechanics of troop types is fundamental to winning battles in Last War.</p>
+            
+            <table class="troop-table">
+              <thead>
+                <tr>
+                  <th>Troop Type</th>
+                  <th>Strong Against</th>
+                  <th>Weak Against</th>
+                  <th>Best Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Infantry</strong></td>
+                  <td>Vehicles</td>
+                  <td>Aircraft</td>
+                  <td>Frontline defense, vehicle counters</td>
+                </tr>
+                <tr>
+                  <td><strong>Vehicles</strong></td>
+                  <td>Aircraft</td>
+                  <td>Infantry</td>
+                  <td>Anti-air, base assault</td>
+                </tr>
+                <tr>
+                  <td><strong>Aircraft</strong></td>
+                  <td>Infantry</td>
+                  <td>Vehicles</td>
+                  <td>Infantry counters, support</td>
+                </tr>
+                <tr>
+                  <td><strong>Mixed Army</strong></td>
+                  <td>Balanced</td>
+                  <td>Specialized counters</td>
+                  <td>General purpose, unpredictable</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="strategy-steps">
+              <h4>Troop Composition Strategy</h4>
+              <ol>
+                <li><strong>Scout Enemy First:</strong> Always check what troops your opponent has before attacking.</li>
+                <li><strong>Counter Their Composition:</strong> If they have mostly vehicles, bring infantry. If aircraft, bring vehicles.</li>
+                <li><strong>Balance Your Army:</strong> Maintain a mix of troop types to handle unexpected counters.</li>
+                <li><strong>Specialize for Events:</strong> Create specialized armies for specific events or targets.</li>
+                <li><strong>Upgrade Uniformly:</strong> Don't neglect any troop type - you'll need them all eventually.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div id="hero-synergies" class="strategy-section">
+            <h3>Hero Synergies and Team Building</h3>
+            <p>Heroes provide significant bonuses to your troops. Matching the right heroes with the right troops can dramatically increase your combat effectiveness.</p>
+            
+            <div class="strategy-steps">
+              <h4>Building Effective Hero Teams</h4>
+              <ol>
+                <li><strong>Match Types:</strong> Use infantry heroes with infantry troops, vehicle heroes with vehicles, etc.</li>
+                <li><strong>Prioritize Attack Bonuses:</strong> Heroes that boost attack are generally more valuable than defense bonuses.</li>
+                <li><strong>Specialize Teams:</strong> Create dedicated teams for different purposes (PvP, gathering, defense).</li>
+                <li><strong>Level Key Heroes First:</strong> Focus on leveling your main combat heroes before secondary ones.</li>
+                <li><strong>Unlock Abilities:</strong> Hero special abilities can turn the tide of battle - unlock and upgrade them.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="strategy-section">
+            <h3>Advanced Combat Tactics</h3>
+            <p>Once you've mastered the basics, these advanced tactics will help you dominate Server 743.</p>
+            
+            <div class="strategy-steps">
+              <h4>Pro-Level Strategies</h4>
+              <ol>
+                <li><strong>Hit-and-Run Attacks:</strong> Attack, gather resources, then shield or relocate before retaliation.</li>
+                <li><strong>Rally Coordination:</strong> Work with alliance members to launch coordinated attacks on strong targets.</li>
+                <li><strong>Terrain Advantage:</strong> Use the world map to your advantage - attack from unexpected directions.</li>
+                <li><strong>Bait and Switch:</strong> Lure enemies into attacking a seemingly weak target, then counter with your main force.</li>
+                <li><strong>Resource Denial:</strong> Target enemy resource gatherers to weaken their economy.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <a href="index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Main Page
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About Server 743</h4>
+          <p>Expert tips and strategies for Last War players on Server 743. Community-driven guides to help you dominate.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Combat Guides</h4>
+          <a href="#troop-types">Troop Types</a>
+          <a href="#hero-synergies">Hero Synergies</a>
+          <a href="#advanced-tactics">Advanced Tactics</a>
+        </div>
+        <div class="footer-section">
+          <h4>Community</h4>
+          <a href="#">Discord Server</a>
+          <a href="#">Forum</a>
+          <a href="#">YouTube</a>
+        </div>
+        <div class="footer-section">
+          <h4>Game Links</h4>
+          <a href="#">Download</a>
+          <a href="#">Official Site</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+      <div class="footer-inner">
+        <small>© <span id="year"></span> Last War Server 743 Tips. Unofficial fan site.</small>
+        <ul class="footer-nav">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Basic UI interactions
+    document.addEventListener('DOMContentLoaded', function () {
+      // Year in footer
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Scroll reveal for cards
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.guide-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.5s ease-out';
+        revealObserver.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>

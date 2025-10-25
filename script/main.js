@@ -1,3 +1,18 @@
+// script/main.js
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('🚀 Service Worker registered:', registration);
+      })
+      .catch(error => {
+        console.log('❌ Service Worker registration failed:', error);
+      });
+  });
+}
+
+
+
 // script/main.js - Main initialization script
 import { initializeUI } from './ui.js';
 import { initializeCounters } from './counters.js';

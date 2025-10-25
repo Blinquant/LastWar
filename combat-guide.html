@@ -311,7 +311,7 @@ body{
       color: #fff;
     }
     
-.troop-table {
+    .troop-table {
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
@@ -413,69 +413,117 @@ body{
       .footer-grid{ grid-template-columns: repeat(2,1fr); }
     }
 
-    @media (max-width: 700px){
-      .site-header {padding: 0rem 1rem;}
-      .container { padding: 1rem;}
-      .hero-art{ display:none; }
-      .hero{ padding:2rem 0; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .strategy-section{ padding:1.25rem; }
-      .guide-intro{ padding:1.25rem; }
-       .troop-table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      .troop-table thead {
-        display: none;
-      }
-      
-      .troop-table tbody {
-        display: block;
-      }
-      
-      .troop-table tr {
-        display: block;
-        margin-bottom: 1.5rem;
-        background: rgba(255,255,255,0.02);
-        border-radius: 8px;
-        border: 1px solid rgba(255,255,255,0.05);
-        padding: 1rem;
-      }
-      
-      .troop-table td {
-        display: block;
-        text-align: left;
-        border: none;
-        padding: 0.5rem 0;
-        position: relative;
-        padding-left: 45%;
-      }
-      
-      .troop-table td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 40%;
-        padding-right: 10px;
-        font-weight: 600;
-        color: var(--accent);
-        text-align: left;
-      }
-      
-      .troop-table td:first-child {
-        font-weight: 700;
-        color: #fff;
-        font-size: 1.1rem;
-        padding-left: 0;
-        margin-bottom: 0.5rem;
-      }
-      
-      .troop-table td:first-child:before {
-        display: none;
-      }
-    }
+/* Responsive smartphone*/
+@media (max-width: 700px){
+  .site-header {padding: 0rem 1rem;}
+  .container { padding: 1rem;}
+  .hero-art{ display:none; }
+  .hero{ padding:2rem 0; }
+  .footer-grid{ grid-template-columns: 1fr; }
+  .strategy-section{ padding:1.25rem; }
+  .guide-intro{ padding:1.25rem; }
+  
+  .troop-table {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+  }
+  
+  .troop-table thead {
+    display: none;
+  }
+  
+  .troop-table tbody {
+    display: block;
+  }
+  
+  .troop-table tr {
+    display: block;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 1.5rem 1rem;
+    background: transparent;
+  }
+  
+  .troop-table tr:last-child {
+    border-bottom: none;
+  }
+  
+  .troop-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border: none;
+    padding: 0.75rem 0;
+    position: relative;
+  }
+  
+  .troop-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--accent);
+    text-align: left;
+    min-width: 45%;
+    padding-right: 1rem;
+  }
+  
+  .troop-table td:first-child {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    justify-content: center;
+  }
+  
+  .troop-table td:first-child:before {
+    display: none;
+  }
+  
+  /* Style spécifique pour la colonne "Best Use" */
+  .troop-table td[data-label="Best Use"] {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+    background: rgba(14,165,163,0.05);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+  
+  .troop-table td[data-label="Best Use"]:before {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    padding-right: 0;
+    min-width: auto;
+  }
+  
+  .troop-table td[data-label="Best Use"] .best-use-content {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .troop-table td[data-label="Best Use"] .best-use-content span {
+    display: block;
+    margin: 0.25rem 0;
+    font-weight: 600;
+  }
+  
+  /* Style pour les autres colonnes */
+  .troop-table td:not(:first-child):not([data-label="Best Use"]) {
+    font-weight: 600;
+    color: #fff;
+  }
+}
 
     /* Utility */
     .muted{ color:var(--muted); font-size:0.95rem; }
@@ -578,42 +626,58 @@ body{
             <h3>Troop Types and Counters</h3>
             <p>Understanding the rock-paper-scissors mechanics of troop types is fundamental to winning battles in Last War.</p>
             
-            <table class="troop-table">
-              <thead>
-                <tr>
-                  <th>Troop Type</th>
-                  <th>Strong Against</th>
-                  <th>Weak Against</th>
-                  <th>Best Use</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Tank</strong></td>
-                  <td>Missile</td>
-                  <td>Aircraft</td>
-                  <td>Tanks recieve <span style="color: #ffaa00;">-20%</span> damage from Missile</td>
-                </tr>
-                <tr>
-                  <td><strong>Missile</strong></td>
-                  <td>Aircraft</td>
-                  <td>Tank</td>
-                  <td>Missile recieve <span style="color: #ffaa00;">-20%</span> damage from Aircraft</td>
-                </tr>
-                <tr>
-                  <td><strong>Aircraft</strong></td>
-                  <td>Tank</td>
-                  <td>Missile</td>
-                  <td>Aircraft recieve <span style="color: #ffaa00;">-20%</span> damage from Tanks</td>
-                </tr>
-                <tr>
-                  <td><strong>Mixed Army</strong></td>
-                  <td>Balanced</td>
-                  <td>Specialized counters</td>
-                  <td>General purpose, unpredictable</td>
-                </tr>
-              </tbody>
-            </table>
+<table class="troop-table">
+  <thead>
+    <tr>
+      <th>Troop Type</th>
+      <th>Strong Against</th>
+      <th>Weak Against</th>
+      <th>Best Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tank</strong></td>
+      <td data-label="Strong Against">Missile</td>
+      <td data-label="Weak Against">Aircraft</td>
+      <td data-label="Best Use">
+        <div class="best-use-content">
+          Tanks receive <span style="color: #ffaa00;">-20%</span> damage from Missile
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Missile</strong></td>
+      <td data-label="Strong Against">Aircraft</td>
+      <td data-label="Weak Against">Tank</td>
+      <td data-label="Best Use">
+        <div class="best-use-content">
+          Missile receive <span style="color: #ffaa00;">-20%</span> damage from Aircraft
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Aircraft</strong></td>
+      <td data-label="Strong Against">Tank</td>
+      <td data-label="Weak Against">Missile</td>
+      <td data-label="Best Use">
+        <div class="best-use-content">
+          Aircraft receive <span style="color: #ffaa00;">-20%</span> damage from Tanks
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Mixed Army</strong></td>
+      <td data-label="Strong Against">Balanced</td>
+      <td data-label="Weak Against">Specialized counters</td>
+      <td data-label="Best Use">
+        <div class="best-use-content">
+          General purpose, unpredictable
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
             
             <div class="strategy-steps">
               <h4>Troop Composition Strategy</h4>

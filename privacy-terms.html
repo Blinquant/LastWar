@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,7 +9,7 @@
   <meta name="theme-color" content="#05060a">
   <style>
     /* Basic reset and variables */
-    :root{
+    :root {
       --max-width: 1100px;
       --accent: #0ea5a3;
       --accent-light: #14b8b6;
@@ -20,53 +21,64 @@
       --container-padding: 1rem;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%; margin:0; padding:0}
-    body{
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background: linear-gradient(180deg, #05060a 0%, #080c18 25%, #0b1020 50%, #080c18 75%, #05060a 100%);
       background-attachment: fixed;
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
       min-height: 100vh;
     }
 
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
       padding: 1.25rem var(--container-padding);
     }
 
     /* Header */
-    .site-header{
-      position:fixed;
-      top:0;
+    .site-header {
+      position: fixed;
+      top: 0;
       left: 0%;
       right: 0%;
-      z-index:1000;
+      z-index: 1000;
       backdrop-filter: blur(8px);
-      background: rgba(6,8,15,0.35);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      background: rgba(6, 8, 15, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       padding: 0.5rem 2rem;
     }
-    main{
-      padding-top: 6rem; 
+
+    main {
+      padding-top: 6rem;
     }
-    
-    .header-inner{
-      display:flex;
-      gap:var(--gap);
-      align-items:center;
-      justify-content:space-between;
+
+    .header-inner {
+      display: flex;
+      gap: var(--gap);
+      align-items: center;
+      justify-content: space-between;
     }
-    .logo{
-      font-weight:700;
-      font-size:1.25rem;
-      color:var(--accent);
-      text-decoration:none;
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+      text-decoration: none;
     }
 
     /* Close navigation */
@@ -77,19 +89,20 @@
       width: 40px;
       height: 40px;
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
     }
-    
+
     .close-nav:hover {
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       transform: scale(1.05);
     }
-    
-    .close-nav::before, .close-nav::after {
+
+    .close-nav::before,
+    .close-nav::after {
       content: '';
       position: absolute;
       width: 20px;
@@ -97,16 +110,21 @@
       background-color: #fff;
       border-radius: 1px;
     }
-    
-    .close-nav::before { transform: rotate(45deg); }
-    .close-nav::after { transform: rotate(-45deg); }
+
+    .close-nav::before {
+      transform: rotate(45deg);
+    }
+
+    .close-nav::after {
+      transform: rotate(-45deg);
+    }
 
     /* Content */
     .content-section {
       background: var(--card);
       padding: 3rem;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.03);
       max-width: 800px;
       margin: 2rem auto;
     }
@@ -120,7 +138,7 @@
     .policy-section {
       margin-bottom: 3rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .policy-section:last-child {
@@ -167,13 +185,13 @@
       color: var(--accent);
       text-decoration: none;
       padding: 0.5rem 1rem;
-      border: 1px solid rgba(14,165,163,0.3);
+      border: 1px solid rgba(14, 165, 163, 0.3);
       border-radius: 6px;
       transition: all 0.2s;
     }
 
     .nav-anchor:hover {
-      background: rgba(14,165,163,0.1);
+      background: rgba(14, 165, 163, 0.1);
     }
 
     .back-link {
@@ -186,20 +204,33 @@
       font-weight: 600;
       transition: all 0.2s;
     }
-    
+
     .back-link:hover {
       color: var(--accent-light);
       gap: 0.75rem;
     }
 
-    @media (max-width: 700px){
-      .site-header {padding: 0rem 1rem;}
-      .container { padding: 1rem;}
-      .content-section { padding: 2rem 1.5rem; }
-      .nav-anchors { flex-direction: column; align-items: center; }
+    @media (max-width: 700px) {
+      .site-header {
+        padding: 0rem 1rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .content-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .nav-anchors {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -224,26 +255,30 @@
 
         <div class="policy-section" id="privacy">
           <h2>Privacy Policy</h2>
-          
+
           <h3>Information Collection</h3>
-          <p>This website does not collect any personal information from visitors. We do not use cookies, tracking technologies or any form of data collection.</p>
-          
+          <p>This website does not collect any personal information from visitors. We do not use cookies, tracking
+            technologies or any form of data collection.</p>
+
           <h3>Third-Party Services</h3>
-          <p>We do not share any information with third parties as we do not collect any information in the first place.</p>
-          
+          <p>We do not share any information with third parties as we do not collect any information in the first place.
+          </p>
+
           <h3>Contact</h3>
           <p>If you want to contact me, please do so through the game, i'll be happy to reply.</p>
         </div>
 
         <div class="policy-section" id="terms">
           <h2>Terms of Use</h2>
-          
+
           <h3>Website Purpose</h3>
-          <p>This is an unofficial fan website created for the Last War Server 743 community. It is not affiliated with, endorsed, or sponsored by the game developers or publishers.</p>
-          
+          <p>This is an unofficial fan website created for the Last War Server 743 community. It is not affiliated with,
+            endorsed, or sponsored by the game developers or publishers.</p>
+
           <h3>Content Usage</h3>
-          <p>All game-related content, images and trademarks belong to their respective owners. This site uses them under fair use for educational and community purposes.</p>
-          
+          <p>All game-related content, images and trademarks belong to their respective owners. This site uses them
+            under fair use for educational and community purposes.</p>
+
           <h3>User Responsibilities</h3>
           <p>By using this website, you agree that:</p>
           <ul>
@@ -251,21 +286,24 @@
             <li>You understand this is fan-made content</li>
             <li>You acknowledge that game strategies may change with updates and I'm not a bot</li>
           </ul>
-          
+
           <h3>Limitation of Liability</h3>
-          <p>We are not responsible for any in-game decisions made based on the information provided on this website. Game strategies should be adapted to your specific situation.</p>
+          <p>We are not responsible for any in-game decisions made based on the information provided on this website.
+            Game strategies should be adapted to your specific situation.</p>
         </div>
 
         <div class="policy-section">
           <h3>Disclaimer</h3>
-          <p>This website is created and maintained by onryo from alliance [Tha] on Server 743. All content is provided "as is" without any warranties.</p>
-          
+          <p>This website is created and maintained by onryo from alliance [Tha] on Server 743. All content is provided
+            "as is" without any warranties.</p>
+
           <p class="muted">Last updated: October 2025</p>
         </div>
-        
+
         <a href="index.html" class="back-link">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
           Back to Main Page
         </a>
@@ -274,45 +312,46 @@
   </main>
 </body>
 <script>
-    // Scroll to section on page load if hash is present
-    document.addEventListener('DOMContentLoaded', function() {
-        const hash = window.location.hash;
-        if (hash) {
-            setTimeout(() => {
-                const target = document.querySelector(hash);
-                if (target) {
-                    const headerHeight = document.querySelector('.site-header').offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                    
-                    window.scrollTo({
-                        top: targetPosition - headerHeight - 30,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
-        }
-    });
+  // Scroll to section on page load if hash is present
+  document.addEventListener('DOMContentLoaded', function () {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = document.querySelector('.site-header').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
 
-    // Smooth scroll for internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerHeight = document.querySelector('.site-header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                
-                window.scrollTo({
-                    top: targetPosition - headerHeight - 30,
-                    behavior: 'smooth'
-                });
-                
-                history.pushState(null, null, href);
-            }
+          window.scrollTo({
+            top: targetPosition - headerHeight - 30,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  });
+
+  // Smooth scroll for internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const headerHeight = document.querySelector('.site-header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: targetPosition - headerHeight - 30,
+          behavior: 'smooth'
         });
+
+        history.pushState(null, null, href);
+      }
     });
+  });
 </script>
+
 </html>

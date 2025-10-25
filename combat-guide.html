@@ -363,21 +363,33 @@ body{
       gap:2rem;
       margin-bottom:2rem;
     }
-    .footer-section h4{
-      color:var(--accent);
-      margin:0 0 0.75rem 0;
-      font-size:1rem;
+    .footer-section h4 {
+      color: var(--accent);
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
     }
-    .footer-section p,
-    .footer-section a{
-      color:var(--muted);
-      font-size:0.9rem;
-      text-decoration:none;
-      display:block;
-      line-height:1.8;
+
+    .footer-section p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin: 0;
     }
-    .footer-section a:hover{
-      color:#fff;
+
+    .footer-section a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: block;
+      line-height: 1.8;
+      margin-right: 0;
+      transition: color 0.2s ease;
+      width: fit-content;
+      width: -moz-fit-content;
+    }
+
+    .footer-section a:hover {
+      color: #fff;
     }
     .footer-inner{
       display:flex;
@@ -523,6 +535,20 @@ body{
     font-weight: 600;
     color: #fff;
   }
+
+  .footer-section{
+    text-align: center;
+  }
+
+  .footer-section p{
+    margin: 0 5rem;
+  }
+
+  .footer-section a {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+  }
 }
 
     /* Utility */
@@ -547,7 +573,7 @@ body{
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1 id="hero-title">Combat Optimization Guide</h1>
-          <p class="subtitle">Master battle tactics, troop compositions, and hero synergies to dominate Server 743.</p>
+          <p class="subtitle">Battle tactics, troop compositions and hero synergies.</p>
           <div class="hero-cta">
             <a class="btn primary" href="#troop-types">Troop Types</a>
             <a class="btn ghost" href="#advanced-tactics">Advanced Tactics</a>
@@ -680,7 +706,7 @@ body{
 </table>
             
             <div class="strategy-steps">
-              <h4>Troop Composition Strategy</h4>
+              <h4>Squad Composition Strategy</h4>
               <ol>
                 <li><strong>Scout Enemy First:</strong> Always check what troops your opponent has before attacking.</li>
                 <li><strong>Counter Their Composition:</strong> Most of players use Tanks, so play Aircraft :)</li>
@@ -692,7 +718,7 @@ body{
           
           <div class="strategy-section" id="advanced-tactics">
             <h3>Advanced Combat Tactics</h3>
-            <p>These advanced tactics will help you.</p>
+            <p>These advanced tactics could help you.</p>
             
             <div class="strategy-steps">
               <h4>Pro-Level Strategies</h4>
@@ -721,7 +747,7 @@ body{
         <div class="footer-grid">
             <div class="footer-section">
                 <h4>About Server 743</h4>
-                <p>Tips and strategies for Last War players on Server 743. Community-driven guides to help you.</p>
+                <p>Tips and strategies for Last War players. Community-driven guides to help you.</p>
             </div>
             <div class="footer-section">
                 <h4>Combat Guides</h4>

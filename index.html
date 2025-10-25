@@ -8,6 +8,7 @@
   <meta name="description"
     content="Expert tips, strategies and guides for Last War players on Server 743. Master the game with proven tactics." />
   <meta name="theme-color" content="#05060a">
+  <script type="module" src="script/main.js"></script>
   <style>
     /* Basic reset and variables */
     :root {
@@ -626,73 +627,81 @@
       margin: 0;
     }
 
-.resource-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, 
-              rgba(14, 165, 163, 0.05) 0%,
-              rgba(20, 184, 182, 0.02) 100%);
-  color: var(--accent);
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.5s ease;
-  margin-top: 1rem;
-  border: 1px solid rgba(14, 165, 163, 0.15);
-  text-align: center;
-  width: 100%;
-  position: relative;
-}
+    .resource-btn {
+      display: inline-block;
+      background: linear-gradient(135deg,
+          rgba(14, 165, 163, 0.05) 0%,
+          rgba(20, 184, 182, 0.02) 100%);
+      color: var(--accent);
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.5s ease;
+      margin-top: 1rem;
+      border: 1px solid rgba(14, 165, 163, 0.15);
+      text-align: center;
+      width: 100%;
+      position: relative;
+    }
 
-.resource-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, 
-              rgba(14, 165, 163, 0.1) 0%,
-              rgba(20, 184, 182, 0.05) 50%,
-              transparent 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-}
+    .resource-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg,
+          rgba(14, 165, 163, 0.1) 0%,
+          rgba(20, 184, 182, 0.05) 50%,
+          transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
 
-.resource-btn:hover::before {
-  opacity: 1;
-}
+    .resource-btn:hover::before {
+      opacity: 1;
+    }
 
-.resource-btn:hover {
-  border-color: var(--accent-light);
-  box-shadow: 0 0 20px rgba(14, 165, 163, 0.4),
-              0 0 40px rgba(14, 165, 163, 0.2);
-  transform: translateY(-3px) scale(1.02);
-}
-/* Resource Icon SVG */
-.resource-icon svg {
-  width: 56px;
-  height: 56px;
-  color: var(--accent);
-  stroke: currentColor;
-  fill: none;
-  transition: all 0.3s ease;
-}
+    .resource-btn:hover {
+      border-color: var(--accent-light);
+      box-shadow: 0 0 20px rgba(14, 165, 163, 0.4),
+        0 0 40px rgba(14, 165, 163, 0.2);
+      transform: translateY(-3px) scale(1.02);
+    }
 
-.resource-card:hover .resource-icon svg {
-  color: var(--accent-light);
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 8px rgba(14, 165, 163, 0.3));
-}
+    /* Resource Icon SVG */
+    .resource-icon svg {
+      width: 56px;
+      height: 56px;
+      color: var(--accent);
+      stroke: currentColor;
+      fill: none;
+      transition: all 0.3s ease;
+    }
 
-/* Animation subtile pour le download */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-2px); }
-}
+    .resource-card:hover .resource-icon svg {
+      color: var(--accent-light);
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px rgba(14, 165, 163, 0.3));
+    }
 
-.resource-card:hover .resource-icon svg {
-  animation: float 2s ease-in-out infinite;
-}
+    /* Animation subtile pour le download */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-2px);
+      }
+    }
+
+    .resource-card:hover .resource-icon svg {
+      animation: float 2s ease-in-out infinite;
+    }
 
 
     /* Hero art placeholder */
@@ -722,13 +731,24 @@
       font-size: 1rem;
     }
 
-    .footer-section p,
+    .footer-section p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
     .footer-section a {
       color: var(--muted);
       font-size: 0.9rem;
       text-decoration: none;
       display: block;
+      /* Garder block pour l'alignement vertical */
       line-height: 1.8;
+      margin-right: 0;
+      transition: color 0.2s ease;
+      width: fit-content;
+      width: -moz-fit-content;
     }
 
     .footer-section a:hover {
@@ -829,9 +849,24 @@
       .strategy-content {
         padding: 1.25rem;
       }
+
       .resource-btn {
         padding: 0.5rem 1rem;
-        font-size: 0.85rem;  
+        font-size: 0.85rem;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-section p {
+        margin: 0 5rem;
+      }
+
+      .footer-section a {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
       }
     }
 
@@ -1487,13 +1522,12 @@
           <div>
             <h2>About Server 743</h2>
             <p>Server 743 is made up of several alliances that have united as one. Here, you'll find a section of
-              essential tips covering base management, faction strengths, resource optimization, and team
-              coordination.</p>
+              essential tips covering base management, faction strengths, resource optimization and team coordination.
+            </p>
             <ul class="meta-list">
               <li><strong>Server:</strong> 743 </li>
               <li><strong>Since:</strong> Sunday, Jul 21, 2024</li>
               <li class="timezone-info" id="timezoneInfo"><strong>Server Day:</strong>Time zone detector</li>
-              <!-- You can add the current server day dynamically with JavaScript since Sunday, Jul 21, 2024 -->
 
             </ul>
           </div>
@@ -1625,66 +1659,89 @@
     <!-- Strategies Section -->
     <section id="strategies" class="section strategies">
       <div class="container">
-        <h2>Advanced Strategy Guides</h2>
+        <h2>Advanced Strategy Event Guides</h2>
         <p class="muted">Comprehensive playbooks for each stage of your Last War journey</p>
 
         <div class="strategy-tabs" role="tablist" aria-label="Strategy guides">
-          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="early"
-            data-strategy="early">Early Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="mid" data-strategy="mid">Mid
-            Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="late" data-strategy="late">Late
-            Game</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pvp" data-strategy="pvp">PvP
-            Focus</button>
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="winter-storm"
+            data-strategy="winter-storm">Winter Storm</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="desert-storm"
+            data-strategy="desert-storm">Desert Storm</button>
+          <!--<button class="tab-btn" role="tab" aria-selected="false" aria-controls="late" data-strategy="late">Late Game</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="pvp" data-strategy="pvp">PvP Focus</button>
+        -->
         </div>
 
-        <div id="early" class="strategy-content active" role="tabpanel">
-          <h3>Early Game Strategy (Level 1-15)</h3>
-          <p>Build a solid foundation during your first days on Server 743. This phase determines your long-term success
-            trajectory.</p>
+        <div id="winter-storm" class="strategy-content active" role="tabpanel">
+          <h3>Strategy Guide: Winter Storm Battlefield</h3>
+          <p>Transition from standard warfare to competitive battlefield operations. Success relies on controlling
+            objectives, maximizing points and maintaining troop efficiency.</p>
+
           <div class="strategy-steps">
-            <h4>Step-by-Step Progression</h4>
+            <h4>Step-by-Step Strategy</h4>
             <ol>
-              <li><strong>Rush Command Center to Level 10:</strong> This unlocks critical buildings and features. Use
-                all available speed-ups to achieve this milestone quickly.</li>
-              <li><strong>Complete Tutorial Missions:</strong> These provide excellent rewards and teach core mechanics.
-                Don't skip any tutorial objectives.</li>
-              <li><strong>Join an Alliance Immediately:</strong> Gain building assistance, protection, and valuable
-                resources. Seek active alliances on Server 743.</li>
-              <li><strong>Focus on Resource Production:</strong> Upgrade farms, oil refineries, and steel mills evenly.
-                Target at least level 8 for each facility.</li>
-              <li><strong>Train Troops Continuously:</strong> Never leave barracks idle. Build a balanced army of
-                infantry and vehicles.</li>
-              <li><strong>Claim All Free Rewards:</strong> Check mail, events, and daily missions regularly for
-                speed-ups and resources.</li>
-              <li><strong>Utilize Shield Protection:</strong> Don't waste beginner shields. Use them while building
-                defensive capabilities.</li>
+              <li><strong>Control Key Structures:</strong> Upon entering the battlefield, immediately prioritize Missile
+                Sites and Oil Wells. These locations generate continuous Battlefield Points. The first team to reach
+                30,000 points wins.</li>
+
+              <li><strong>Focus on Timing:</strong> If the timer expires, victory goes to the side with the highest
+                score. Coordinate captures carefully to hold more structures as the battle closes.</li>
+
+              <li><strong>Central Silo Domination:</strong> The Silo opens after a short period. Capturing and holding
+                it grants massive point boosts.</li>
+
+              <li><strong>Secure Supply Airdrops:</strong> Resource crates will drop periodically across the map. Send
+                fast-moving units to collect them, these provide both points and tactical advantages.</li>
+
+              <li><strong>Unit Deployment System:</strong> On entering, your highest-level units automatically fill the
+                Independent Drill Ground. These units are unique to the battlefield and won't affect your base's army
+                composition.</li>
+
+              <li><strong>No Permanent Losses:</strong> In this event, units do not die. Severely wounded troops are
+                automatically healed for free after the battle. Take advantage of this to play aggressively and dominate
+                objectives.</li>
             </ol>
           </div>
         </div>
 
-        <div id="mid" class="strategy-content" role="tabpanel">
-          <h3>Mid Game Strategy (Level 16-25)</h3>
-          <p>Transition from pure expansion to strategic warfare. Balance continued growth with military development and
-            server participation.</p>
+        <div id="desert-storm" class="strategy-content active" role="tabpanel">
+          <h3>Strategy Guide: Desert Storm</h3>
+          <p>Transition from standard alliance warfare to large-scale battlefield operations. Victory depends on
+            coordination, timing and control of strategic objectives.</p>
+
           <div class="strategy-steps">
-            <h4>Step-by-Step Progression</h4>
+            <h4>Step-by-Step Strategy</h4>
             <ol>
-              <li><strong>Diversify Your Army:</strong> Unlock and train all troop types. Maintain a versatile
-                composition for different scenarios.</li>
-              <li><strong>Begin Research Progression:</strong> Focus on military and economic branches. Prioritize troop
-                attack and defense bonuses.</li>
-              <li><strong>Participate in Server Events:</strong> Events offer massive rewards. Coordinate with your
-                alliance for maximum points.</li>
-              <li><strong>Upgrade Hero Units:</strong> Heroes are crucial for combat success. Level them up and unlock
-                special abilities.</li>
-              <li><strong>Produce T3 Troops:</strong> These units significantly outperform T2. Begin replacing your army
-                with higher tiers.</li>
-              <li><strong>Optimize Base Layout:</strong> Redesign for defensive strength. Protect Command Center and
-                resource storage.</li>
-              <li><strong>Farm Inactive Bases:</strong> Scout the map for abandoned locations and farm them regularly
-                for resources.</li>
+              <li><strong>Prepare Your Team:</strong> At the beginning of each battle, a role with a number is assigned
+                to you, it's important to remember it. Balance roles between Vanguard, Logistics Support, Healer,...
+              </li>
+
+              <li><strong>Stage 1 - Establish Control:</strong> Capture Oil Refineries, Science Hubs, and Field
+                Hospitals first. These provide early Battlefield Points and strengthen your alliance's starting
+                advantage.</li>
+
+              <li><strong>Stage 2 - Push for Central Objectives:</strong> Once secured, move toward the Nuclear Silo,
+                Arsenal, and Mercenary Factory. These offer the highest point output, control them as soon as they
+                unlock.</li>
+
+              <li><strong>Stage 3 - Secure Oil Wells:</strong> As Oil Wells appear, if all your units are dead or the
+                game is won, send out your squads to continuously harvest them.</li>
+
+              <li><strong>Use Free Teleports Strategically:</strong> Relocate every few minutes to capture undefended
+                buildings or reinforce key objectives. Avoid wasting teleports during cooldowns.</li>
+
+              <li><strong>Play Aggressively - No Unit Deaths:</strong> Since units cannot die, take calculated risks.
+                Push forward during critical moments, knowing your wounded troops will fully recover after battle.</li>
+
+              <li><strong>Hold Buildings for Maximum Value:</strong> Buildings generate extra Battlefield Points over
+                time. Predict enemy movements by checking our positions with many points.</li>
+
+              <li><strong>Earn Individual Points Efficiently:</strong> Attack higher tier enemies for more personal
+                points. Garrison buildings (+30 pts/sec), gather at Oil Wells (+5 pts/sec), and collect Supply Boxes to
+                boost your ranking.</li>
+
+              <li><strong>Adapt and Communicate:</strong> Maintain constant communication through alliance chat. Quick
+                coordination between defense and offense is the key to victory.</li>
             </ol>
           </div>
         </div>
@@ -1742,53 +1799,56 @@
     </section>
 
     <!-- Resources Section -->
-<section id="resources" class="section resources">
-  <div class="container">
-    <h2>Essential Resources</h2>
-    <p class="muted">Tools and links to enhance your Last War experience</p>
+    <section id="resources" class="section resources">
+      <div class="container">
+        <h2>Essential Resources</h2>
+        <p class="muted">Tools and links to enhance your Last War experience</p>
 
-    <div class="resource-grid">
-      <article class="resource-card">
-        <div class="resource-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M7 7H17M7 12H17M7 17H12M7 3V5M17 3V5M6 21H18C19.1046 21 20 20.1046 20 19V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21Z"/>
-          </svg>
-        </div>
-        <h3>Calculator</h3>
-        <p>Tools and calculations</p>
-        <a href="https://last-war-util.vercel.app/#/home" class="resource-btn" target="_blank" rel="noopener">
-          Calculator
-        </a>
-      </article>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <div class="resource-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M7 7H17M7 12H17M7 17H12M7 3V5M17 3V5M6 21H18C19.1046 21 20 20.1046 20 19V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21Z" />
+              </svg>
+            </div>
+            <h3>Calculator</h3>
+            <p>Tools and calculations</p>
+            <a href="https://last-war-util.vercel.app/#/home" class="resource-btn" target="_blank" rel="noopener">
+              Calculator
+            </a>
+          </article>
 
-      <article class="resource-card">
-        <div class="resource-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528"/>
-          </svg>
-        </div>
-        <h3>Wiki</h3>
-        <p>Detailed content</p>
-        <a href="https://www.lastwartutorial.com/" class="resource-btn" target="_blank" rel="noopener">
-          Wiki
-        </a>
-      </article>
+          <article class="resource-card">
+            <div class="resource-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" />
+              </svg>
+            </div>
+            <h3>Wiki</h3>
+            <p>Detailed content</p>
+            <a href="https://www.lastwartutorial.com/" class="resource-btn" target="_blank" rel="noopener">
+              Wiki
+            </a>
+          </article>
 
-      <article class="resource-card">
-        <div class="resource-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429M17 20H7M17 20V18C17 17.3438 16.8736 16.717 16.6438 16.1429M7 20H2V18C2 16.3431 3.34315 15 5 15C5.95561 15 6.80686 15.4468 7.35625 16.1429M7 20V18C7 17.3438 7.12642 16.717 7.35625 16.1429M7.35625 16.1429C8.0935 14.301 9.89482 13 12 13C14.1052 13 15.9065 14.301 16.6438 16.1429M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"/>
-          </svg>
+          <article class="resource-card">
+            <div class="resource-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429M17 20H7M17 20V18C17 17.3438 16.8736 16.717 16.6438 16.1429M7 20H2V18C2 16.3431 3.34315 15 5 15C5.95561 15 6.80686 15.4468 7.35625 16.1429M7 20V18C7 17.3438 7.12642 16.717 7.35625 16.1429M7.35625 16.1429C8.0935 14.301 9.89482 13 12 13C14.1052 13 15.9065 14.301 16.6438 16.1429M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" />
+              </svg>
+            </div>
+            <h3>Community</h3>
+            <p>Official Discord</p>
+            <a href="https://discord.com/invite/lastwarsurvival" class="resource-btn" target="_blank" rel="noopener">
+              Discord
+            </a>
+          </article>
         </div>
-        <h3>Community</h3>
-        <p>Official Discord</p>
-        <a href="https://discord.com/invite/lastwarsurvival" class="resource-btn" target="_blank" rel="noopener">
-          Discord
-        </a>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -1796,7 +1856,7 @@
       <div class="footer-grid">
         <div class="footer-section">
           <h4>About Server 743</h4>
-          <p>Tips and strategies for Last War players on Server 743. Community-driven guides to help you.</p>
+          <p>Tips and strategies for Last War players. Community-driven guides to help you.</p>
         </div>
         <div class="footer-section">
           <h4>Quick Links</h4>
@@ -1817,554 +1877,16 @@
       <div class="footer-inner">
         <small>© <span id="year"></span> Last War 743. Unofficial fan site.</small>
         <ul class="footer-nav">
-          <li><a href="privacy-terms.html">Privacy</a></li>
-          <li><a href="privacy-terms.html">Terms</a></li>
+          <li><a href="privacy-terms.html#privacy">Privacy</a></li>
+          <li><a href="privacy-terms.html#terms">Terms</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </footer>
-  <script>
-
-
-    // Calcul du nombre de jours depuis le 21 juillet 2024
-    function calculateDaysSinceStart() {
-      const startDate = new Date('2024-07-20T00:00:00');
-      const today = new Date();
-
-      // Calcul de la différence en jours
-      const timeDiff = today.getTime() - startDate.getTime();
-      const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
-
-      return Math.max(1, daysDiff); // Au minimum 1 jour
-    }
-
-    // Animated counters (runs once when visible)
-    const counters = document.querySelectorAll('.num[data-count]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          let target;
-
-          // Cas spécial pour le compteur auto
-          if (el.getAttribute('data-count') === 'auto') {
-            target = calculateDaysSinceStart();
-          } else {
-            // Compteurs normaux
-            target = parseInt(el.getAttribute('data-count'), 10) || 0;
-          }
-
-          animateCount(el, target, 900);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.6 });
-
-    counters.forEach(c => observer.observe(c));
-
-    function animateCount(el, target, duration) {
-      const startTime = performance.now();
-      function step(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.floor(progress * target);
-        el.textContent = value;
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target;
-        }
-      }
-      requestAnimationFrame(step);
-    }
-  </script>
-  <script>
-    // Arms Race Section
-    class ArmsRaceTracker {
-      constructor() {
-        // Date de référence: 23 octobre 2025 = Jour 3/7
-        // On utilise le 21 octobre 2025 comme Jour 1/7 à 00:00 UTC-2
-        this.referenceDate = new Date('2025-10-21T00:00:00-02:00');
-
-        // game UTC server
-        this.serverUTCOffset = -2; // UTC-2
-
-        this.events = [
-          'Hero Advancement',
-          'City Building',
-          'Unit Progression',
-          'Tech Research',
-          'Drone Boost'
-        ];
-
-        // 7 days cycle
-        this.dayCycle = [
-          [0, 1, 2, 3, 4, 0],     // Day 1
-          [1, 2, 3, 4, 0, 1],     // Day 2  
-          [2, 3, 4, 0, 1, 2],     // Day 3
-          [3, 4, 0, 1, 2, 3],     // Day 4
-          [4, 0, 1, 2, 3, 4],     // Day 5
-          [0, 1, 2, 3, 4, 0],     // Day 6
-          [1, 2, 3, 4, 0, 1]      // Day 7
-        ];
-      }
-
-      // Obtenir l'offset UTC de l'utilisateur en heures
-      getUserUTCOffset() {
-        return -new Date().getTimezoneOffset() / 60;
-      }
-
-      // Calculer la différence entre l'utilisateur et le serveur
-      getTimeDifference() {
-        const userOffset = this.getUserUTCOffset();
-        const serverOffset = this.serverUTCOffset;
-        return userOffset - serverOffset; // Différence en heures
-      }
-
-      // Obtenir l'heure serveur actuelle
-      getServerTime() {
-        const now = new Date();
-        const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-        return new Date(utcTime + (this.serverUTCOffset * 3600000));
-      }
-
-      // Calculer le jour Arms Race actuel (1-7)
-      getCurrentArmsRaceDay() {
-        const serverNow = this.getServerTime();
-        const serverDayStart = new Date(serverNow);
-        serverDayStart.setHours(0, 0, 0, 0);
-
-        const refDayStart = new Date(this.referenceDate);
-        refDayStart.setHours(0, 0, 0, 0);
-
-        const daysDiff = Math.floor((serverDayStart - refDayStart) / (24 * 60 * 60 * 1000));
-        return ((daysDiff % 7) + 7) % 7 + 1;
-      }
-
-      // Obtenir l'heure de début du jour en heure locale (00:00 serveur + différence)
-      getLocalDayStart() {
-        const now = new Date();
-        const localDayStart = new Date(now);
-        localDayStart.setHours(0, 0, 0, 0);
-
-        // Ajouter la différence de temps
-        const timeDiff = this.getTimeDifference();
-        localDayStart.setHours(localDayStart.getHours() + timeDiff);
-
-        // Si on est avant l'heure de début, prendre le jour précédent
-        if (now < localDayStart) {
-          localDayStart.setDate(localDayStart.getDate() - 1);
-        }
-
-        return localDayStart;
-      }
-
-      // Obtenir l'index de l'événement actuel (0-5)
-      getCurrentEventIndex() {
-        const now = new Date();
-        const dayStart = this.getLocalDayStart();
-        const timeSinceStart = now - dayStart;
-        const eventIndex = Math.floor(timeSinceStart / (4 * 60 * 60 * 1000)); // 4 hours
-
-        return Math.min(Math.max(eventIndex, 0), 5);
-      }
-
-      // Obtenir l'heure de début et fin d'un événement en heure locale
-      getEventTimeRange(eventIndex) {
-        const dayStart = this.getLocalDayStart();
-        const eventStart = new Date(dayStart);
-        eventStart.setHours(eventStart.getHours() + (eventIndex * 4));
-
-        const eventEnd = new Date(eventStart);
-        eventEnd.setHours(eventEnd.getHours() + 4);
-
-        return {
-          start: eventStart.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' }),
-          end: eventEnd.toLocaleTimeString('en-EN', { hour: '2-digit', minute: '2-digit' })
-        };
-      }
-
-      // Temps restant avant la fin de l'événement
-      getTimeRemaining(eventIndex) {
-        const dayStart = this.getLocalDayStart();
-        const eventEnd = new Date(dayStart);
-        eventEnd.setHours(eventEnd.getHours() + ((eventIndex + 1) * 4));
-
-        return eventEnd - new Date();
-      }
-
-      formatTimeRemaining(ms) {
-        if (ms <= 0) return "Terminé";
-        const hours = Math.floor(ms / (1000 * 60 * 60));
-        const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-        return `Ending in ${hours}h ${minutes.toString().padStart(2, '0')}m`;
-      }
-
-      formatTimezoneOffset(offset) {
-        const sign = offset >= 0 ? '+' : '';
-        return `UTC${sign}${offset}`;
-      }
-
-      getTodaysEvents() {
-        const currentIndex = this.getCurrentEventIndex();
-        const armsRaceDay = this.getCurrentArmsRaceDay();
-        const dayEvents = this.dayCycle[armsRaceDay - 1];
-
-        const events = [];
-        for (let i = 0; i < dayEvents.length; i++) {
-          const eventTypeIndex = dayEvents[i];
-          const eventName = this.events[eventTypeIndex];
-          const timeRange = this.getEventTimeRange(i);
-
-          let status = 'upcoming';
-          if (i < currentIndex) {
-            status = 'completed';
-          } else if (i === currentIndex) {
-            status = 'current';
-          }
-
-          events.push({
-            number: i + 1,
-            name: eventName,
-            timeRange,
-            status,
-            index: i
-          });
-        }
-
-        return {
-          armsRaceDay,
-          currentEvent: events.find(e => e.status === 'current'),
-          events
-        };
-      }
-    }
-
-    const tracker = new ArmsRaceTracker();
-
-    function updateDisplay() {
-      const userOffset = tracker.getUserUTCOffset();
-      const serverOffset = tracker.serverUTCOffset;
-      const timeDiff = tracker.getTimeDifference();
-
-      document.getElementById('timezoneInfo').innerHTML =
-        `<strong>Your time zone: </strong>${tracker.formatTimezoneOffset(userOffset)} • ` +
-        `<strong>Server: </strong>${tracker.formatTimezoneOffset(serverOffset)} • ` +
-        `<strong>Time offset: </strong>${timeDiff}h`;
-
-      const data = tracker.getTodaysEvents();
-      const currentDate = new Date().toLocaleDateString('en-EN', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
-      document.getElementById('currentDate').textContent = currentDate;
-      document.getElementById('armsRaceDay').textContent = `day ${data.armsRaceDay}/7`;
-
-      if (data.currentEvent) {
-        document.getElementById('currentEventName').textContent = data.currentEvent.name;
-        const timeRemaining = tracker.getTimeRemaining(data.currentEvent.index);
-        document.getElementById('countdown').textContent = tracker.formatTimeRemaining(timeRemaining);
-      } else {
-        document.getElementById('currentEventName').textContent = "No event in progress";
-        document.getElementById('countdown').textContent = "";
-      }
-
-      const eventsList = document.getElementById('eventsList');
-      eventsList.innerHTML = '';
-
-      data.events.forEach(event => {
-        const eventDiv = document.createElement('div');
-        eventDiv.className = `event ${event.status}`;
-
-        const statusClass = `status-${event.status}`;
-        const statusText = event.status === 'current' ? 'ACTUAL' :
-          event.status === 'completed' ? 'FINISHED' : 'NEXT';
-
-        eventDiv.innerHTML = `
-                    <div class="event-number">${event.number}</div>
-                    <div class="event-content">
-                        <div class="event-name">${event.name}</div>
-                        <div class="event-time">${event.timeRange.start} - ${event.timeRange.end}</div>
-                    </div>
-                    <div class="event-status ${statusClass}">${statusText}</div>
-                `;
-
-        eventsList.appendChild(eventDiv);
-      });
-
-      document.getElementById('lastUpdate').textContent =
-        `Last update: ${new Date().toLocaleTimeString('en-EN')}`;
-
-      // Info de debug
-      const serverTime = tracker.getServerTime();
-      const dayStart = tracker.getLocalDayStart();
-      document.getElementById('debugInfo').textContent =
-        `Time server: ${serverTime.toLocaleTimeString('en-EN')} • ` +
-        `cycle start: ${dayStart.toLocaleTimeString('en-EN')}`;
-    }
-
-
-
-
-
-    updateDisplay();
-    setInterval(updateDisplay, 600);
-  </script>
-  <script>
-    // Basic UI interactions and enhancements
-    document.addEventListener('DOMContentLoaded', function () {
-      // Year in footer
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Mobile nav toggle
-      const navToggle = document.getElementById('nav-toggle');
-      const navList = document.getElementById('nav-list');
-      if (navToggle && navList) {
-        navToggle.addEventListener('click', function () {
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', String(!expanded));
-          navList.classList.toggle('show');
-        });
-        // Close nav when a link is clicked (mobile)
-        navList.addEventListener('click', function (e) {
-          if (e.target.tagName === 'A' && navList.classList.contains('show')) {
-            navList.classList.remove('show');
-            navToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-
-      // Strategy tabs
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-          const strategy = this.getAttribute('data-strategy');
-
-          // Update buttons
-          tabBtns.forEach(b => {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          });
-          this.classList.add('active');
-          this.setAttribute('aria-selected', 'true');
-
-          // Update content
-          document.querySelectorAll('.strategy-content').forEach(content => {
-            content.classList.remove('active');
-          });
-          const targetContent = document.getElementById(strategy);
-          if (targetContent) {
-            targetContent.classList.add('active');
-          }
-        });
-      });
-
-
-
-      // Smooth scroll for anchor links with offset for fixed header
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            // Calculate the offset based on header height
-            const headerHeight = document.querySelector('.site-header').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-
-            window.scrollTo({
-              top: targetPosition - headerHeight - 20, // Additional 20px for breathing room
-              behavior: 'smooth'
-            });
-
-            // Update URL without jumping
-            history.pushState(null, null, href);
-          }
-        });
-      });
-
-      // Scroll reveal for cards
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-      document.querySelectorAll('.tip-card, .resource-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.5s ease-out';
-        revealObserver.observe(card);
-      });
-
-      // Active nav link highlight on scroll with offset
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-list a');
-
-      window.addEventListener('scroll', () => {
-        let current = '';
-        const headerHeight = document.querySelector('.site-header').offsetHeight;
-        const offset = headerHeight + 50; // Additional offset for better visibility
-
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= sectionTop - offset) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.style.color = 'var(--muted)';
-          link.style.background = 'transparent';
-          const href = link.getAttribute('href').slice(1);
-          if (href === current) {
-            link.style.color = '#fff';
-            link.style.background = 'rgba(255, 255, 255, 0.03)';
-          }
-        });
-      });
-
-      // Scroll to top button
-      const scrollBtn = document.createElement('button');
-      scrollBtn.innerHTML = '↑';
-      scrollBtn.setAttribute('aria-label', 'Scroll to top');
-      scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, var(--accent), var(--accent-light));
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        transition: all 0.3s;
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(14, 165, 163, 0.3);
-      `;
-      document.body.appendChild(scrollBtn);
-
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 400) {
-          scrollBtn.style.opacity = '1';
-        } else {
-          scrollBtn.style.opacity = '0';
-        }
-      });
-
-      scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      scrollBtn.addEventListener('mouseenter', () => {
-        scrollBtn.style.transform = 'scale(1.1)';
-        scrollBtn.style.boxShadow = '0 6px 20px rgba(14, 165, 163, 0.5)';
-      });
-
-      scrollBtn.addEventListener('mouseleave', () => {
-        scrollBtn.style.transform = 'scale(1)';
-        scrollBtn.style.boxShadow = '0 4px 12px rgba(14, 165, 163, 0.3)';
-      });
-    });
-
-    /**
-     * Animate numeric count from 0 to target.
-     * @param {HTMLElement} el
-     * @param {number} target
-     * @param {number} duration in ms
-     */
-    function animateCount(el, target, duration) {
-      const startTime = performance.now();
-      function step(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.floor(progress * target);
-        el.textContent = value;
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target;
-        }
-      }
-      requestAnimationFrame(step);
-    }
-  </script>
-  <script>
-    // Strategy tabs functionality
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const strategyContents = document.querySelectorAll('.strategy-content');
-
-    // Fonction pour changer d'onglet
-    function switchTab(strategyId) {
-      // Mettre à jour les boutons
-      tabBtns.forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-        if (btn.getAttribute('data-strategy') === strategyId) {
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected', 'true');
-        }
-      });
-
-      // Mettre à jour le contenu
-      strategyContents.forEach(content => {
-        content.classList.remove('active');
-        if (content.id === strategyId) {
-          content.classList.add('active');
-        }
-      });
-    }
-
-    // Ajouter les event listeners
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const strategy = this.getAttribute('data-strategy');
-        switchTab(strategy);
-      });
-    });
-
-    // Optionnel: Navigation au clavier pour l'accessibilité
-    tabBtns.forEach(btn => {
-      btn.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const strategy = this.getAttribute('data-strategy');
-          switchTab(strategy);
-        }
-
-        // Navigation avec les flèches
-        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-          e.preventDefault();
-          const currentIndex = Array.from(tabBtns).indexOf(this);
-          let nextIndex;
-
-          if (e.key === 'ArrowRight') {
-            nextIndex = (currentIndex + 1) % tabBtns.length;
-          } else {
-            nextIndex = (currentIndex - 1 + tabBtns.length) % tabBtns.length;
-          }
-
-          const nextStrategy = tabBtns[nextIndex].getAttribute('data-strategy');
-          switchTab(nextStrategy);
-          tabBtns[nextIndex].focus(); // Donne le focus au nouvel onglet
-        }
-      });
-    });
-  </script>
+<script nomodule>
+    console.warn('Your browser does not support ES6 modules. Please update your browser.');
+</script>
 
 </body>
 

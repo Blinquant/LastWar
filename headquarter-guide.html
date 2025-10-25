@@ -1,1101 +1,1209 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Headquarter Guide - Last War 743</title>
-  <meta name="description" content="Master HQ progression from level 31 to 35 in Last War. Learn building requirements and oil research strategies for Server 743." />
-  <meta name="theme-color" content="#05060a">
-  <style>
-    /* Basic reset and variables */
-:root{
-  --max-width: 1100px;
-  --accent: #0ea5a3;
-  --accent-light: #14b8b6;
-  --bg: #0b1020;
-  --card: #0e1422;
-  --muted: #9aa3b2;
-  --radius: 10px;
-  --gap: 1.25rem;
-  --container-padding: 1rem;
-}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Headquarter Guide - Last War 743</title>
+    <meta name="description"
+        content="Master HQ progression from level 31 to 35 in Last War. Learn building requirements and oil research strategies for Server 743." />
+    <meta name="theme-color" content="#05060a">
+    <style>
+        /* Basic reset and variables */
+        :root {
+            --max-width: 1100px;
+            --accent: #0ea5a3;
+            --accent-light: #14b8b6;
+            --bg: #0b1020;
+            --card: #0e1422;
+            --muted: #9aa3b2;
+            --radius: 10px;
+            --gap: 1.25rem;
+            --container-padding: 1rem;
+        }
 
-*{box-sizing:border-box}
-html,body{height:100%; margin:0; padding:0}
-body{
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  /* Dégradé plus progressif */
-  background: linear-gradient(
-    180deg, 
-    #05060a 0%, 
-    #080c18 25%, 
-    #0b1020 50%, 
-    #080c18 75%, 
-    #05060a 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  color:#e6eef6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-  min-height: 100vh;
-}
+        * {
+            box-sizing: border-box
+        }
 
-    /* Layout container */
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding: 1.25rem var(--container-padding);
-    }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
 
-    /* Header */
-    .site-header{
-      position:fixed;
-      top:0;
-      left: 0%;
-      right: 0%;
-      z-index:1000;
-      backdrop-filter: blur(8px);
-      background: rgba(6,8,15,0.35);;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-      padding: 0.5rem 2rem;
-    }
-    main{
-      padding-top: 6rem; 
-    }
-    
-    .header-inner{
-      display:flex;
-      gap:var(--gap);
-      align-items:center;
-      justify-content:space-between;
-    }
-    .logo{
-      font-weight:700;
-      font-size:1.25rem;
-      color:var(--accent);
-      text-decoration:none;
-    }
-    .server-badge{
-      background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      color:#fff;
-      padding:0.25rem 0.6rem;
-      border-radius:6px;
-      font-size:0.8rem;
-      margin-left:0.5rem;
-      font-weight:600;
-    }
-    .main-nav { display:flex; align-items:center; gap:1rem;}
-    
-    /* Croix de navigation */
-    .close-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .close-nav:hover {
-      background: rgba(255,255,255,0.03);
-      transform: scale(1.05);
-    }
-    
-    .close-nav::before, .close-nav::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      background-color: #fff;
-      border-radius: 1px;
-      box-shadow: 0 0 8px rgba(255,255,255,0.5);
-    }
-    
-    .close-nav::before {
-      transform: rotate(45deg);
-    }
-    
-    .close-nav::after {
-      transform: rotate(-45deg);
-    }
-    
-    /* Animation de pulse très douce */
-    @keyframes gentle-pulse {
-      0%, 100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
-      }
-      50% {
-        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
-      }
-    }
-    
-    .close-nav {
-      animation: gentle-pulse 4s infinite;
-    }
+        body {
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            /* Dégradé plus progressif */
+            background: linear-gradient(180deg,
+                    #05060a 0%,
+                    #080c18 25%,
+                    #0b1020 50%,
+                    #080c18 75%,
+                    #05060a 100%);
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: #e6eef6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
 
-    /* Hero */
-    .hero{
-      padding:3.25rem 0;
-    }
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1fr 480px;
-      gap:2rem;
-      align-items:center;
-    }
-    .hero-copy h1{
-      font-size:clamp(2rem,4vw,3rem);
-      margin:0 0 0.5rem 0;
-      letter-spacing: -0.02em;
-    }
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 1.5rem 0;
-    }
-    .hero-cta{
-      display:flex;
-      gap:0.75rem;
-    }
+        /* Layout container */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.25rem var(--container-padding);
+        }
 
-    /* Buttons */
-    .btn{
-      display:inline-block;
-      padding:0.65rem 1rem;
-      border-radius:8px;
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,0.06);
-      background:transparent;
-      color:inherit;
-      font-weight:600;
-      transition: all 0.2s;
-      cursor:pointer;
-    }
-    .btn.primary{
-      background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      color:#fff;
-      border:0;
-    }
-    .btn.primary:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(14,165,163,0.3);
-    }
-    .btn.ghost{
-      background:transparent;
-      color:var(--accent);
-      border:1px solid rgba(14,165,163,0.3);
-    }
-    .btn.ghost:hover{
-      background:rgba(14,165,163,0.1);
-    }
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0%;
+            right: 0%;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            background: rgba(6, 8, 15, 0.35);
+            ;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 0.5rem 2rem;
+        }
 
-    /* Sections */
-    .section{ padding:2rem 0; }
-    .section h2{
-      font-size:2rem;
-      margin:0 0 1.5rem 0;
-      letter-spacing:-0.02em;
-    }
+        main {
+            padding-top: 6rem;
+        }
 
-    /* Guide Content */
-    .guide-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .guide-intro {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
-      margin-bottom: 2rem;
-    }
-    
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .guide-card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
-      transition: all 0.3s;
-    }
-    
-    .guide-card:hover {
-      border-color: rgba(14,165,163,0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(14,165,163,0.15);
-    }
-    
-    .guide-card h3 {
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-    
-    .guide-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .guide-list li {
-      padding: 0.4rem 0;
-      padding-left: 1.25rem;
-      position: relative;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    
-    .guide-list li:before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    
-    .strategy-section {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
-      margin-bottom: 2rem;
-    }
-    
-    .strategy-section h3 {
-      color: #fff;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    
-    .strategy-steps {
-      background: rgba(14,165,163,0.05);
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid rgba(14,165,163,0.1);
-      margin-top: 1.5rem;
-    }
-    
-    .strategy-steps h4 {
-      color: var(--accent);
-      margin: 0 0 1rem 0;
-      font-size: 1.25rem;
-    }
-    
-    .strategy-steps ol {
-      margin: 0;
-      padding-left: 1.5rem;
-    }
-    
-    .strategy-steps li {
-      padding: 0.5rem 0;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    
-    .strategy-steps strong {
-      color: #fff;
-    }
-    
-    /* Building Requirements */
-    .requirements-grid {
-      display: grid;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .hq-level {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    
-    .hq-level h4 {
-      color: var(--accent);
-      margin: 0 0 1rem 0;
-      font-size: 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      padding-bottom: 0.5rem;
-    }
-    
-    .building-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .building-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-    
-    .building-item:last-child {
-      border-bottom: none;
-    }
-    
-    .building-info {
-      flex: 1;
-    }
-    
-    .building-name {
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-    
-    .building-level {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    
-    /* Building Images */
-    .building-images {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    
-    .building-image {
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      flex-shrink: 0;
-    }
-    
-    .building-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: rgba(14,165,163,0.05);
-      padding: 2px;
-    }
-    
-    /* Multiple images container */
-    .multi-images {
-      display: flex;
-      gap: 0.5rem;
-    }
-    
-    #researchNeeded {
-      color: #c58401;
-      font-weight: 700;
-    }
+        .header-inner {
+            display: flex;
+            gap: var(--gap);
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    /* Timeline */
-    .timeline {
-      position: relative;
-      margin: 2rem 0;
-    }
-    
-    .timeline-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    
-    .timeline-marker {
-      width: 20px;
-      height: 20px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .timeline-content {
-      flex: 1;
-      background: var(--card);
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    
-    .timeline-time {
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 2rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-    
-    .back-link:hover {
-      color: var(--accent-light);
-      gap: 0.75rem;
-    }
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    /* Footer */
-    .site-footer{ 
-      border-top:1px solid rgba(255,255,255,0.03); 
-      padding:2rem 0; 
-      margin-top:3rem; 
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:2rem;
-      margin-bottom:2rem;
-    }
-    .footer-section h4{
-      color:var(--accent);
-      margin:0 0 0.75rem 0;
-      font-size:1rem;
-    }
-    .footer-section p,
-    .footer-section a{
-      color:var(--muted);
-      font-size:0.9rem;
-      text-decoration:none;
-      display:block;
-      line-height:1.8;
-    }
-    .footer-section a:hover{
-      color:#fff;
-    }
-    .footer-inner{
-      display:flex;
-      gap:1rem;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      color:var(--muted);
-      padding-top:1.5rem;
-      border-top:1px solid rgba(255,255,255,0.03);
-    }
-    .footer-nav{
-      list-style:none;
-      display:flex;
-      gap:0.75rem;
-      margin:0;
-      padding:0;
-    }
-    .footer-nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:0.9rem;
-    }
-    .footer-nav a:hover{
-      color:#fff;
-    }
+        .server-badge {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            color: #fff;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
 
-    /* Responsive rules */
-    @media (max-width: 980px){
-      .hero-art{ display:none; }
-      .hero-inner{ grid-template-columns: 1fr; }
-      .guide-grid{ grid-template-columns: 1fr; }
-      .footer-grid{ grid-template-columns: repeat(2,1fr); }
-    }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    @media (max-width: 700px){
-      .site-header {padding: 0rem 1rem;}
-      .container { padding: 1rem;}
-      .hero-art{ display:none; }
-      .hero{ padding:2rem 0; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .strategy-section{ padding:1.25rem; }
-      .guide-intro{ padding:1.25rem; }
-      .hq-level{ padding:1.25rem; }
-      
-      /* Mobile layout for building items */
-      .building-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-        text-align: center;
-      }
-      
-      .building-info {
-        width: 100%;
-        text-align: center;
-      }
-      
-      .building-images {
-        justify-content: center;
-        width: 100%;
-      }
-      
-      .building-image {
-        width: 3rem;
-        height: 3rem;
-      }
-      
-      .multi-images {
-        justify-content: center;
-        width: 100%;
-      }
-    }
+        /* Croix de navigation */
+        .close-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-    @media (max-width: 480px){
-      .building-image {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-      
-      .multi-images {
-        gap: 0.25rem;
-      }
-    }
+        .close-nav:hover {
+            background: rgba(255, 255, 255, 0.03);
+            transform: scale(1.05);
+        }
 
-    /* Utility */
-    .muted{ color:var(--muted); font-size:0.95rem; }
-  </style>
+        .close-nav::before,
+        .close-nav::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 1px;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .close-nav::before {
+            transform: rotate(45deg);
+        }
+
+        .close-nav::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Animation de pulse très douce */
+        @keyframes gentle-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .close-nav {
+            animation: gentle-pulse 4s infinite;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 3.25rem 0;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 480px;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.65rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: transparent;
+            color: inherit;
+            font-weight: 600;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            color: #fff;
+            border: 0;
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 163, 0.3);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid rgba(14, 165, 163, 0.3);
+        }
+
+        .btn.ghost:hover {
+            background: rgba(14, 165, 163, 0.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        /* Guide Content */
+        .guide-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .guide-intro {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 2rem;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.3s;
+        }
+
+        .guide-card:hover {
+            border-color: rgba(14, 165, 163, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 163, 0.15);
+        }
+
+        .guide-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .guide-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .guide-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .guide-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .strategy-section {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 2rem;
+        }
+
+        .strategy-section h3 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .strategy-steps {
+            background: rgba(14, 165, 163, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(14, 165, 163, 0.1);
+            margin-top: 1.5rem;
+        }
+
+        .strategy-steps h4 {
+            color: var(--accent);
+            margin: 0 0 1rem 0;
+            font-size: 1.25rem;
+        }
+
+        .strategy-steps ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .strategy-steps li {
+            padding: 0.5rem 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .strategy-steps strong {
+            color: #fff;
+        }
+
+        /* Building Requirements */
+        .requirements-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .hq-level {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .hq-level h4 {
+            color: var(--accent);
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .building-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .building-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .building-item:last-child {
+            border-bottom: none;
+        }
+
+        .building-info {
+            flex: 1;
+        }
+
+        .building-name {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .building-level {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Building Images */
+        .building-images {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .building-image {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .building-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(14, 165, 163, 0.05);
+            padding: 2px;
+        }
+
+        /* Multiple images container */
+        .multi-images {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        #researchNeeded {
+            color: #c58401;
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-marker {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .timeline-time {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-light);
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+
+        .footer-section p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .footer-section a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: block;
+            /* Garder block pour l'alignement vertical */
+            line-height: 1.8;
+            margin-right: 0;
+            transition: color 0.2s ease;
+            width: fit-content;
+            width: -moz-fit-content;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-inner {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: var(--muted);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-nav a:hover {
+            color: #fff;
+        }
+
+        /* Responsive rules */
+        @media (max-width: 980px) {
+            .hero-art {
+                display: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .site-header {
+                padding: 0rem 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .hero-art {
+                display: none;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-section {
+                padding: 1.25rem;
+            }
+
+            .guide-intro {
+                padding: 1.25rem;
+            }
+
+            .hq-level {
+                padding: 1.25rem;
+            }
+
+            /* Mobile layout for building items */
+            .building-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            .building-info {
+                width: 100%;
+                text-align: center;
+            }
+
+            .building-images {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .building-image {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .multi-images {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section p {
+                margin: 0 5rem;
+            }
+
+            .footer-section a {
+                display: block;
+                width: max-content;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .building-image {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .multi-images {
+                gap: 0.25rem;
+            }
+        }
+
+        /* Utility */
+        .muted {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html">
-        Last War 743
-      </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html" class="close-nav" aria-label="Return to home page"></a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 id="hero-title">Headquarter 31-35 Guide</h1>
-          <p class="subtitle">Master HQ progression from level 31 to 35 with Season 2 updates. Learn building requirements and oil research strategies.</p>
-          <div class="hero-cta">
-            <a class="btn primary" href="#progression">Progression Timeline</a>
-            <a class="btn ghost" href="#requirements">Building Requirements</a>
-          </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">
+                Last War 743
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="close-nav" aria-label="Return to home page"></a>
+            </nav>
         </div>
-        <div class="hero-art">
-          <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Ligne décorative simple -->
-            <line x1="60" y1="160" x2="420" y2="160" 
-                  stroke="rgba(14,165,163,0.2)" 
-                  stroke-width="1"/>
-          </svg>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Headquarter 31-35 Guide</h1>
+                    <p class="subtitle">Master HQ progression from level 31 to 35 with Season 2 updates. Learn building
+                        requirements and oil research strategies.</p>
+                    <div class="hero-cta">
+                        <a class="btn primary" href="#progression">Progression Timeline</a>
+                        <a class="btn ghost" href="#requirements">Building Requirements</a>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Ligne décorative simple -->
+                        <line x1="60" y1="160" x2="420" y2="160" stroke="rgba(14,165,163,0.2)" stroke-width="1" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Content -->
+        <section class="section guide">
+            <div class="container">
+                <div class="guide-content">
+                    <div class="guide-intro">
+                        <h2>Requirements for HQ Levels 31 to 35</h2>
+                        <p>With the Season 2 Celebration update and its new research tree The Age of Oil, it is now
+                            possible to upgrade the HQ up to level 35.</p>
+                    </div>
+
+                    <div id="unlock" class="strategy-section">
+                        <h3>Unlocking HQ 31-35 Upgrade</h3>
+                        <p>To access this feature, you must first complete the "HQ Expansion Lv1" research in The Age of
+                            Oil tree.</p>
+
+                        <div id="progression" class="strategy-steps">
+                            <h4>Observed Progression</h4>
+                            <p>HQ progression beyond level 30 mainly depends on oil production, limited per hour. Here
+                                is the observed progression without purchases:</p>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">1 week and 4 hours</div>
+                                        <p>Start of Oil Output I research - Level 10</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">2 weeks and 4 hours</div>
+                                        <p>Start of Oil Output II - Level 4, with 50,000 oil units remaining</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">3 weeks and 4 hours</div>
+                                        <p>Start of Oil Output II - Level 8</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">4 weeks and 4 hours</div>
+                                        <p>Start of Oil Output III - Level 1</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">5 weeks and 4 hours</div>
+                                        <p>Start of Oil Output III - Level 10, with 130,000 oil units remaining</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-time">6 weeks+</div>
+                                        <p>Start of HQ 31 upgrade, without oil purchases</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="requirements" class="strategy-section">
+                        <h3>Building Requirements for HQ Levels 31 to 35</h3>
+
+                        <div class="requirements-grid">
+                            <!-- HQ Level 31 -->
+                            <div class="hq-level">
+                                <h4>HQ Level 31</h4>
+                                <ul class="building-list">
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Research Center</div>
+                                            <div class="building-level">Level 30</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/researchCenter.webp" alt="Research Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Tank, Aircraft or Missile Center</div>
+                                            <div class="building-level">Level 30</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="multi-images">
+                                                <div class="building-image">
+                                                    <img src="img/tankCenter.webp" alt="Tank Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/aircraftCenter.webp" alt="Aircraft Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/missileCenter.webp" alt="Missile Center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Barracks</div>
+                                            <div class="building-level">Level 30</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/barracks.webp" alt="Barracks">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div id="researchNeeded" class="building-name">HQ Expansion Lv1</div>
+                                            <div class="building-level">Research required</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- HQ Level 32 -->
+                            <div class="hq-level">
+                                <h4>HQ Level 32</h4>
+                                <ul class="building-list">
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Research Center</div>
+                                            <div class="building-level">Level 31</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/researchCenter.webp" alt="Research Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Tank, Aircraft or Missile Center</div>
+                                            <div class="building-level">Level 31</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="multi-images">
+                                                <div class="building-image">
+                                                    <img src="img/tankCenter.webp" alt="Tank Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/aircraftCenter.webp" alt="Aircraft Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/missileCenter.webp" alt="Missile Center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Barracks</div>
+                                            <div class="building-level">Level 31</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/barracks.webp" alt="Barracks">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Wall</div>
+                                            <div class="building-level">Level 31</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/wall.webp" alt="Wall">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- HQ Level 33 -->
+                            <div class="hq-level">
+                                <h4>HQ Level 33</h4>
+                                <ul class="building-list">
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Research Center</div>
+                                            <div class="building-level">Level 32</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/researchCenter.webp" alt="Research Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Tank, Aircraft or Missile Center</div>
+                                            <div class="building-level">Level 32</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="multi-images">
+                                                <div class="building-image">
+                                                    <img src="img/tankCenter.webp" alt="Tank Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/aircraftCenter.webp" alt="Aircraft Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/missileCenter.webp" alt="Missile Center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Barracks</div>
+                                            <div class="building-level">Level 32</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/barracks.webp" alt="Barracks">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Hospital</div>
+                                            <div class="building-level">Level 32</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/hospital.webp" alt="Hospital">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Drill Ground</div>
+                                            <div class="building-level">Level 32</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/drillGround.webp" alt="Drill Ground">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- HQ Level 34 -->
+                            <div class="hq-level">
+                                <h4>HQ Level 34</h4>
+                                <ul class="building-list">
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Research Center</div>
+                                            <div class="building-level">Level 33</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/researchCenter.webp" alt="Research Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Tank, Aircraft or Missile Center</div>
+                                            <div class="building-level">Level 33</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="multi-images">
+                                                <div class="building-image">
+                                                    <img src="img/tankCenter.webp" alt="Tank Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/aircraftCenter.webp" alt="Aircraft Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/missileCenter.webp" alt="Missile Center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Barracks</div>
+                                            <div class="building-level">Level 33</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/barracks.webp" alt="Barracks">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Wall</div>
+                                            <div class="building-level">Level 33</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/wall.webp" alt="Wall">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Alliance Center</div>
+                                            <div class="building-level">Level 33</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/allianceCenter.webp" alt="Alliance Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- HQ Level 35 -->
+                            <div class="hq-level">
+                                <h4>HQ Level 35</h4>
+                                <ul class="building-list">
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Research Center</div>
+                                            <div class="building-level">Level 34</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/researchCenter.webp" alt="Research Center">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Tank, Aircraft or Missile Center</div>
+                                            <div class="building-level">Level 34</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="multi-images">
+                                                <div class="building-image">
+                                                    <img src="img/tankCenter.webp" alt="Tank Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/aircraftCenter.webp" alt="Aircraft Center">
+                                                </div>
+                                                <div class="building-image">
+                                                    <img src="img/missileCenter.webp" alt="Missile Center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Barracks</div>
+                                            <div class="building-level">Level 34</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/barracks.webp" alt="Barracks">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Hospital</div>
+                                            <div class="building-level">Level 34</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/hospital.webp" alt="Hospital">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="building-item">
+                                        <div class="building-info">
+                                            <div class="building-name">Drill Ground</div>
+                                            <div class="building-level">Level 34</div>
+                                        </div>
+                                        <div class="building-images">
+                                            <div class="building-image">
+                                                <img src="img/drillGround.webp" alt="Drill Ground">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="back-link">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Back to Main Page
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Server 743</h4>
+                    <p>Tips and strategies for Last War players. Community-driven guides to help you.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>HQ Guides</h4>
+                    <a href="#unlock">Unlock Requirements</a>
+                    <a href="#requirements">Building Requirements</a>
+                    <a href="#progression">Progression Timeline</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <a href="https://fr.wikipedia.org/wiki/743">743</a>
+                    <a href="https://www.lastwartutorial.com/">Tutorial</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Game Links</h4>
+                    <a href="https://www.lastwar.com/en/home.html?1758595519518">Official Site</a>
+                </div>
+            </div>
+            <div class="footer-inner">
+                <small>© <span id="year"></span> Last War 743. Unofficial fan site.</small>
+                <ul class="footer-nav">
+                    <li><a href="privacy-terms.html#privacy">Privacy</a></li>
+                    <li><a href="privacy-terms.html#terms">Terms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Guide Content -->
-    <section class="section guide">
-      <div class="container">
-        <div class="guide-content">
-          <div class="guide-intro">
-            <h2>Requirements for HQ Levels 31 to 35</h2>
-            <p>With the Season 2 Celebration update and its new research tree The Age of Oil, it is now possible to upgrade the HQ up to level 35.</p>
-          </div>
+    <script>
+        // Basic UI interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Year in footer
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-          <div id="unlock" class="strategy-section">
-            <h3>Unlocking HQ 31-35 Upgrade</h3>
-            <p>To access this feature, you must first complete the "HQ Expansion Lv1" research in The Age of Oil tree.</p>
-            
-            <div id="progression" class="strategy-steps">
-              <h4>Observed Progression</h4>
-              <p>HQ progression beyond level 30 mainly depends on oil production, limited per hour. Here is the observed progression without purchases:</p>
-              
-              <div class="timeline">
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">1 week and 4 hours</div>
-                    <p>Start of Oil Output I research - Level 10</p>
-                  </div>
-                </div>
-                
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">2 weeks and 4 hours</div>
-                    <p>Start of Oil Output II - Level 4, with 50,000 oil units remaining</p>
-                  </div>
-                </div>
-                
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">3 weeks and 4 hours</div>
-                    <p>Start of Oil Output II - Level 8</p>
-                  </div>
-                </div>
-                
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">4 weeks and 4 hours</div>
-                    <p>Start of Oil Output III - Level 1</p>
-                  </div>
-                </div>
-                
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">5 weeks and 4 hours</div>
-                    <p>Start of Oil Output III - Level 10, with 130,000 oil units remaining</p>
-                  </div>
-                </div>
-                
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">6 weeks+</div>
-                    <p>Start of HQ 31 upgrade, without oil purchases</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            // Smooth scroll for anchor links with offset for fixed header
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
 
-          <div id="requirements" class="strategy-section">
-            <h3>Building Requirements for HQ Levels 31 to 35</h3>
-            
-            <div class="requirements-grid">
-              <!-- HQ Level 31 -->
-              <div class="hq-level">
-                <h4>HQ Level 31</h4>
-                <ul class="building-list">
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Research Center</div>
-                      <div class="building-level">Level 30</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/researchCenter.webp" alt="Research Center">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Tank, Aircraft or Missile Center</div>
-                      <div class="building-level">Level 30</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="multi-images">
-                        <div class="building-image">
-                          <img src="img/tankCenter.webp" alt="Tank Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/aircraftCenter.webp" alt="Aircraft Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/missileCenter.webp" alt="Missile Center">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Barracks</div>
-                      <div class="building-level">Level 30</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/barracks.webp" alt="Barracks">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div id="researchNeeded" class="building-name">HQ Expansion Lv1</div>
-                      <div class="building-level">Research required</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        // Calculate the offset based on header height
+                        const headerHeight = document.querySelector('.site-header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
 
-              <!-- HQ Level 32 -->
-              <div class="hq-level">
-                <h4>HQ Level 32</h4>
-                <ul class="building-list">
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Research Center</div>
-                      <div class="building-level">Level 31</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/researchCenter.webp" alt="Research Center">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Tank, Aircraft or Missile Center</div>
-                      <div class="building-level">Level 31</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="multi-images">
-                        <div class="building-image">
-                          <img src="img/tankCenter.webp" alt="Tank Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/aircraftCenter.webp" alt="Aircraft Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/missileCenter.webp" alt="Missile Center">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Barracks</div>
-                      <div class="building-level">Level 31</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/barracks.webp" alt="Barracks">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Wall</div>
-                      <div class="building-level">Level 31</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/wall.webp" alt="Wall">
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                        window.scrollTo({
+                            top: targetPosition - headerHeight - 30, // 30px additional offset for breathing room
+                            behavior: 'smooth'
+                        });
 
-              <!-- HQ Level 33 -->
-              <div class="hq-level">
-                <h4>HQ Level 33</h4>
-                <ul class="building-list">
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Research Center</div>
-                      <div class="building-level">Level 32</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/researchCenter.webp" alt="Research Center">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Tank, Aircraft or Missile Center</div>
-                      <div class="building-level">Level 32</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="multi-images">
-                        <div class="building-image">
-                          <img src="img/tankCenter.webp" alt="Tank Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/aircraftCenter.webp" alt="Aircraft Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/missileCenter.webp" alt="Missile Center">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Barracks</div>
-                      <div class="building-level">Level 32</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/barracks.webp" alt="Barracks">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Hospital</div>
-                      <div class="building-level">Level 32</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/hospital.webp" alt="Hospital">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Drill Ground</div>
-                      <div class="building-level">Level 32</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/drillGround.webp" alt="Drill Ground">
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- HQ Level 34 -->
-              <div class="hq-level">
-                <h4>HQ Level 34</h4>
-                <ul class="building-list">
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Research Center</div>
-                      <div class="building-level">Level 33</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/researchCenter.webp" alt="Research Center">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Tank, Aircraft or Missile Center</div>
-                      <div class="building-level">Level 33</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="multi-images">
-                        <div class="building-image">
-                          <img src="img/tankCenter.webp" alt="Tank Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/aircraftCenter.webp" alt="Aircraft Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/missileCenter.webp" alt="Missile Center">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Barracks</div>
-                      <div class="building-level">Level 33</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/barracks.webp" alt="Barracks">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Wall</div>
-                      <div class="building-level">Level 33</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/wall.webp" alt="Wall">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Alliance Center</div>
-                      <div class="building-level">Level 33</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/allianceCenter.webp" alt="Alliance Center">
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- HQ Level 35 -->
-              <div class="hq-level">
-                <h4>HQ Level 35</h4>
-                <ul class="building-list">
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Research Center</div>
-                      <div class="building-level">Level 34</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/researchCenter.webp" alt="Research Center">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Tank, Aircraft or Missile Center</div>
-                      <div class="building-level">Level 34</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="multi-images">
-                        <div class="building-image">
-                          <img src="img/tankCenter.webp" alt="Tank Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/aircraftCenter.webp" alt="Aircraft Center">
-                        </div>
-                        <div class="building-image">
-                          <img src="img/missileCenter.webp" alt="Missile Center">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Barracks</div>
-                      <div class="building-level">Level 34</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/barracks.webp" alt="Barracks">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Hospital</div>
-                      <div class="building-level">Level 34</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/hospital.webp" alt="Hospital">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="building-item">
-                    <div class="building-info">
-                      <div class="building-name">Drill Ground</div>
-                      <div class="building-level">Level 34</div>
-                    </div>
-                    <div class="building-images">
-                      <div class="building-image">
-                        <img src="img/drillGround.webp" alt="Drill Ground">
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <a href="index.html" class="back-link">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Back to Main Page
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>About Server 743</h4>
-                <p>Tips and strategies for Last War players on Server 743. Community-driven guides to help you.</p>
-            </div>
-            <div class="footer-section">
-                <h4>HQ Guides</h4>
-                <a href="#unlock">Unlock Requirements</a>
-                <a href="#requirements">Building Requirements</a>
-                <a href="#progression">Progression Timeline</a>
-            </div>
-            <div class="footer-section">
-                <h4>Community</h4>
-                <a href="https://fr.wikipedia.org/wiki/743">743</a>
-                <a href="https://www.lastwartutorial.com/">Tutorial</a>
-            </div>
-            <div class="footer-section">
-                <h4>Game Links</h4>
-                <a href="https://www.lastwar.com/en/home.html?1758595519518">Official Site</a>
-            </div>
-        </div>
-        <div class="footer-inner">
-            <small>© <span id="year"></span> Last War 743. Unofficial fan site.</small>
-            <ul class="footer-nav">
-                <li><a href="privacy-terms.html#privacy">Privacy</a></li>
-                <li><a href="privacy-terms.html#terms">Terms</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-  <script>
-    // Basic UI interactions
-    document.addEventListener('DOMContentLoaded', function () {
-      // Year in footer
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Smooth scroll for anchor links with offset for fixed header
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-          
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            // Calculate the offset based on header height
-            const headerHeight = document.querySelector('.site-header').offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            
-            window.scrollTo({
-              top: targetPosition - headerHeight - 30, // 30px additional offset for breathing room
-              behavior: 'smooth'
+                        // Update URL without jumping
+                        history.pushState(null, null, href);
+                    }
+                });
             });
-            
-            // Update URL without jumping
-            history.pushState(null, null, href);
-          }
-        });
-      });
 
-      // Scroll reveal for cards
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            // Scroll reveal for cards
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-      document.querySelectorAll('.guide-card, .hq-level').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.5s ease-out';
-        revealObserver.observe(card);
-      });
-    });
-  </script>
+            document.querySelectorAll('.guide-card, .hq-level').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.5s ease-out';
+                revealObserver.observe(card);
+            });
+        });
+    </script>
 </body>
+
 </html>

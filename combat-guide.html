@@ -616,6 +616,22 @@
                 color: #fff;
             }
 
+            .troop-table td[data-label="Weak Against"] {
+                word-break: break-word;
+                min-height: auto;
+            }
+
+            .troop-table td[data-label="Weak Against"]:before {
+                min-width: 40%;
+                text-align: left;
+            }
+
+            .troop-table td[data-label="Weak Against"] {
+                text-align: right;
+                font-weight: 600;
+                color: #fff;
+            }
+
             .footer-section {
                 text-align: center;
             }
@@ -781,7 +797,7 @@
                             <tr>
                                 <td><strong>Mixed Army</strong></td>
                                 <td data-label="Strong Against">Balanced</td>
-                                <td data-label="Weak Against">Specialized counters</td>
+                                <td class="sc" data-label="Weak Against">Specialized counters</td>
                                 <td data-label="Best Use">
                                     <div class="best-use-content">
                                         General purpose, unpredictable

@@ -314,29 +314,164 @@
             margin: 0 auto;
         }
 
+        /* Gear Crafting Section*/
+        .gear-crafting-section {
+            background: var(--card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gear-crafting-section h2 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .gear-crafting-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        .gear-crafting-intro {
+            background: rgba(14, 165, 163, 0.05);
+            border: 1px solid rgba(14, 165, 163, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .gear-crafting-intro h3 {
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .rule-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(14, 165, 163, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .rule-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .rule-card h4 {
+            color: #fff;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .rule-card p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .gear-progression-overview {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .progression-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .progression-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            color: #fff;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(14, 165, 163, 0.3);
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .step-value {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
         .guide-intro {
             background: var(--card);
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             margin-bottom: 2rem;
-        }
-
-        /* Gear Crafting Section */
-        .gear-crafting-section {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            margin-bottom: 2rem;
-        }
-
-        .gear-crafting-section h2 {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            text-align: left;
         }
 
         .guide-intro p::before {
@@ -499,6 +634,368 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Hero Section*/
+        /* Hero Categories */
+        .hero-category {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(14, 165, 163, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(14, 165, 163, 0.2);
+        }
+
+        .category-icon img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .category-title {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .category-count {
+            color: var(--muted);
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-prioritization {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero-type {
+            display: none;
+        }
+
+
+        .hero-category-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-nav-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--muted);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-nav-btn.active {
+            background: rgba(14, 165, 163, 0.2);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .category-nav-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .hero-section {
+            background: var(--card);
+            padding: 2.5rem;
+            margin-top: 10rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h2 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .hero-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        .hero-intro {
+            background: rgba(14, 165, 162, 0.021);
+            border: 1px solid rgba(14, 165, 162, 0.37);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .hero-intro h3 {
+            color: rgb(255, 255, 255);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-intro .rules-grid p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .hero-intro .rules-grid p::before {
+            content: "• ";
+            color: var(--accent);
+        }
+
+        /* Hero Prioritization Section */
+        .hero-prioritization {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            border-color: rgba(14, 165, 163, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .hero-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-info {
+            flex: 1;
+        }
+
+        .hero-name {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .hero-details {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-rarity,
+        .hero-capacity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-type img,
+        .hero-rarity img,
+        .hero-capacity img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .hero-type span,
+        .hero-rarity span,
+        .hero-capacity span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .hero-skills {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .skill-image-container {
+            flex-shrink: 0;
+        }
+
+        .skill-image {
+            width: 100%;
+            max-width: 463px;
+            height: auto;
+            aspect-ratio: 463 / 122;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 0;
+        }
+
+        .skill-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .skill-numbers {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 1rem;
+            padding: 0 2.5rem;
+            height: 40px;
+            align-items: center;
+        }
+
+        .skill-number {
+            color: rgb(255, 255, 255);
+            font-weight: 700;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            background: rgba(14, 165, 162, 0.068);
+            border-radius: 20%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-number:nth-child(1) {
+            left: 12.5%;
+        }
+
+        .skill-number:nth-child(2) {
+            left: 37.5%;
+        }
+
+        .skill-number:nth-child(3) {
+            left: 62.5%;
+        }
+
+        .skill-number:nth-child(4) {
+            left: 87.5%;
+        }
+
+        .skill-priorities {
+            flex: 1;
+        }
+
+        .skill-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skill-table th {
+            background: rgba(14, 165, 163, 0.1);
+            color: var(--accent);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-table td {
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--muted);
+        }
+
+        .skill-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .skill-table tr:hover {
+            background: rgba(14, 165, 163, 0.05);
+        }
+
+        .skill-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem;
+            color: #fff;
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .skill-input:focus {
+            outline: none;
+            border-color: var(--accent);
         }
 
         /* Modal Styles */
@@ -741,6 +1238,15 @@
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .hero-skills {
+                flex-direction: column;
+            }
+
+            .skill-image {
+                width: 100%;
+                max-width: 463px;
+            }
         }
 
         /* Mobile responsive */
@@ -757,6 +1263,29 @@
                 display: none;
             }
 
+            .category-header {
+                padding: 1rem;
+            }
+
+            .category-title {
+                font-size: 1.25rem;
+            }
+
+            .hero-prioritization {
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+
+            .hero-category-nav {
+                justify-content: center;
+            }
+
+            .category-nav-btn {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+            }
+
             .hero {
                 padding: 2rem 0;
             }
@@ -767,6 +1296,23 @@
 
             .gear-crafting-section {
                 padding: 1.25rem;
+            }
+
+            .gear-crafting-intro {
+                padding: 1.25rem;
+            }
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gear-progression-overview {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .progression-step:not(:last-child)::after {
+                display: none;
             }
 
             .guide-intro {
@@ -798,6 +1344,34 @@
             .resource-image {
                 width: 3rem;
                 height: 3rem;
+            }
+
+            .skill-numbers {
+                padding: 0 1.5rem;
+                height: 35px;
+                margin-top: 0.8rem;
+            }
+
+            .skill-number {
+                font-size: 1.2rem;
+                width: 30px;
+                height: 30px;
+            }
+
+            .skill-number:nth-child(1) {
+                left: 12.5%;
+            }
+
+            .skill-number:nth-child(2) {
+                left: 37.5%;
+            }
+
+            .skill-number:nth-child(3) {
+                left: 62.5%;
+            }
+
+            .skill-number:nth-child(4) {
+                left: 87.5%;
             }
 
             .resource-image.zoomed {
@@ -839,6 +1413,21 @@
             .modal-body {
                 overflow-x: auto;
             }
+
+            .hero-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero-details {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .skill-table {
+                min-width: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -854,6 +1443,31 @@
 
             .upgrade-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 1.25rem;
+            }
+
+            .hero-intro {
+                padding: 1.25rem;
+            }
+
+            .hero-card {
+                padding: 1rem;
+            }
+
+            .skill-numbers {
+                padding: 0 1rem;
+                height: 30px;
+                margin-top: 0.6rem;
+            }
+
+            .skill-number {
+                font-size: 1.1rem;
+                width: 28px;
+                height: 28px;
+                border-width: 1px;
             }
         }
 
@@ -911,22 +1525,50 @@
             <div class="container">
                 <div class="guide-content">
 
-                    <div class="guide-intro">
-                        <h2>Gear Crafting Guide</h2>
-                        <h3>Rules :</h3>
-                        <p>Only care about UR gear.</p>
-                        <p>Always level gear in 10 level increments.</p>
-                        <p>Always buy Blueprints whenever you can.</p>
-
-                    </div>
                     <div id="gear-crafting" class="gear-crafting-section">
+                        <h2>Gear Crafting Guide</h2>
+
+                        <div class="gear-crafting-intro">
+                            <h3>Essential Rules</h3>
+                            <div class="rules-grid">
+                                <div class="rule-card">
+                                    <h4>Focus on UR Gear</h4>
+                                    <p>Only invest resources in UR (Ultra Rare) gear for maximum efficiency and power.
+                                    </p>
+                                </div>
+                                <div class="rule-card">
+                                    <h4>Level in Increments</h4>
+                                    <p>Gear stats are boosted only by upgrades occurring every 10 levels.</p>
+                                </div>
+                                <div class="rule-card">
+                                    <h4>Buy Blueprints</h4>
+                                    <p>Always purchase blueprints whenever available to ensure steady progression.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gear-progression-overview">
+                            <div class="progression-step">
+                                <div class="step-icon">1</div>
+                                <div class="step-label">Level Up</div>
+                                <div class="step-value">0 → 40</div>
+                            </div>
+                            <div class="progression-step">
+                                <div class="step-icon">2</div>
+                                <div class="step-label">Unlock Attributes</div>
+                                <div class="step-value">All Stats</div>
+                            </div>
+                            <div class="progression-step">
+                                <div class="step-icon">3</div>
+                                <div class="step-label">Star Up</div>
+                                <div class="step-value">0 → 5★</div>
+                            </div>
+                        </div>
+
                         <h2>Gear Upgrade Costs</h2>
-                        <p>Gear progression from level 0 to 5 stars.</p>
-                        <p>Optimize your gear progression by understanding upgrade costs and resource requirements.
-                            Upgrade gear to level 40 to unlock all extra attributes before proceeding with star
-                            upgrades.</p>
-
-
+                        <p class="muted text-center">Gear progression from level 0 to 5 stars. Optimize your gear
+                            progression by understanding upgrade costs and resource requirements. Upgrade gear to level
+                            40 to unlock all extra attributes before proceeding with star upgrades.</p>
 
                         <div class="upgrade-tabs">
                             <button class="tab-btn active" data-tab="levels">Gear Levels</button>
@@ -1359,6 +2001,1061 @@
                         </div>
                     </div>
 
+                    <div id="hero" class="hero-section">
+                        <h2>Heroes Skills Guide</h2>
+                        <div class="hero-intro">
+                            <h3>Skills Prioritization</h3>
+                            <div class="rules-grid">
+                                <div class="rule-card">
+                                    <h4>Leveling Strategy</h4>
+                                    <p>Get every skill to lvl20 asap.</p>
+                                    <p>Max skills according to the following prioritization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tanks Section -->
+                        <div class="hero-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <img src="img/heros/type/Tank_Type.png" alt="Tanks"
+                                        onerror="this.style.display='none'">
+                                </div>
+                                <h3 class="category-title">Tanks Heroes</h3>
+                                <span class="category-count">5 Heroes</span>
+                            </div>
+                            <div class="hero-prioritization">
+                                <!-- Kimberly -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Kimberly_Thumbnail.png" alt="Kimberly"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+S2ltYmVybHk8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Kimberly</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/tanks/kimberly.jpg" alt="Kimberly Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5LaW1iZXJseSBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Barrage Strike</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Energy Assault</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Energy Boost</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Marshall -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Marshall_Thumbnail.webp" alt="Marshall"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+TWFyc2hhbGw8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Marshall</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Buffs_Capability.png"
+                                                        alt="Teammates" onerror="this.style.display='none'">
+                                                    <span>Teammates</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/tanks/marshall.jpg" alt="Marshall Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NYXJzaGFsbCBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Command Strategy</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Focus Fire</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Rapid Start</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Murphy -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Murphy_Thumbnail.png" alt="Murphy"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+TXVycGh5PC90ZXh0Pgo8L3N2Zz4K'">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Murphy</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Defense" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/tanks/murphy.jpg" alt="Murphy Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NdXJwaHkgU2tpbGxzPC90ZXh0Pgo8L3N2Zz4K='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Ironclad Barrier</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Stand Firm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Cannon Fire</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Stetmann -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Stetmann_Thumbnail.png" alt="Stetmann"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+U3RldG1hbm48L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Stetmann</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/tanks/stetmann.jpg" alt="Stetmann Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5TdGV0bWFubiBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Lightning Rush</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Critical Charge</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Orb Lightning</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Williams -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Williams_Thumbnail.png" alt="Williams"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcrialIj5XaWxsaWFtczwvdGV4dD4KPC9zdmc+Cg=='"">
+                                        </div>
+                                        <div class=" hero-info">
+                                            <h3 class="hero-name">Williams</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Defense" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/tanks/williams.jpg" alt="Williams Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5XaWxsaWFtcyBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Iron Will</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>All-Around Armor</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Stun Bomb</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Aircraft Section -->
+                        <div class="hero-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <img src="img/heros/type/Aircraft_Type.png" alt="Aircraft"
+                                        onerror="this.style.display='none'">
+                                </div>
+                                <h3 class="category-title">Aircraft Heroes</h3>
+                                <span class="category-count">5 Heroes</span>
+                            </div>
+                            <div class="hero-prioritization">
+                                <!-- DVA -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/DVA_Thumbnail.png" alt="DVA"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+RFZBPC90ZXh0Pgo8L3N2Zz4K'">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">DVA</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/aircraft/dva.jpg" alt="DVA Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5EVkEgU2tpbGxzPC90ZXh0Pgo8L3N2Zz4K'">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Steel Barrage</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Vortex Missile</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Precision Upgrade</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Carlie -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Carlie_Thumbnail.png" alt="Carlie"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+Q2FybGllPC90ZXh0Pgo8L3N2Zz4K'">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Carlie</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Teammates" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/aircraft/carlie.jpg" alt="Carlie Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5DYXJsaWUgU2tpbGxzPC90ZXh0Pgo8L3N2Zz4K'">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Dual-string Rocket</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Energy Adaptation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Inferno Blaze</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Schuyler -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Schuyler_Thumbnail.png" alt="Schuyler"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+U2NodXlsZXI8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Schuyler</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png" alt="Heal"
+                                                        onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/aircraft/schuyler.jpg" alt="Schuyler Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5TY2h1eWxlciBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Disruptive Beam</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Plasma Blast</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Antimatter Armor</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Lucius -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Lucius_Thumbnail.png" alt="Lucius"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+THVjaXVzPC90ZXh0Pgo8L3N2Zz4K'">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Lucius</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/aircraft/lucius.jpg" alt="Lucius Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5MdWNpdXMgU2tpbGxzPC90ZXh0Pgo8L3N2Zz4K'">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Knight's Spirit</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Silver Armor</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Lightning Triple Strike</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Morrison -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Morrison_Thumbnail.png" alt="Morrison"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+TW9ycmlzb248L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Morrison</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Defense" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/aircraft/morrison.jpg" alt="Morrison Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5Nb3JyaXNvbiBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Armor-Piercing Shot</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Full-Auto Machine Gun</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Full Firepower</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Missile Section -->
+                        <div class="hero-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <img src="img/heros/type/Missile_Vehicle_Type.png" alt="Missile"
+                                        onerror="this.style.display='none'">
+                                </div>
+                                <h3 class="category-title">Missile Heroes</h3>
+                                <span class="category-count">5 Heroes</span>
+                            </div>
+                            <div class="hero-prioritization">
+                                <!-- McGregor -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/McGregor_Thumbnail.png" alt="McGregor"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+TWNHcmVnb3I8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">McGregor</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/missile/mcgregor.jpg" alt="McGregor Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NY0dyZWdvciBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Unyielding Heart</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>HP Boost</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Relentless Assault</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tesla -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Tesla_Thumbnail.webp" alt="Tesla"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+VGVzbGE8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Tesla</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Teammates" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/missile/tesla.jpg" alt="Tesla Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5UZXNsYSBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Lightning Chain</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Electric Grid Lockdown</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Electric Power Boost</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Swift -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Swift_Thumbnail.png" alt="Swift"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+U3dpZnQ8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Swift</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png" alt="Heal"
+                                                        onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/missile/swift.jpg" alt="Swift Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5Td2lmdCBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Target Strike</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Weakness Targeting</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Precise Guidance</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fiona -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Fiona_Thumbnail.png" alt="Fiona"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+RmlvbmE8L3RleHQ+Cjwvc3ZnPgo='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Fiona</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Give_Damage_Capability.png"
+                                                        alt="Damage" onerror="this.style.display='none'">
+                                                    <span>Damage</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/missile/fiona.jpg" alt="Fiona Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5GaW9uYSBTa2lsbHM8L3RleHQ+Cjwvc3ZnPgo='">
+                                            </div>
+                                            <div class="skill-numbers">
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Double Trajectory</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Atomic Blast</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Ballistic Boost</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Adam -->
+                                <div class="hero-card">
+                                    <div class="hero-header">
+                                        <div class="hero-thumbnail">
+                                            <img src="img/heros/heroThumbnail/Adam_Thumbnail.png" alt="Adam"
+                                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMGVhNWEzIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+QWRhbTwvdGV4dD4KPC9zdmc+Cg=='">
+                                        </div>
+                                        <div class="hero-info">
+                                            <h3 class="hero-name">Adam</h3>
+                                            <div class="hero-details">
+                                                <div class="hero-rarity">
+                                                    <img src="img/heros/rarityCategory/UR_Category.png" alt="UR"
+                                                        onerror="this.style.display='none'">
+                                                    <span>UR</span>
+                                                </div>
+                                                <div class="hero-capacity">
+                                                    <img src="img/heros/capacity/Take_Damage_Capability.png"
+                                                        alt="Defense" onerror="this.style.display='none'">
+                                                    <span>Defense</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-skills">
+                                        <div class="skill-image-container">
+                                            <div class="skill-image">
+                                                <img src="img/skill/missile/adam.jpg" alt="Adam Skills"
+                                                    onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYzIiBoZWlnaHQ9IjEyMiIgdmlld0JveD0iMCAwIDQ2MyAxMjIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0NjMiIGhlaWdodD0iMTIyIiBmaWxsPSIjMGUxNDIyIi8+Cjx0ZXh0IHg9IjIzMS41IiB5PSI2MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlhYTNiMiIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5BZGFtIFNraWxsczwvdGV4dD4KPC9zdmc+Cg=='">
+                                            </div>
+                                            <div class=" skill-numbers">
+                                                <span class="skill-number">3</span>
+                                                <span class="skill-number">2</span>
+                                                <span class="skill-number">1</span>
+                                                <span class="skill-number">4</span>
+                                            </div>
+                                        </div>
+                                        <div class="skill-priorities">
+                                            <table class="skill-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Skill</th>
+                                                        <th>Priority</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Spike Armor</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Counter Defense</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>MK43</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Super Sensing</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="index.html" class="back-link">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2"
@@ -1367,7 +3064,6 @@
                         Back to Main Page
                     </a>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -1746,6 +3442,14 @@
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
             document.querySelectorAll('.upgrade-level').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.5s ease-out';
+                revealObserver.observe(card);
+            });
+
+            // Scroll reveal for hero cards
+            document.querySelectorAll('.hero-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'all 0.5s ease-out';

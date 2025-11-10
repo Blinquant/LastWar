@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="icons/icon-743.png">
 
     <style>
-        /* Basic reset and variables */
+        /* ===== CSS VARIABLES & RESET ===== */
         :root {
             --max-width: 1100px;
             --accent: #0ea5a3;
@@ -32,24 +32,19 @@
         }
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         html,
         body {
             height: 100%;
             margin: 0;
-            padding: 0
+            padding: 0;
         }
 
         body {
             font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            background: linear-gradient(180deg,
-                    #05060a 0%,
-                    #080c18 25%,
-                    #0b1020 50%,
-                    #080c18 75%,
-                    #05060a 100%);
+            background: linear-gradient(180deg, #05060a 0%, #080c18 25%, #0b1020 50%, #080c18 75%, #05060a 100%);
             background-attachment: fixed;
             background-size: 100% 100%;
             color: #e6eef6;
@@ -59,7 +54,7 @@
             min-height: 100vh;
         }
 
-        /* Layout container */
+        /* ===== LAYOUT & CONTAINERS ===== */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -67,21 +62,21 @@
             padding: 1.25rem var(--container-padding);
         }
 
-        /* Header */
+        main {
+            padding-top: 6rem;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
         .site-header {
             position: fixed;
             top: 0;
-            left: 0%;
-            right: 0%;
+            left: 0;
+            right: 0;
             z-index: 1000;
             backdrop-filter: blur(8px);
             background: rgba(6, 8, 15, 0.35);
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             padding: 0.5rem 2rem;
-        }
-
-        main {
-            padding-top: 6rem;
         }
 
         .header-inner {
@@ -114,7 +109,7 @@
             gap: 1rem;
         }
 
-        /* Navigation cross */
+        /* Close Navigation Button */
         .close-nav {
             display: flex;
             align-items: center;
@@ -127,6 +122,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
+            animation: gentle-pulse 4s infinite;
         }
 
         .close-nav:hover {
@@ -153,24 +149,7 @@
             transform: rotate(-45deg);
         }
 
-        /* Gentle pulse animation */
-        @keyframes gentle-pulse {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
-            }
-
-            50% {
-                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
-            }
-        }
-
-        .close-nav {
-            animation: gentle-pulse 4s infinite;
-        }
-
-        /* Hero */
+        /* ===== HERO SECTION ===== */
         .hero {
             padding: 3.25rem 0;
         }
@@ -198,7 +177,11 @@
             gap: 0.75rem;
         }
 
-        /* Buttons */
+        .hero-art {
+            /* Decorative element */
+        }
+
+        /* ===== BUTTON STYLES ===== */
         .btn {
             display: inline-block;
             padding: 0.65rem 1rem;
@@ -233,12 +216,10 @@
             background: rgba(14, 165, 163, 0.1);
         }
 
-        /* Action Button */
+        /* Action Button with special effects */
         .btn-action {
             display: inline-block;
-            background: linear-gradient(135deg,
-                    rgba(14, 165, 163, 0.05) 0%,
-                    rgba(20, 184, 182, 0.02) 100%);
+            background: linear-gradient(135deg, rgba(14, 165, 163, 0.05) 0%, rgba(20, 184, 182, 0.02) 100%);
             color: var(--accent);
             padding: 1rem 2rem;
             border-radius: 12px;
@@ -259,10 +240,7 @@
             position: absolute;
             inset: 0;
             border-radius: 12px;
-            background: linear-gradient(135deg,
-                    rgba(14, 165, 163, 0.1) 0%,
-                    rgba(20, 184, 182, 0.05) 50%,
-                    transparent 100%);
+            background: linear-gradient(135deg, rgba(14, 165, 163, 0.1) 0%, rgba(20, 184, 182, 0.05) 50%, transparent 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
             z-index: -1;
@@ -274,30 +252,13 @@
 
         .btn-action:hover {
             border-color: var(--accent-light);
-            box-shadow: 0 0 20px rgba(14, 165, 163, 0.4),
-                0 0 40px rgba(14, 165, 163, 0.2);
+            box-shadow: 0 0 20px rgba(14, 165, 163, 0.4), 0 0 40px rgba(14, 165, 163, 0.2);
             transform: translateY(-3px) scale(1.02);
             color: var(--accent-light);
-        }
-
-        /* Animation subtile pour le bouton */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-2px);
-            }
-        }
-
-        .btn-action:hover {
             animation: float 2s ease-in-out infinite;
         }
 
-        /* Sections */
+        /* ===== SECTION STYLES ===== */
         .section {
             padding: 2rem 0;
         }
@@ -308,14 +269,15 @@
             letter-spacing: -0.02em;
         }
 
-        /* Guide Content */
+        /* Guide Content Container */
         .guide-content {
             max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Gear Crafting Section*/
-        .gear-crafting-section {
+        /* ===== GEAR CRAFTING SECTION ===== */
+        .gear-crafting-section,
+        .hero-section {
             background: var(--card);
             padding: 2.5rem;
             border-radius: 16px;
@@ -326,7 +288,8 @@
             overflow: hidden;
         }
 
-        .gear-crafting-section h2 {
+        .gear-crafting-section h2,
+        .hero-section h2 {
             color: #fff;
             margin-top: 0;
             margin-bottom: 1.5rem;
@@ -336,7 +299,8 @@
             padding-bottom: 1rem;
         }
 
-        .gear-crafting-section h2::after {
+        .gear-crafting-section h2::after,
+        .hero-section h2::after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -348,16 +312,19 @@
             border-radius: 2px;
         }
 
-        .gear-crafting-intro {
-            background: rgba(14, 165, 163, 0.05);
-            border: 1px solid rgba(14, 165, 163, 0.1);
+        /* Intro Cards with Rules */
+        .gear-crafting-intro,
+        .hero-intro {
+            background: rgba(14, 165, 162, 0.021);
+            border: 1px solid rgba(14, 165, 162, 0.37);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2.5rem;
             position: relative;
         }
 
-        .gear-crafting-intro h3 {
+        .gear-crafting-intro h3,
+        .hero-intro h3 {
             color: var(--accent);
             margin-top: 0;
             margin-bottom: 1.5rem;
@@ -367,6 +334,12 @@
             gap: 0.75rem;
         }
 
+        .hero-intro h3 {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        /* Rules Grid Layout */
         .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -407,6 +380,14 @@
             line-height: 1.6;
         }
 
+        .rule-card p::before,
+        .guide-intro p::before,
+        .hero-intro .rules-grid p::before {
+            content: "• ";
+            color: var(--accent);
+        }
+
+        /* ===== PROGRESSION OVERVIEW ===== */
         .gear-progression-overview {
             display: flex;
             justify-content: space-between;
@@ -466,19 +447,7 @@
             margin-top: 0.25rem;
         }
 
-        .guide-intro {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            margin-bottom: 2rem;
-        }
-
-        .guide-intro p::before {
-            content: "• ";
-            color: var(--accent);
-        }
-
+        /* ===== TABS SYSTEM ===== */
         .upgrade-tabs {
             display: flex;
             gap: 1rem;
@@ -517,7 +486,7 @@
             display: block;
         }
 
-        /* Upgrade Grid */
+        /* ===== UPGRADE GRID & COSTS ===== */
         .upgrade-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -606,20 +575,19 @@
             object-fit: contain;
         }
 
-        /* Zoomed resource images */
         .resource-image.zoomed img {
             width: 100%;
             height: 100%;
         }
 
-        /* Action Section */
+        /* ===== ACTION SECTIONS ===== */
         .action-section {
             text-align: center;
             margin: 3rem 0 2rem 0;
             padding: 2rem;
             background: var(--card);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03)
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .action-section h4 {
@@ -636,8 +604,7 @@
             margin-right: auto;
         }
 
-        /* Hero Section*/
-        /* Hero Categories */
+        /* ===== HERO CATEGORIES & CARDS ===== */
         .hero-category {
             margin-bottom: 3rem;
             background: rgba(255, 255, 255, 0.02);
@@ -693,115 +660,6 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-        }
-
-        .hero-type {
-            display: none;
-        }
-
-
-        .hero-category-nav {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .category-nav-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--muted);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-nav-btn.active {
-            background: rgba(14, 165, 163, 0.2);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .category-nav-btn:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-        }
-
-        .hero-section {
-            background: var(--card);
-            padding: 2.5rem;
-            margin-top: 10rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section h2 {
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .hero-section h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            border-radius: 2px;
-        }
-
-        .hero-intro {
-            background: rgba(14, 165, 162, 0.021);
-            border: 1px solid rgba(14, 165, 162, 0.37);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .hero-intro h3 {
-            color: rgb(255, 255, 255);
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .hero-intro .rules-grid p {
-            color: var(--muted);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .hero-intro .rules-grid p::before {
-            content: "• ";
-            color: var(--accent);
-        }
-
-        /* Hero Prioritization Section */
-        .hero-prioritization {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
         }
 
         .hero-card {
@@ -879,6 +737,7 @@
             font-size: 0.9rem;
         }
 
+        /* ===== SKILLS LAYOUT ===== */
         .hero-skills {
             display: flex;
             gap: 1.5rem;
@@ -917,7 +776,7 @@
         }
 
         .skill-number {
-            color: rgb(255, 255, 255);
+            color: #fff;
             font-weight: 700;
             font-size: 1.4rem;
             position: absolute;
@@ -981,24 +840,7 @@
             background: rgba(14, 165, 163, 0.05);
         }
 
-        .skill-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            padding: 0.5rem;
-            color: #fff;
-            font-size: 0.9rem;
-            resize: vertical;
-            min-height: 60px;
-        }
-
-        .skill-input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        /* Modal Styles */
+        /* ===== MODAL STYLES ===== */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1103,7 +945,7 @@
             overflow-y: auto;
         }
 
-        /* Table Styles */
+        /* Cost Table in Modal */
         .cost-table {
             width: 100%;
             border-collapse: collapse;
@@ -1137,23 +979,7 @@
             background: rgba(14, 165, 163, 0.03);
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 2rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--accent-light);
-            gap: 0.75rem;
-        }
-
-        /* Footer */
+        /* ===== FOOTER STYLES ===== */
         .site-footer {
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             padding: 2rem 0;
@@ -1189,7 +1015,6 @@
             margin-right: 0;
             transition: color 0.2s ease;
             width: fit-content;
-            width: -moz-fit-content;
         }
 
         .footer-section a:hover {
@@ -1225,7 +1050,64 @@
             color: #fff;
         }
 
-        /* Responsive rules */
+        /* ===== UTILITY CLASSES ===== */
+        .muted {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-light);
+            gap: 0.75rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes gentle-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        /* Tablet & Small Desktop */
         @media (max-width: 980px) {
             .hero-art {
                 display: none;
@@ -1249,7 +1131,7 @@
             }
         }
 
-        /* Mobile responsive */
+        /* Mobile Devices */
         @media (max-width: 700px) {
             .site-header {
                 padding: 0rem 1rem;
@@ -1294,11 +1176,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .gear-crafting-section {
+            .gear-crafting-section,
+            .hero-section {
                 padding: 1.25rem;
             }
 
-            .gear-crafting-intro {
+            .gear-crafting-intro,
+            .hero-intro {
                 padding: 1.25rem;
             }
 
@@ -1358,22 +1242,6 @@
                 height: 30px;
             }
 
-            .skill-number:nth-child(1) {
-                left: 12.5%;
-            }
-
-            .skill-number:nth-child(2) {
-                left: 37.5%;
-            }
-
-            .skill-number:nth-child(3) {
-                left: 62.5%;
-            }
-
-            .skill-number:nth-child(4) {
-                left: 87.5%;
-            }
-
             .resource-image.zoomed {
                 width: 3.5rem;
                 height: 3.5rem;
@@ -1425,11 +1293,35 @@
                 flex-wrap: wrap;
             }
 
+            .hero-skills {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skill-priorities {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+
+            .skill-priorities::-webkit-scrollbar {
+                height: 4px;
+            }
+
             .skill-table {
                 min-width: 300px;
+                font-size: 0.9rem;
+            }
+
+            .skill-table th,
+            .skill-table td {
+                padding: 0.5rem;
+                white-space: nowrap;
             }
         }
 
+        /* Small Mobile Devices */
         @media (max-width: 480px) {
             .resource-image {
                 width: 2.5rem;
@@ -1469,20 +1361,20 @@
                 height: 28px;
                 border-width: 1px;
             }
-        }
 
-        /* Utility */
-        .muted {
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
+            .skill-table {
+                min-width: 180px;
+                font-size: 0.85rem;
+            }
 
-        .text-center {
-            text-align: center;
-        }
+            .skill-table th,
+            .skill-table td {
+                padding: 0.4rem 0.3rem;
+            }
 
-        .mt-2 {
-            margin-top: 2rem;
+            .hero-skills {
+                gap: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -1508,7 +1400,7 @@
                     <p class="subtitle">Learn upgrade costs, resource management, and optimization strategies.</p>
                     <div class="hero-cta">
                         <a class="btn primary" href="#gear-crafting">Gear Crafting</a>
-                        <a class="btn ghost" href="#detailed-costs">Detailed Costs</a>
+                        <a class="btn ghost" href="#hero">Skills Prioritization</a>
                     </div>
                 </div>
                 <div class="hero-art">
@@ -1532,7 +1424,7 @@
                             <h3>Essential Rules</h3>
                             <div class="rules-grid">
                                 <div class="rule-card">
-                                    <h4>Focus on UR Gear</h4>
+                                    <h4><strong> Focus on UR Gear</strong></h4>
                                     <p>Only invest resources in UR (Ultra Rare) gear for maximum efficiency and power.
                                     </p>
                                 </div>
@@ -3313,9 +3205,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>HQ Guides</h4>
-                    <a href="#unlock">Unlock Requirements</a>
-                    <a href="#requirements">Building Requirements</a>
-                    <a href="#progression">Progression Timeline</a>
+                    <a href="#gear-crafting">Gear Crafting</a>
+                    <a href="#hero">Hero Skills</a>
                 </div>
                 <div class="footer-section">
                     <h4>Community</h4>
